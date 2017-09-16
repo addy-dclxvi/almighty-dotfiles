@@ -1,0 +1,23 @@
+sw_volume: 84
+audio_device_state:1:pulse audio
+audio_device_state:1:my_fifo
+state: play
+current: 4
+time: 4.156000
+random: 0
+repeat: 1
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Dream Theater/08 DREAM THEATRE - Scenes from a memory/Dream Theater - Scenes ... -02- Overture 1928.mp3
+1:Dream Theater/08 DREAM THEATRE - Scenes from a memory/Dream Theater - Scenes ... -03- Strange Deja Vu.mp3
+2:Dream Theater/08 DREAM THEATRE - Scenes from a memory/Dream Theater - Scenes ... -06- Beyond this life.mp3
+3:Dream Theater/08 DREAM THEATRE - Scenes from a memory/Dream Theater - Scenes ... -07- Through her eyes.mp3
+4:Dream Theater/08 DREAM THEATRE - Scenes from a memory/Dream Theater - Scenes ... -08- Home.mp3
+5:Dream Theater/08 DREAM THEATRE - Scenes from a memory/Dream Theater - Scenes ... -10- One last time.mp3
+6:Dream Theater/08 DREAM THEATRE - Scenes from a memory/Dream Theater - Scenes ... -11- The spirit carries on.mp3
+7:Dream Theater/08 DREAM THEATRE - Scenes from a memory/Dream Theater - Scenes ... -12- Finally free.mp3
+playlist_end

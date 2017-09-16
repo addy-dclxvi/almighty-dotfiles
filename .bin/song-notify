@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Send mpc now playing notification to dunst
+# I only use this script for testing my dunst
+
+notify-send "Now Playing ♫" "$(mpc current)"

@@ -1,0 +1,89 @@
+[options]
+#https://github.com/thestinger/termite/blob/master/config
+allow_bold = true
+audible_bell = false
+browser = xdg-open
+clickable_url = true
+cursor_blink = system
+cursor_shape = block
+dynamic_title = true
+filter_unmatched_urls = true
+font = M+ 1mn 8
+geometry = 480x280
+highlight = #2f2f2f
+icon_name = terminal
+modify_other_keys = false
+mouse_autohide = false
+scroll_on_output = false
+scroll_on_keystroke = true
+scrollback_lines = 15000
+size_hints = false
+search_wrap = true
+urgent_on_bell = true
+padding = 2
+
+[hints]
+#font = Monospace 12
+#foreground = #dcdccc
+#background = #3f3f3f
+#active_foreground = #e68080
+#active_background = #3f3f3f
+#padding = 2
+#border = #3f3f3f
+#border_width = 10
+#roundness = 2.0
+
+##############################################
+####                                      ####
+#### Espresso Color Scheme by Addy        ####
+#### https://github.com/addy-dclxvi       ####
+#### http://addy-dclxvi.deviantart.com/   ####
+#### https://plus.google.com/+AdhiPambudi ####
+####                                      ####
+##############################################
+####                                      ####
+#### Based on Mocha color scheme          ####
+####                                      ####
+##############################################
+
+[colors]
+foreground      = #606060
+foreground_bold = #606060
+#foreground_dim   = 
+cursor          = #dc8cc3
+#cursor_foreground = #dcdccc
+# 20% background transparency (requires a compositor)
+#background = rgba(75, 75, 75, 1.0)
+background = #ffffff
+
+# black
+color0  = #736060
+color8  = #5b4848
+
+# red
+color1  = #e3788f
+color9  = #cb6077
+
+# green
+color2  = #d6ed73
+color10 = #bec55b
+
+# yellow
+color3  = #fcd49f
+color11 = #e4bc87
+
+# blue
+color4  = #a2cbed
+color12 = #8ab3d5
+
+# magenta
+color5  = #c0b3d1
+color13 = #a89bb9
+
+# cyan
+color6  = #93e5cc
+color14 = #7bcdb4
+
+# white
+color7  = #e0d8d6
+color15 = #c8c0be

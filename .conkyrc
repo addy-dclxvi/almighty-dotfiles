@@ -1,0 +1,103 @@
+## pkill -xf "conky -c ~/.conkyrc" &
+
+## Informant Conky
+## By Addy
+## https://plus.google.com/+AdhiPambudi
+## http://addy-dclxvi.deviantart.com/
+## https://github.com/addy-dclxvi
+
+## Tweaked: for BunsenLabs Cv1.9
+## by: Sector11
+## 2017-08-25
+
+## ---------- Begin Window Settings
+
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints skip_taskbar,skip_pager,below,undecorated,sticky
+own_window_colour 000000
+own_window_class Conky
+own_window_title Informant Conky
+
+#minimum_size 400 200
+#maximum_width 400
+
+gap_x 20	# l|r
+gap_y 0		# u|d
+
+alignment tr
+
+## ---------- End Window Settings
+## ---------- Font Settings
+
+override_utf8_locale yes
+use_xft yes
+######## xftfont Roboto:size=10
+#xftfont Liberation Mono:bold:size=10
+#xftfont Fantasque Sans Mono:bold:size=9
+#xftfont Monofur:bold:size=10
+#xftfont DejaVu Sans Mono:bold:size=10
+#xftfont Fira Mono:bold:size=9
+xftalpha 1.0
+
+## --------- End Font Settings
+## --------- Color Settings
+
+draw_shades yes
+default_shade_color 000000
+draw_outline no
+default_outline_color 000000
+
+default_color fd7980 #Cyan #DCDCDC #Gainsboro
+color0 ffffff #white C0C0C0 #Silver
+color1 777777 #Gray
+color2 FAEBD7 #AntiqueWhite
+color3 87CEFA #LightSkyBlue
+color4 48D1CC #MediumTurquoise
+color5 FFDEAD #NavajoWhite
+color6 00BFFF #DeepSkyBlue
+color7 B0E0E6 #PowderBlue
+color8 FFD700 #Gold
+color9 CD5C5C #IndianRed
+
+## ---------- End Color Settings
+## ---------- Begin Borders Section
+
+draw_borders no
+stippled_borders 5
+border_inner_margin 0
+border_outer_margin 0
+border_width 2
+
+## ---------- End Borders Secton
+## ---------- Begin Miscellaneous Section
+
+background no
+use_spacer none
+no_buffers yes
+short_units yes
+imlib_cache_size 0
+double_buffer yes
+short_units yes
+pad_percents 2
+
+## ---------- End Miscellaneous Section
+
+update_interval 1
+TEXT
+\
+${font Roboto:Light:size=72}${alignr}${time %H}${color0}:${time %M}${font}
+${font Roboto:Light:size=24}${voffset 12}${alignr}${execi 300 LANG=en_US.utf8 LC_TIME=en_US.utf8 date +"%A"}${color},\
+ ${execi 300 LANG=en_US.utf8 LC_TIME=en_US.utf8 date +"%d"}\
+ ${color0}${execi 300 LANG=${template9} LC_TIME=${template9} date +"%B"}${font}${voffset 2}
+${hr}${color}${voffset 4}
+${font Roboto:Regular:size=10}${alignr}ARCHITECTURE: ${color0}${machine} ${color1}|${color} KERNEL: ${color0}${kernel}${color}
+${alignr}USER: ${color0}${execi 5000 whoami} ${color1}|${color} MACHINE: ${color0}${nodename} ${color1}|${color} UPTIME: ${color0}${uptime_short}${color}
+${alignr}DISTRIBUTION: ${color0}${exec awk -F'=' '/DESCRIPTION/ {print $2}' /etc/lsb-release |sed 's/"//g'} ${color1}|${color} VERSION: ${color0}${exec awk -F'=' '/DISTRIB_RELEASE=/ {printf $2" "} /CODENAME/ {print $2}' /etc/lsb-release}${color}
+${alignr}ROOT: ${color0}${fs_used /} ${color}/${color0} ${fs_size /} ${color1}|${color} HOME: ${color0}${fs_used /home}${color} / ${color0}${fs_size /home}${color}
+${alignr}CPU: ${color0}${if_match ${cpu cpu0}<10}  ${cpu cpu0}\
+${else}${if_match ${cpu cpu0}<100} ${cpu cpu0}\
+${else}${cpu cpu0}${endif}${endif}% ${color1}|${color} RAM: ${color0}${mem} ${color}/${color0} ${memmax}${color} HD: ${color0}${fs_used_perc}%${color}
+${alignr}SWAP: ${color0}${swap} ${color}/${color0} ${swapmax} ${color1}|${color} SYS TEMP: ${color0}${hwmon temp 1}°C${color}
+${alignr}YOU CAN INSTALL ${color0}${execpi 1800 checkupdates | wc -l}${color} UPDATE(S)

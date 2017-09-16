@@ -1,0 +1,285 @@
+[colors]
+
+background 		= #aa282828
+background-alt 	= #44282828
+foreground 		= #f5f8f6
+foreground-alt 	= #88f5f8f6
+black      		= #5b4848
+red	    		= #cb6077
+red-alt	    	= #44cb6077
+green			= #bec55b
+yellow			= #e4bc87
+blue			= #8ab3d5
+magenta    		= #a89bb9
+cyan	    	= #7bcdb4
+white	    	= #e0d8d6
+
+[bar/top]
+monitor = LVDS-1
+width = 100%
+height = 20
+fixed-center = true
+underline-size = 2
+topbar.border-top-size = 4
+background = ${colors.background}
+foreground = ${colors.foreground}
+padding-left = 2
+padding-right = 2
+module-margin-left = 0
+module-margin-right = 2
+
+font-0 = Noto Sans:pixelsize=8
+font-1 = FontAwesome:pixelsize=9;0
+font-2 = unifont:fontformat=truetype:size=9:antialias=false;0
+font-3 = Wuncon Siji:pixelsize=9;0
+font-4 = Roboto:style=Regular:pixelsize=9;0
+
+modules-left = i3 xwindow
+modules-center = mpd
+modules-right = volume date
+
+;tray-position = right
+tray-padding = 2
+;tray-transparent = true
+tray-background = ${colors.background}
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:40:...%
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-default = " "
+
+label-mode-padding = 1
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.background}
+
+label-focused = %icon% 
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.foreground}
+label-focused-underline = ${colors.red}
+label-focused-padding = 2
+
+label-unfocused = %icon%
+label-unfocused-padding = 2
+label-unfocused-foreground = ${colors.foreground-alt}
+
+label-visible = %icon%
+label-visible-background = ${colors.background}
+label-visible-underline = ${colors.background}
+label-visible-padding = 2
+
+label-urgent = %icon%
+label-urgent-background = ${colors.red}
+label-urgent-foreground = ${colors.foreground}
+label-urgent-padding = 2
+
+
+[module/mpd]
+type = internal/mpd
+;format-online = <icon-prev> <icon-stop> <toggle> <icon-next> <bar-progress>  <label-time>  <label-song>
+format-online = <label-song>
+
+icon-prev = 
+icon-seekb = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-seekf = 
+icon-next = 
+
+label-song-maxlen = 40
+label-song-ellipsis = true
+
+bar-progress-width = 15
+bar-progress-indicator = |
+bar-progress-indicator-foreground = #ff
+bar-progress-indicator-font = 2
+bar-progress-fill = ─
+bar-progress-fill-font = 2
+bar-progress-fill-foreground = #ff
+bar-progress-empty = ─
+bar-progress-empty-font = 2
+bar-progress-empty-foreground = ${colors.foreground-alt}
+
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label> <bar>
+label = BL
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #ff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+;format-prefix = "CPU "
+format-prefix-foreground = ${colors.red}
+;format-underline = #fff
+label = %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+;format-prefix = "RAM "
+format-prefix-foreground = ${colors.red}
+;format-underline = #fff
+label = %mb_used%
+
+[module/wlan]
+type = internal/network
+interface = wlp2s0
+interval = 1.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-underline = #9f78e1
+label-connected = %essid%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 1
+
+date =
+date-alt = " %Y-%m-%d"
+
+;time = %l:%M %p
+;time-alt = %l:%M %p
+time = %H:%M
+time-alt = %H:%M
+
+format-prefix =  
+format-prefix-foreground = ${colors.red}
+;format-underline = #fff
+
+label = %date% %time%
+
+[module/volume]
+type = internal/volume
+
+format-volume = <label-volume> <bar-volume>
+label-volume = " "
+label-volume-foreground = ${colors.red}
+
+format-muted-prefix = " "
+format-muted-foreground = #ad2828
+label-muted = Muted
+
+bar-volume-width = 8
+;bar-volume-foreground-0 = #ad2828
+;bar-volume-foreground-1 = #ad2828
+;bar-volume-foreground-2 = #ad2828
+;bar-volume-foreground-3 = #ad2828
+;bar-volume-foreground-4 = #ad2828
+;bar-volume-foreground-5 = #ad2828
+;bar-volume-foreground-6 = #ad2828
+bar-volume-gradient = false
+bar-volume-indicator = 
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 2
+warn-temperature = 60
+
+format = <ramp> <label>
+;format-underline = #fff
+format-warn = <ramp> <label-warn>
+;format-warn-underline = ${self.format-underline}
+
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.red}
+
+ramp-0 =  
+ramp-1 =  
+ramp-2 =  
+ramp-foreground = #ad2828
+
+[module/powermenu]
+type = custom/menu
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.red}
+label-close =  cancel
+label-close-foreground = ${colors.red}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = power off
+menu-2-0-exec = sudo poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini
