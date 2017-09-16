@@ -4,17 +4,17 @@
 
 ## Introduction
 A collection of configs to be placed in the users home directory usually prefixed with a period, hence the name dotfiles.
-This repo is actually intended for my personal backup, but everyone are welcome to use these resources. Designed for **Arch Linux**, but can also works in another distro.
+This repo is actually intended for my personal backup, but everyone are welcome to use these resources. Designed for **Arch Linux**, but can also works for another distro.
 
 ## Preview
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview.jpg) <br />
-Openbox theme : Clair (included in this repo)
+**Openbox theme** : Clair (included in this repo)
 
 ## Containing
 
-- **Openbox** <br /> Some useful keybinds like snap window with useless gaps (super + arrows), . MPC control using play/pause, next, previous, stop, keys. *Super + number* to switch workspace like in i3wm.
+- **Openbox** <br /> Some useful keybinds like snap window with useless gaps (super + arrows). MPC control using *play/pause, next, previous,* and *stop* keys. *Super + number* to switch workspace like in i3wm.
 *Super + shift + number* to send window to another workspace (also like in i3wm), and more keybinds. Please read the *rc.xml* first before using it, just in case I forgot to remove my self-destruct keybind before push it to this repo. <br />
-Also including two bonus Openbox Theme, Triste & Clair. Want more themes? please check my [Openbox Theme Collections](https://github.com/addy-dclxvi/Openbox-Theme-Collections).
+And a well commented *autostart* file is included. Also including two bonus Openbox Theme only for You, Triste & Clair. Want more themes? please check my [Openbox Theme Collections](https://github.com/addy-dclxvi/Openbox-Theme-Collections).
 
 - **i3-gaps** <br /> Pretty stock simple config with useless gaps. My config is using Polybar as statusbar.
 
@@ -29,19 +29,20 @@ To use it, simply install oh-my-zsh package, copy my .zshrc & .oh-my-zsh folder 
 
 - **Tint2** <br /> Just a single tint2rc. For my another Tint2 collections please check my [Tint2 Themes Collections](https://github.com/addy-dclxvi/Tint2-Theme-Collections).
 
-- **termite** <br /> My custom color schemes for termite. To use white color schemes just launch ```termite-light``` command from *dmenu* (if you use my *~/.bin* & *.profile*).
+- **termite** <br /> My custom color schemes for termite. To use white color schemes just launch ```termite-light``` command from *dmenu* (if you are using use my *~/.bin* & *.profile*). And Use *M+ 1mn* fonts.
 
-- **Xresources** <br /> My custom color schemes & config for Urxvt, including copy paste support by [Muennich](https://github.com/muennich/urxvt-perls). Hit Alt+C to copy, and Alt+V to paste (*xsel* package is needed). <br />
+- **Xresources** <br /> My custom color schemes & config for Urxvt, including copy paste support by [Muennich](https://github.com/muennich/urxvt-perls). Hit Alt+C to copy, and Alt+V to paste (*xsel* package is needed). Use *M+ 1mn* fonts.<br />
 Also contains my stupidly minimalist *rofi* theme.
 
-- **ncmpcpp** <br /> A simple ncmpcpp config, with album art support. The album art script is taken from [Marco](https://marcocheung.wordpress.com/). Slightly modified to get rid the transparency bug. <br />
-![alt text](https://raw.githubusercontent.com/addy-dclxvi/Ultimate-Dotfiles/master/ncmpcpp.gif). To use ncmpcpp with album art, simply launch ```my-music``` from dmenu (if you use my *~/.bin* & *.profile*).
-<br /> Also integrated with *dunst* notification. Just copy my dunst config, install dunst, and do nothing. Dunst will launch automatically if triggered by *notify-send* event.
+- **ncmpcpp** <br /> A simple ncmpcpp config, with album art support. The album art script is taken from [Marco](https://marcocheung.wordpress.com/). Slightly modified to get rid the transparency bug. <br /> <br />
+![alt text](https://raw.githubusercontent.com/addy-dclxvi/Ultimate-Dotfiles/master/ncmpcpp.gif) <br /> <br />
+To use ncmpcpp with album art, simply launch ```my-music``` from dmenu (if you are using my *~/.bin* & *.profile*). Urxvt with pixbuf enabled is needed. You can get it from AUR, the package name is *rxvt-unicode-pixbuf*. And Use *M+ 1mn* fonts, because of what? It just looks nice. <br />
+Also integrated with *dunst* notification. Just copy my dunst config, install dunst, and do nothing. Dunst will launch automatically if triggered by *notify-send* event.
 
-- **gtk.css** <br /> Add useless space wasting paddings (Who don't love terminal paddings? It looks nice) for vte-based terminal, including termite.
+- **gtk.css** <br /> Add useless space wasting paddings (who don't love terminal paddings? It looks nice) for vte-based terminal, including termite.
 
 - **bin** <br /> The most useful script here is gitsetup & gitpush by [Erik Dubois](http://erikdubois.be/quick-easy-way-set-personal-github-repository), and some script for Tint2 executor.
-the rest are only toys from [Crunchbang Forum](https://crunchbang.org/forums/viewtopic.php?id=13645). Don't forget to make them executable. Also copy *.profile* file to your home to make them executable without writing full path.
+The rest are only toys from [Crunchbang Forum](https://crunchbang.org/forums/viewtopic.php?id=13645). Don't forget to make them executable. Also copy *.profile* file to your home to make them executable without writing full path.
 
 ## Additional Information
 Some of these configs are hardcoded, that mean You need to edit the configs before it would work. Like the path and default apps.
@@ -77,6 +78,9 @@ But I have generated a [pkglist.txt](https://github.com/addy-dclxvi/almighty-dot
 It is pretty barebones & not so bloated, only containing 772 packages. <br />
 Or if You want to brutally replicate my setup, just install them all using ```yaourt -S pkglist.txt --needed```  <br />
 It will install every packages that I have but You don't have. But I'm too afraid to test it by myself. Maybe You want to be a volunteer to test the command above, and post the results here. If your OS is broken, I will not use that command.
+
+## Comments
+I have spend so much time writing comments in my config files for a purpose, to be read.
 
 ## My Links
 [Google+](https://plus.google.com/+AdhiPambudi)
