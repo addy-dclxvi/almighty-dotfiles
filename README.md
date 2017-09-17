@@ -4,7 +4,8 @@
 
 ## Introduction
 A collection of configs to be placed in the users home directory usually prefixed with a period, hence the name dotfiles.
-This repo is actually intended for my personal backup, but everyone are welcome to use these resources. Designed for **Arch Linux**, but can also works for another distro.
+This repo is actually intended for my personal backup, but everyone are welcome to use these resources. <br />
+Designed for **Arch Linux**, but can also works for another distro.
 
 ## Preview
 **A Change of Seasons** <br />
@@ -13,7 +14,7 @@ This repo is actually intended for my personal backup, but everyone are welcome 
 
 ## Containing
 - **Openbox** <br /> Some useful keybinds like snap window with useless gaps (super + arrows). MPC control using *play/pause, next, previous,* and *stop* keys. *Super + number* to switch workspace like in i3wm.
-*Super + shift + number* to send window to another workspace (also like in i3wm), and more keybinds. Please read the *rc.xml* first before using it, just in case I forgot to remove my **self-destruct** keybind before I pushed it to this repo. <br />
+*Super + shift + number* to send window to another workspace (also like in i3wm), and more keybinds. Please read the *rc.xml* first before using it, just in case I forgot to remove my **self-destruct** keybind before I pushed it to this repo. <br /> <br />
 And a well commented *autostart* file is included. Also including two bonus Openbox Theme only for You, Triste & Clair. Want more themes? please check my [Openbox Theme Collections](https://github.com/addy-dclxvi/Openbox-Theme-Collections).
 
 - **obmenu-generator** <br /> My Openbox menu in the screenshot above is generated using obmenu-generator pipemenu. To use my scheme simply copy my scheme & config, then install *obmenu-generator* from AUR and type ```obmenu-generator -p``` and reconfigure Openbox.
@@ -38,7 +39,7 @@ Also contains my stupidly minimalist *rofi* theme.
 
 - **ncmpcpp** <br /> A simple ncmpcpp config, with album art support. The album art script is taken from [Marco](https://marcocheung.wordpress.com/). Slightly modified to get rid the transparency bug. <br /> <br />
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview2.png) <br />
-**Now Playing** : Dream Theater - Strange Deja Vu (Metropolis Part 2 : Scenes from a Memory, 1999) <br />
+**Now Playing** : Dream Theater - Strange Deja Vu (Metropolis Part 2 : Scenes from a Memory, 1999) <br /> <br />
 To use ncmpcpp with album art, simply launch ```my-music``` from dmenu (if you are using my *~/.bin* & *.profile*). Urxvt with pixbuf enabled is needed. You can get it from AUR, the package name is *rxvt-unicode-pixbuf*. And Use *M+ 1mn* fonts, because of what? It just looks nice. <br />
 Also integrated with *dunst* notification. Just copy my dunst config, install dunst, and do nothing. Dunst will launch automatically if triggered by *notify-send* event.
 
