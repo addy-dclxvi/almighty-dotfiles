@@ -1,5 +1,5 @@
 <p align="center">
-<a name="top" href="https://github.com/addy-dclxvi/Ultimate-Dotfiles/"><img src="https://raw.githubusercontent.com/addy-dclxvi/Ultimate-Dotfiles/master/logo.png"></a>
+<a name="top" href="https://github.com/addy-dclxvi/almighty-dotfiles/"><img src="https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/header.png"></a>
 </p>
 
 ## Introduction
