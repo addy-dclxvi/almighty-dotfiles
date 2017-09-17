@@ -7,14 +7,16 @@ A collection of configs to be placed in the users home directory usually prefixe
 This repo is actually intended for my personal backup, but everyone are welcome to use these resources. Designed for **Arch Linux**, but can also works for another distro.
 
 ## Preview
+**A Change of Seasons** <br />
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview.jpg) <br />
-**Openbox theme** : Clair (included in this repo)
+**Openbox Theme** : Clair (included in this repo)
 
 ## Containing
-
 - **Openbox** <br /> Some useful keybinds like snap window with useless gaps (super + arrows). MPC control using *play/pause, next, previous,* and *stop* keys. *Super + number* to switch workspace like in i3wm.
-*Super + shift + number* to send window to another workspace (also like in i3wm), and more keybinds. Please read the *rc.xml* first before using it, just in case I forgot to remove my self-destruct keybind before push it to this repo. <br />
+*Super + shift + number* to send window to another workspace (also like in i3wm), and more keybinds. Please read the *rc.xml* first before using it, just in case I forgot to remove my **self-destruct** keybind before I pushed it to this repo. <br />
 And a well commented *autostart* file is included. Also including two bonus Openbox Theme only for You, Triste & Clair. Want more themes? please check my [Openbox Theme Collections](https://github.com/addy-dclxvi/Openbox-Theme-Collections).
+
+- **obmenu-generator** <br /> My Openbox menu in the screenshot above is generated using obmenu-generator pipemenu. To use my scheme simply copy my scheme & config, then install *obmenu-generator* from AUR and type ```obmenu-generator -p``` and reconfigure Openbox.
 
 - **i3-gaps** <br /> Pretty stock simple config with useless gaps. My config is using Polybar as statusbar.
 
@@ -35,20 +37,21 @@ To use it, simply install oh-my-zsh package, copy my .zshrc & .oh-my-zsh folder 
 Also contains my stupidly minimalist *rofi* theme.
 
 - **ncmpcpp** <br /> A simple ncmpcpp config, with album art support. The album art script is taken from [Marco](https://marcocheung.wordpress.com/). Slightly modified to get rid the transparency bug. <br /> <br />
-![alt text](https://raw.githubusercontent.com/addy-dclxvi/Ultimate-Dotfiles/master/ncmpcpp.gif) <br /> <br />
+![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview2.png) <br />
+**Now Playing** : Dream Theater - Strange Deja Vu (Metropolis Part 2 : Scenes from a Memory, 1999) <br />
 To use ncmpcpp with album art, simply launch ```my-music``` from dmenu (if you are using my *~/.bin* & *.profile*). Urxvt with pixbuf enabled is needed. You can get it from AUR, the package name is *rxvt-unicode-pixbuf*. And Use *M+ 1mn* fonts, because of what? It just looks nice. <br />
 Also integrated with *dunst* notification. Just copy my dunst config, install dunst, and do nothing. Dunst will launch automatically if triggered by *notify-send* event.
 
-- **gtk.css** <br /> Add useless space wasting paddings (who don't love terminal paddings? It looks nice) for vte-based terminal, including termite.
+- **gtk.css** <br /> Add useless space wasting paddings (who don't love terminal paddings? it looks nice) for vte-based terminal, including termite.
 
 - **bin** <br /> The most useful script here is gitsetup & gitpush by [Erik Dubois](http://erikdubois.be/quick-easy-way-set-personal-github-repository), and some script for Tint2 executor.
 The rest are only toys from [Crunchbang Forum](https://crunchbang.org/forums/viewtopic.php?id=13645). Don't forget to make them executable. Also copy *.profile* file to your home to make them executable without writing full path.
 
 ## Additional Information
 Some of these configs are hardcoded, that mean You need to edit the configs before it would work. Like the path and default apps.
-- My username at my machine is addy@freako, so some of these configs path are pointing to ```/home/addy``` 
+- My username at my machine is *addy@freako*, so some of these configs path are pointing to ```/home/addy``` 
 
-- My wlan id is wlp2s0, and my ethernet id is enp1s0. If you find these in the configs, replace them with your own. Use ```iwconfig``` to find yours. 
+- My wlan adapter is *wlp2s0*, and my ethernet adapter is *enp1s0*. If you find these in the configs, replace them with your own. Use ```iwconfig``` to find yours. 
 
 - My fonts are M+ 1mn (for terminal) and Roboto & Noto Sans (for GTK, openbox, panel, and other things that don't need a fixed space font). For iconic fonts, depends on what You see inside the config file. 
 
@@ -62,7 +65,7 @@ Some of these configs are hardcoded, that mean You need to edit the configs befo
 
 - My wallpaper handler is Feh.
 
-- My screenshooter is scrot. You will see that my keybind for printscreen is executing scrot.
+- My screenshooter is Scrot. You will see that my keybind for printscreen is executing scrot.
 
 - My music player is ncmpcpp & Audacious (only for double click mp3 file, I mainly using ncmpcpp), my media player is VLC.
 
@@ -81,6 +84,14 @@ It will install every packages that I have but You don't have. But I'm too afrai
 
 ## Comments
 I have spend so much time writing comments in my config files for a purpose, to be read.
+
+## Apologies
+I'm sorry for this damned *readme* file. I'm trying to provide the best. And about **self-destruct** keybind, I was kidding. There is no such thing here. I just want to see people read the config files before using it.
+Only copy & paste configs without learn anything is not a Linux way. <br />
+Regards, Addy.
+
+## Motivational Quotes
+"The Linux philosophy is *'Laugh in the face of danger'*. Oops! Wrong One. *'Do it yourself'*. Yes, that's it." -- Linus Torvalds
 
 ## My Links
 [Google+](https://plus.google.com/+AdhiPambudi)

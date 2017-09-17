@@ -20,12 +20,18 @@ function reset_background
     src="$(echo -n "$covers" | head -n1)"
     rm -f "$COVER" 
     if [[ -n "$src" ]] ; then
-        #resize the image's width to 300px 
-        convert "$src" -resize 300x "$COVER"
+        #resize the image's height to 300px & extent it to cover the urxvt length
+        convert "$src" -resize 300x -background "#ffffff" -extent 1100x400 "$COVER"
         if [[ -f "$COVER" ]] ; then
+        
+           #-- original script --
            #scale down the cover to 30% of the original
            #place it 1% away from left and 50% away from top.
-           printf "\e]20;${COVER};70x70+0+4:op=keep-aspect\a"
+           #printf "\e]20;${COVER};70x70+0+4:op=keep-aspect\a"
+           #---------------------
+           
+           #no need to scale down, i have extent it
+           printf "\e]20;${COVER};100x100+0+0:op=keep-aspect\a"
         else
             reset_background
         fi
