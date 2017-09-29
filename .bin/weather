@@ -10,12 +10,12 @@
 API_KEY="365a6f3a274bba21cabdbee0aa44exxx"
 
 # Check on http://openweathermap.org/find
-CITY_ID="1650888"
+CITY_ID="1650xxx"
 
 URGENT_LOWER=0
 URGENT_HIGHER=30
 
-ICON_SUNNY="  Sunny"
+ICON_SUNNY="  Clear"
 ICON_CLOUDY="  Cloudy"
 ICON_RAINY="  Rainy"
 ICON_STORM="  Storm"
@@ -23,7 +23,7 @@ ICON_SNOW="  Snow"
 ICON_FOG="  Fog"
 ICON_MISC=" "
 
-TEXT_SUNNY="Sunny"
+TEXT_SUNNY="Clear"
 TEXT_CLOUDY="Cloudy"
 TEXT_RAINY="Rainy"
 TEXT_STORM="Storm"

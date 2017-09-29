@@ -1,0 +1,107 @@
+#! /bin/sh
+
+## autostart
+
+## reload the keybinds
+#pkill sxhkd &
+sxhkd &
+## reload polybar
+pkill polybar
+polybar -c ~/.config/bspwm/polybar top &
+## reload the xsettingsd, a minimal x settings daemon
+pkill xsettingsd
+xsettingsd &
+## set the wallpaper
+feh --bg-fill ~/.wallpaper.jpg
+## reload compton
+pkill compton
+compton -b &
+## you can't live without music :D
+mpd &
+## reload the cursor theme
+xsetroot -cursor_name left_ptr
+
+##
+#bspc monitor -d 'I ' 'II ' 'III ' 'IV ' 'V ' 'VI ' 'VII ' 'VIII '
+bspc monitor -d '' '' '' '' '' '' '' ''
+#bspc monitor -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
+#bspc monitor -d '1 ' '2 ' '3 ' '4 ' '5 ' '6 ' '7 ' '8 '
+
+bspc config border_width        2
+bspc config window_gap         	8
+
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config focus_follows_pointer true
+bspc config top_padding 20
+bspc config bottom_padding 0
+
+
+## color settings
+
+#bspc config normal_frame_opacity 1.0
+#bspc config focused_frame_opacity 0.05
+bspc config focused_border_color "#fd7980" 
+bspc config normal_border_color "#2f343f"
+#bspc config presel_border_color "#282828"
+#bspc config urgent_border_color "#a89bb9"
+#bspc config focused_private_border_color "#282828"
+bspc config border_width 2
+
+
+## window rules
+
+## workspace 1 (labs)
+bspc rule -a Termite desktop='^1' follow=on focus=on
+bspc rule -a URxvt desktop='^1' follow=on focus=on
+
+## workspace 2 (web browsers)
+bspc rule -a Firefox desktop='^2' follow=on focus=on
+bspc rule -a Chromium desktop='^2' follow=on focus=on
+bspc rule -a Opera desktop='^2' follow=on focus=on
+bspc rule -a Transmission-gtk desktop='^2' follow=on focus=on
+
+## workspace 3 (file-manager)
+bspc rule -a Thunar desktop='^3' follow=on focus=on
+bspc rule -a File-roller desktop='^3' follow=on focus=on
+
+## workspace 4 (text-editors)
+bspc rule -a Geany desktop='^4' follow=on focus=on
+bspc rule -a libreoffice desktop='^4' follow=on focus=on
+bspc rule -a Wps desktop='^4' follow=on focus=on
+bspc rule -a Et desktop='^4' follow=on focus=on
+bspc rule -a Wpp desktop='^4' follow=on focus=on
+
+## workspace 5 (graphic-utilities)
+bspc rule -a Nitrogen desktop='^5' follow=on focus=on
+bspc rule -a Font-manager desktop='^5' state=floating follow=on focus=on
+bspc rule -a Evince desktop='^5' follow=on focus=on
+
+## workspace 6 (multimedia)
+bspc rule -a Audacity desktop='^6' follow=on focus=on
+bspc rule -a Vlc desktop='^6' follow=on focus=on
+bspc rule -a mpv desktop='^6' follow=on focus=on
+bspc rule -a Ghb desktop='^6' follow=on focus=on
+bspc rule -a Xfburn desktop='^6' follow=on focus=on
+
+## workspace 7 (graphics-editors)
+bspc rule -a Gimp-2.8 desktop='^7' follow=on focus=on
+bspc rule -a Inkscape desktop='^7' follow=on focus=on
+
+## workspace 8 (settings)
+bspc rule -a Lxappearance desktop='^8' state=floating follow=on
+bspc rule -a Xfce4-settings-manager desktop='^8' state=floating follow=on
+bspc rule -a Lightdm-gtk-greeter-settings desktop='^8' state=floating follow=on
+bspc rule -a System-config-printer.py desktop='^8' state=floating follow=on
+bspc rule -a Lxtask desktop='^8' state=floating follow=on
+
+## need to be floating
+bspc rule -a URxvt state=floating follow=on
+bspc rule -a Audacious state=floating follow=on
+bspc rule -a Viewnior state=floating follow=on
+bspc rule -a feh state=floating follow=on
+bspc rule -a Gpicview state=floating follow=on
+
+## don't manage my conky :/
+bspc rule -a Conky manage=off

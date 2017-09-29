@@ -17,5 +17,9 @@ if [[ "${status}" == "on" ]]; then
     echo "${volume}%"
 	fi
 else
-  echo "off"
+	if  [[ $1 = "-i" ]]; then
+	echo "  off"
+	else
+    echo "off"
+	fi
 fi
