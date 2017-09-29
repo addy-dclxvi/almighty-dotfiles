@@ -3,7 +3,8 @@ set $alt mod1
 
 font pango:Roboto 8
 
-# espresso dark color scheme
+## espresso dark color scheme
+#set $background #ffffff
 set $background #2f343f
 set $foreground #efefef
 set $black      #5b4848
@@ -15,7 +16,7 @@ set $magenta    #a89bb9
 set $cyan	    #7bcdb4
 set $white	    #aaaaaa
 
-# set workspaces
+## set workspaces
 set $ws1  "1: 1"
 set $ws2  "2: 2"
 set $ws3  "3: 3"
@@ -25,14 +26,14 @@ set $ws6  "6: 6"
 set $ws7  "7: 7"
 set $ws8  "8: 8"
 
-# eight is more than enought!
+## eight is more than enought!
 #set $ws9  "9: 9"
 #set $ws10 "10: 10"
 
-# Use Mouse+$mod to drag floating windows to their wanted position
+## use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# autostart
+## autostart
 #exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id xfsettingsd
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -41,91 +42,94 @@ exec --no-startup-id xsettingsd
 exec --no-startup-id polybar -c ~/.config/i3/polybar top
 #exec --no-startup-id nm-applet
 
-# music is my only friend
+## music is my only friend
 exec --no-startup-id mpd
 
-# set wallpaper
+## set wallpaper
 #exec --no-startup-id nitrogen --restore
 exec --no-startup-id feh --bg-fill ~/.wallpaper.jpg
 
-# start a terminal
+## keybind for launching a terminal
 bindsym $mod+Return exec termite
 
-# start alternative terminal
+## keybind for launching alternative terminal
 bindsym $mod+Shift+Return exec urxvt
 
-# start a web browser
-bindsym $mod+Shift+w exec chromium
+## start a web browser
+bindsym $mod+Shift+w exec chromium;workspace 3;focus
+#bindsym $mod+Shift+w exec opera;workspace 3;focus
+#bindsym $mod+Shift+w exec firefox;workspace 3;focus
 
-# file manager
-bindsym $mod+Shift+f exec thunar
+## file manager
+bindsym $mod+Shift+f exec thunar;workspace 3;focus
 
-# i3lock-fancy
+## i3lock-fancy
 bindsym $mod+l exec i3lock-fancy 
 
-# kill focused window
+## kill focused window
 bindsym $mod+Escape kill
 
-#change volume
+## volume control
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master '5%+'
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master '5%-'
+bindsym XF86AudioMute exec amixer set Master toggle
 
-# music control
+## music control
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioStop exec mpc stop
 
-#screenshots
-bindsym $mod+Print exec --no-startup-id scrot
+## screenshots
+bindsym $mod+Print exec --no-startup-id scrot 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f ~ ; viewnior ~/$f'
 #bindsym $alt+Print exec --no-startup-id xfce4-screenshooter
 
-# program launcher
-bindsym $mod+Shift+d exec rofi -show drun -font 'Roboto Regular 8'
-bindsym $mod+d exec dmenu_run -i -b -nb '#222222' -nf '#efefef' -sb '#222222' -sf '#cb6077' -fn 'Roboto:regular:pixelsize=12'
+## program launcher
+bindsym $mod+d exec rofi -show drun -font 'Roboto Regular 8'
+bindsym $mod+Shift+d  exec dmenu_run -i -b -nb '#222222' -nf '#efefef' -sb '#222222' -sf '#cb6077' -fn 'Roboto:regular:pixelsize=12'
 
-# change focus
+## change focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# my own move
+## sent to another edge of the screen
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
+## split in horizontal orientation
 bindsym $mod+h split h
 
-# split in vertical orientation
+## split in vertical orientation
 bindsym $mod+v split v
 
-# bar toggle, hide or show
+## bar toggle, hide or show
 bindsym $mod+b bar mode toggle
 
-# enter fullscreen mode for the focused container
+## enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 
-# toggle tiling / floating
+## toggle tiling / floating
 bindsym $mod+space floating toggle
 
-# change container layout (stacked, tabbed, toggle split)
+## change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+$alt+s layout toggle split
 
-# change focus between tiling / floating windows
+## change focus between tiling / floating windows
 bindsym $mod+Control+space focus mode_toggle
 
-# focus the parent container
+## focus the parent container
 bindsym $mod+Control+c focus parent
  
-# focus the child container
+## focus the child container
 bindsym $mod+Shift+c focus child
 
-# switch to workspace
+## switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -137,11 +141,11 @@ bindsym $mod+8 workspace 8
 #bindsym $mod+9 workspace 9
 #bindsym $mod+0 workspace 10
 
-# next/previous workspace
+## next/previous workspace
 bindsym $alt+Control+Right workspace next
 bindsym $alt+Control+Left workspace prev
 
-# move focused container to workspace
+## move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
@@ -153,14 +157,14 @@ bindsym $mod+Shift+8 move container to workspace 8
 #bindsym $mod+Shift+9 move container to workspace 9
 #bindsym $mod+Shift+0 move container to workspace 10
 
-# reload the configuration file
+## reload the configuration file
 bindsym $mod+Shift+BackSpace reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+## restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Control+r restart
-# exit i3 (logs you out of your X session)
+## exit i3 (logs you out of your X session)
 bindsym $mod+Control+Escape exec "i3-nagbar -t warning -m 'Really exit?' -b 'Yes' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
+## resize window (you can also use the mouse for that)
 mode "resize" {
         bindsym Left resize shrink width 2 px or 2 ppt
         bindsym Down resize grow height 2 px or 2 ppt
@@ -188,40 +192,51 @@ mode "gaps" {
 bindsym $mod+r mode "resize"
 bindsym $mod+g mode "gaps"
 
-# colors                border      	background		text        	indicator
+## colors                border      	background		text        	indicator
 client.focused          $background		$background		$foreground	 	$red
 client.focused_inactive $background   	$foreground  	$foreground 	$background
 client.unfocused        $background   	$foreground  	$foreground 	$background
 client.urgent           $background     $background   	$foreground 	$yellow  
 
-# who needs window title when you have i3?
+## who needs window title when you have i3-gaps?
 for_window [class=".*"] border pixel 2
 gaps inner 8
 gaps outer 0
 
-# image viewer need floating, doesn't it?
-for_window [class=Gpicview|Viewnior|feh] floating enable
-# I prefer Urxvt to be floating
-for_window [class=URxvt] floating enable
-
-# assign window, you can find window class using xprop
+## assign window, you can find window class using xprop
+## workspace 1 (labs)
 assign [class=Termite|URxvt] 1
-for_window [class=Termite|URxvt] focus
+## workspace 2 (web browsers)
 assign [class=Firefox|Chromium|Opera|Transmission-gtk] 2
-for_window [class=Firefox|Chromium|Opera|Transmission-gtk] focus
+## workspace 3 (file-manager)
 assign [class=Thunar|File-roller] 3
-# sometimes thunar focus is annoying :/
-# for_window [class=Thunar|File-roller] focus
+## workspace 4 (text-editors)
 assign [class=Geany|libreoffice*|Wps|Et|Wpp] 4
-for_window [class=Geany|libreoffice*|Wps|Et|Wpp] focus
-assign [class=Nitrogen|Font-manager] 5
-for_window [class=Nitrogen|Font-manager] focus
+## workspace 5 (graphic-utilities)
+assign [class=Nitrogen|Font-manager|Evince] 5
+## workspace 6 (multimedia)
 assign [class=Vlc|mpv|Audacity|Ghb|Xfburn] 6
-for_window [class=Vlc|mpv|Audacity|Ghb|Xfburn] focus
-assign [class=Gimp|Inkscape] 7
-for_window [class=Gimp|Inkscape] focus
+## workspace 7 (graphics-editors)
+assign [class=Gimp-2.8|Inkscape] 7
+## workspace 8 (settings)
 assign [class=Lightdm-gtk-greeter-settings|Xfce4-settings-manager|Lxappearance] 8
+assign [class=Pamac*|System-config-printer.py|Lxtask] 8
+
+## focus on launch
+for_window [class=Termite|URxvt] focus
+## effective only focus on launch
+#for_window [class=Firefox|Chromium|Opera|Transmission-gtk] focus
+## sometimes thunar focus is annoying, so I disable it :/
+#for_window [class=Thunar|File-roller] focus
+for_window [class=Geany|libreoffice*|Wps|Et|Wpp] focus
+for_window [class=Nitrogen|Font-manager|Evince] focus
+for_window [class=Vlc|mpv|Audacity|Ghb|Xfburn] focus
+for_window [class=Gimp-2.8|Inkscape] focus
 for_window [class=Lightdm-gtk-greeter-settings|Xfce4-settings-manager|Lxappearance] focus
-assign [class=Pamac*|System-config-printer.py] 8
-for_window [class=Pamac*|System-config-printer.py] focus
+for_window [class=Pamac*|System-config-printer.py|Lxtask] focus
+
+## image viewer need floating
+for_window [class=Gpicview|Viewnior|feh] floating enable
+## I prefer Urxvt to be floating
+for_window [class=URxvt] floating enable
 
