@@ -1,44 +1,44 @@
 ! ------------------------------------------------------------------------------
-! Espresso color scheme by Addy
-! Based On Mocha
+! I forget what color scheme is this
+! Maybe Monokai? 
 ! ------------------------------------------------------------------------------
 
 ! special
-*.foreground:   #606060
+*.foreground:   #474c57
 *.background:   #ffffff
-*.cursorColor:  #dc8cc3
+*.cursorColor:  #fec7cd
 
 ! black
-*.color0  : #736060
-*.color8  : #5b4848
+*.color0  : #737a8a
+*.color8  : #636a7a
 
 ! red
-*.color1  : #e3788f
-*.color9  : #cb6077
+*.color1  : #ef6b7b
+*.color9  : #e76373
 
 ! green
-*.color2  : #d6ed73
-*.color10 : #bec55b
+*.color2  : #a1d569
+*.color10 : #99cd61
 
 ! yellow
-*.color3  : #fcd49f
-*.color11 : #e4bc87
+*.color3  : #f59335
+*.color11 : #ed8b2d
 
 ! blue
-*.color4  : #a2cbed
-*.color12 : #8ab3d5
+*.color4  : #4ec2e8
+*.color12 : #46bae0
 
 ! magenta
-*.color5  : #c0b3d1
-*.color13 : #a89bb9
+*.color5  : #fec7cd
+*.color13 : #f6bfc5
 
 ! cyan
-*.color6  : #93e5cc
-*.color14 : #7bcdb4
+*.color6  : #95c1c0
+*.color14 : #8db9b8
 
 ! white
-*.color7  : #e0d8d6
-*.color15 : #c8c0be
+*.color7  : #dde1e8
+*.color15 : #d5d9e0
 
 
 ! ------------------------------------------------------------------------------
@@ -54,18 +54,18 @@ URxvt*iso14755:         false
 URxvt*depth:            32
 !URxvt*background:      rgba:0000/0000/0000/AAAA
 !URxvt*background:      [100]#ffffff
-URxvt.underlineColor:   #4682B4
-URxvt.highlightColor:   #4682B4
+URxvt.underlineColor:   #4ec2e8
+URxvt.highlightColor:   #4ec2e8
 URxvt.throughColor:     Blue
-URxvt*cursorColor:      #dc8cc3
+URxvt*cursorColor:      #fec7cd
 URxvt*cursorColor2:     Black
 URxvt*scrollBar:        false
 URxvt*scrollBar_right:  false
 URxvt*internalBorder:   0
 URxvt*externalBorder:   0
-URxvt.colorIT:      	#87af5f
-URxvt.colorBD:      	#c5c8c6
-URxvt.colorUL:      	#87afd7
+URxvt.colorIT:      	#a1d569
+URxvt.colorBD:      	#3f444f
+URxvt.colorUL:      	#4ec2e8
 URxvt.geometry: 		92x16
 URxvt.internalBorder:	16
 
@@ -112,7 +112,7 @@ URxvt*buffered:         false
 
 rofi.color-enabled: true
 rofi.color-window: #ffffff, #ffffff, #ffffff
-rofi.color-normal: #ffffff, #606060, #ffffff, #ffffff, #e3788f
-rofi.color-active: #ffffff, #93e5cc, #ffffff, #ffffff, #93e5cc
-rofi.color-urgent: #ffffff, #fcd49f, #ffffff, #ffffff, #fcd49f                                       
+rofi.color-normal: #ffffff, #474c57, #ffffff, #ffffff, #4ec2e8
+rofi.color-active: #ffffff, #fec7cd, #ffffff, #ffffff, #95c1c0
+rofi.color-urgent: #ffffff, #f59335, #ffffff, #ffffff, #f59335                                       
                                                            

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Use Conky as Bar for Spectrwm
+
+conky -c ~/.conkybar

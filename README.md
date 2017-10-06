@@ -35,7 +35,7 @@ To use it, simply install oh-my-zsh package, copy my .zshrc & .oh-my-zsh folder 
 - **termite** <br /> My custom color schemes for termite. To use white color schemes just launch ```termite-light``` command from *dmenu* (if you are using use my *~/.bin* & *.profile*). And Use *M+ 1mn* fonts.
 
 - **Xresources** <br /> My custom color schemes & config for Urxvt, including copy paste support by [Muennich](https://github.com/muennich/urxvt-perls). Hit Alt+C to copy, and Alt+V to paste (*xsel* package is needed). Use *M+ 1mn* fonts.<br />
-Also contains my stupidly minimalist *rofi* theme.
+Also contains my stupidly minimalist *rofi* theme. The default color scheme is Nord dark. If You want to use light color scheme type this ```xrdb ~.Xresources-light```.
 
 - **ncmpcpp** <br /> A simple ncmpcpp config, with album art support. The album art script is taken from [Marco](https://marcocheung.wordpress.com/). Slightly modified to get rid the transparency bug. <br /> <br />
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview2.png) <br />
@@ -72,16 +72,23 @@ Some of these configs are hardcoded, that mean You need to edit the configs befo
 
 - My image viewers are Viewnior.
 
-- My Window Managers are Openbox, i3-gaps.
+- My Window Managers are Openbox, i3-gaps, Bspwm, Herbstluftwm, Xfwm (standalone), and Spectrwm. Arch Linux turns me from *Distro Hopper* into *WM Hopper*.
 
 - My panels are tint2 (with executor support) and polybar (with libmpdclient support). I gave up with lemonbar & dzen2 after slamming my head into wall twice!
+
+- My favourite distros are Arch Linux, BunsenLabs, and ArchLabs.
+
+- My favourite bands are Dream Theater, Metallica, and NOFX. (Not important :p)
+
+- My favourite drinks are Red Velvet, Ice Cream Cone, Avocado Juice, Vanilla Milk, and Espresso (with less sugar, I'm already sweet :D). Just in case You want to buy me some.
 
 ## Package List
 I can't remember one by one what packages need to be installed to make everything works.
 But I have generated a [pkglist.txt](https://github.com/addy-dclxvi/almighty-dotfiles/blob/master/pkglist.txt) file. It contains a list of my installed packages, maybe it will help You to decide what packages need to be installed.
 It is pretty barebones & not so bloated, only containing 772 packages. <br />
 Or if You want to brutally replicate my setup, just install them all using ```yaourt -S pkglist.txt --needed```  <br />
-It will install every packages that I have but You don't have. But I'm too afraid to test it by myself. Maybe You want to be a volunteer to test the command above, and post the results here. If your OS is broken, I will not use that command.
+It will install every packages that I have but You don't have. But I'm too afraid to test it by myself. Maybe You want to be a volunteer to test the command above, and post the results here. If your OS is broken, I will not use that command. <br /> <br />
+EDIT : Day to day I have installed more and more packages, and some of my packages is not available in the repo. So, I don't update my package list.
 
 ## Comments
 I have spend so much time writing comments in my config files for a purpose, to be read.

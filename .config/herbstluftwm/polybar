@@ -1,0 +1,172 @@
+[colors]
+foreground = #474c57
+background = #88ffffff
+modb = #88ffffff
+modb1 = #88ffffff
+modb2 = #88ffffff
+accent_1 = #99cd61
+accent_2 = #f59335
+accent_3 = #ef6b7b
+accent_4 = #4ec2e8
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+override-redirect = true
+
+[bar/top]
+width = 100%
+height = 28
+offset-x = 0
+offset-y = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = Iosevka Nerd Font:size=8:antialias=true;1
+;font-1 = MaterialIcons-Regular :size=10:;
+font-1 = icomoon :size=9:;
+
+modules-left = date volume cpu weather
+modules-center = mpd
+modules-right = ewmh powermenu
+
+tray-position = right
+tray-padding = 2
+tray-transparent = false
+tray-detached = false
+tray-background = ${colors.modb}
+
+spacing = 1
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume><label-volume>
+
+format-volume-background = ${colors.modb}
+format-volume-padding = 2
+
+module-margin-right = 0
+ramp-volume-0 =
+ramp-volume-1 =
+ramp-volume-2 =
+ramp-volume-3 =
+ramp-volume-foreground = ${colors.accent_2}
+
+
+label-muted =  muted
+
+[module/date]
+type = internal/date
+interval = 60
+;date = " %a %d // %H:%M"
+date = " %H:%M"
+format-prefix = 
+format-prefix-foreground = ${colors.accent_1}
+format-background = ${colors.modb}
+format-padding = 2
+
+[module/powermenu]
+type = custom/menu
+
+label-open =
+label-open-foreground = ${colors.accent_3}
+label-open-background = ${colors.modb2}
+label-open-padding = 2
+label-close =
+label-close-padding = 1
+label-close-foreground = $[colors.accent_3]
+label-separator = |
+label-separator-foreground = #666666
+
+menu-0-0 =
+menu-0-0-exec = menu-open-1
+menu-0-1 =
+menu-0-1-exec = menu-open-2
+menu-0-2 =
+menu-0-2-exec = menu-open-3
+
+menu-1-0 =
+menu-1-0-exec = menu-open-0
+menu-1-1 =
+menu-1-1-exec = systemctl reboot
+
+menu-2-0 =
+menu-2-0-exec = systemctl poweroff
+menu-2-1 =
+menu-2-1-exec = menu-open-0
+
+menu-3-0 =
+menu-3-0-exec = herbstclient quit
+menu-3-1 =
+menu-3-1-exec = menu-open-0
+
+[module/ewmh]
+type = internal/xworkspaces
+enable-scroll = true
+format-padding = 2
+format-foreground = ${colors.accent_2}
+format-background = ${colors.modb2}
+label-active = "  ●"
+label-occupied = "  ○"
+label-urgent = "  ○"
+label-empty = "  ○"
+
+[module/hlws]
+type = custom/script
+exec = python3 ~/.config/herbstluftwm/hlws.py
+scroll-down = exec herbstclient use_index +1
+scroll-up = exec herbstclient use_index -1
+interval = 0.5
+format-foreground = ${colors.accent_3}
+format-background = ${colors.modb2}
+format-padding = 2
+
+[module/cpu]
+type = internal/cpu
+label = %percentage%%
+format-prefix = " "
+format-prefix-foreground = ${colors.accent_3}
+format-background = ${colors.modb}
+format-padding = 2
+
+[module/weather]
+type = custom/script
+interval = 1800
+format = <label>
+format-padding = 2
+format-prefix = " "
+;format-suffix = "°C"
+format-prefix-foreground = ${colors.accent_4}
+format-background = ${colors.modb}
+exec = weather
+
+[module/mpd]
+type = internal/mpd
+format-online = <label-time> <label-song> <icon-prev> <toggle> <icon-next>
+
+icon-prev = 
+icon-play = 
+icon-pause = 
+icon-next = 
+icon-stop = 
+
+label-song-maxlen = 40
+label-song-ellipsis = true
+
+bar-progress-width = 15
+bar-progress-indicator = |
+bar-progress-indicator-foreground = #ff
+bar-progress-indicator-font = 2
+bar-progress-fill = ─
+bar-progress-fill-font = 2
+bar-progress-fill-foreground = #ff
+bar-progress-empty = ─
+bar-progress-empty-font = 2
+bar-progress-empty-foreground = ${colors.foreground-alt}
+

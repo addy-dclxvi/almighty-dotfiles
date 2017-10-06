@@ -1,0 +1,176 @@
+#!/usr/bin/env bash
+
+hc() {
+    cmds="$cmds , $@"
+}
+hc emit_hook reload xsetroot -solid '#292a44'
+hc pad 0 28 0 0
+hc keyunbind --all
+
+## startup apps
+pkill compton
+compton &
+feh --bg-fill ~/.wallpaper.jpg
+xsettingsd &
+pkill polybar
+polybar -c ~/.config/herbstluftwm/polybar top &
+mpd &
+
+## use the super key as the main modifier
+Mod=Mod4
+## and alt button can also be useful as alternative modifier
+Alternative=Mod1
+
+## keybind for kill window
+hc keybind $Mod-Control-Escape quit
+hc keybind $Mod-Shift-BackSpace reload
+hc keybind $Mod-Escape close
+
+## keybind for common apps
+hc keybind $Mod-d spawn dmenu_run -i -b -nb '#222222' -nf '#efefef' -sb '#222222' -sf '#cb6077' -fn 'Roboto:regular:pixelsize=12'
+hc keybind $Mod-Shift+d spawn rofi -show drun
+hc keybind $Mod-Return spawn termite
+hc keybind $Mod-Shift-Return spawn urxvt
+hc keybind $Mod-l spawn i3lock-fancy
+hc keybind $Mod-Shift-w spawn chromium
+hc keybind $Mod-Shift-f spawn thunar
+
+## volume control
+hc keybind XF86AudioRaiseVolume spawn amixer -D pulse sset Master '5%+'
+hc keybind XF86AudioLowerVolume spawn amixer -D pulse sset Master '5%-'
+hc keybind XF86AudioMute spawn amixer set Master toggle
+
+## music control
+hc keybind XF86AudioNext spawn mpc next
+hc keybind XF86AudioPrev spawn mpc prev
+hc keybind XF86AudioPlay spawn mpc toggle
+hc keybind XF86AudioStop spawn mpc stop
+
+## screenshot
+hc keybind Print spawn scrot 'scrot_%Y-%m-%d-%S_$wx$h.png'
+
+## change window focus
+hc keybind $Mod-Left  focus left
+hc keybind $Mod-Down  focus down
+hc keybind $Mod-Up    focus up
+hc keybind $Mod-Right focus right
+
+## send window to another frame
+hc keybind $Mod-Shift-Left  shift left
+hc keybind $Mod-Shift-Down  shift down
+hc keybind $Mod-Shift-Up    shift up
+hc keybind $Mod-Shift-Right shift right
+
+## split the frame
+hc keybind $Mod-Control-v       split   bottom  0.5
+hc keybind $Mod-Control-h       split   right   0.5
+hc keybind $Mod-e 				split 	explode
+
+## resizing frame
+resizestep=0.02
+hc keybind $Mod-Control-Left    resize left +$resizestep
+hc keybind $Mod-Control-Down    resize down +$resizestep
+hc keybind $Mod-Control-Up      resize up +$resizestep
+hc keybind $Mod-Control-Right   resize right +$resizestep
+
+## workspaces.. eight is more than enough!
+tag_names=( {1..8} )
+tag_keys=( {1..8} 0 )
+hc rename default "${tag_names[0]}" || true
+for i in ${!tag_names[@]} ; do
+    hc add "${tag_names[$i]}"
+    key="${tag_keys[$i]}"
+    if ! [ -z "$key" ] ; then
+        hc keybind "$Mod-$key" use_index "$i"
+        hc keybind "$Mod-Shift-$key" move_index "$i"
+    fi
+done
+
+## use control+alt+left/right for navigate workspace, old habit die hard :)
+hc keybind $Alternative-Control-Right use_index +1 --skip-visible
+hc keybind $Alternative-Control-Left  use_index -1 --skip-visible
+
+## set the layout
+hc keybind $Mod-r remove
+hc keybind $Mod-space floating toggle
+hc keybind $Mod-f fullscreen toggle
+hc keybind $Mod-p pseudotile toggle
+hc keybind $Mod-w set_layout max
+hc keybind $Mod-g set_layout grid
+hc keybind $Mod-v set_layout vertical
+hc keybind $Mod-h set_layout horizontal
+
+## now mouse keybind
+hc mouseunbind --all
+
+## mod+leftclick to drag window 
+hc mousebind $Mod-Button1 move
+
+# seriously?? dragging the trackpad while holding super & rightclick is ridiculous for a laptop user!
+#hc mousebind $Mod-Button2 zoom
+
+# this is more sane resize method ;)
+hc mousebind $Alternative-Button1 zoom
+
+# i don't have a middle click :(
+#hc mousebind $Mod-Button3 resize
+hc mousebind Control-Button1 resize
+
+# theming
+
+hc attr theme.tiling.reset 1
+hc attr theme.floating.reset 1
+
+hc set frame_border_active_color '#ef6b7b'
+hc set frame_border_normal_color '#4ec2e8'
+#hc set frame_bg_normal_color '#2f343f'
+#hc set frame_bg_active_color '#2f343f'
+hc set frame_active_opacity 40
+hc set frame_normal_opacity 0
+#hc keybind $Mod-o cycle_value frame_active_opacity 0 40
+hc keybind $Mod-o cycle_value frame_normal_opacity 0 40
+hc set frame_bg_transparent 0
+#hc set frame_transparent_width 0
+hc set frame_gap 32
+hc keybind $Mod-g cycle_value frame_gap 32 0
+hc set frame_padding 0
+hc set frame_border_width 2
+
+hc attr theme.active.color '#ef6b7b'
+hc attr theme.normal.color '#2f343f'
+hc attr theme.urgent.color '#f59335'
+#hc attr theme.background_color '#2f343f'
+#hc attr theme.inner_color black
+hc attr theme.floating.outer_color '#a1d569'
+#hc attr theme.active.inner_color '#a1d569'
+#hc attr theme.active.outer_color '#a1d569'
+hc attr theme.border_width 2
+hc attr theme.floating.border_width 2
+hc attr theme.floating.outer_width 0
+hc attr theme.inner_width 0
+
+hc set always_show_frame 0
+hc keybind $Mod-s cycle_value always_show_frame 0 1
+hc set window_gap 8
+hc set smart_window_surroundings 1
+hc set smart_frame_surroundings 1
+hc set mouse_recenter_gap 0
+hc set focus_follows_mouse 1
+
+# make individual window can be floating. useful for popup
+# but this is creating a new issue. the new window will be overlaping. set this to 0 to revert it back to default.
+hc set default_frame_layout 2
+
+
+hc unrule -F
+hc rule focus=on # normally focus new clients
+hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
+hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
+hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
+hc rule class~'[Pp]olybar' manage=off
+
+hc unlock
+
+herbstclient set tree_style '╾│ ├└╼─┐'
+
+herbstclient chain $cmds&

@@ -10,7 +10,6 @@ dynamic_title = true
 filter_unmatched_urls = true
 font = M+ 1mn 8
 geometry = 480x280
-highlight = #2f2f2f
 icon_name = terminal
 modify_other_keys = false
 mouse_autohide = false
@@ -20,59 +19,53 @@ scrollback_lines = 15000
 size_hints = false
 search_wrap = true
 urgent_on_bell = true
-padding = 2
+highlight = #30343e
 
-##############################################
-####                                      ####
-#### Espresso Color Scheme by Addy        ####
-#### https://github.com/addy-dclxvi       ####
-#### http://addy-dclxvi.deviantart.com/   ####
-#### https://plus.google.com/+AdhiPambudi ####
-####                                      ####
-##############################################
-####                                      ####
-#### Based on Mocha color scheme          ####
-####                                      ####
-##############################################
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# title      Nord Termite                                    +
+# project    nord-termite                                    +
+# version    0.2.0                                           +
+# repository https://github.com/arcticicestudio/nord-termite +
+# author     Arctic Ice Studio                               +
+# email      development@arcticicestudio.com                 +
+# copyright  Copyright (C) 2016                              +
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [colors]
-foreground      = #f5f8f6
-foreground_bold = #f5f8f6
-#foreground_dim   = 
-cursor          = #dc8cc3
-#cursor_foreground = #dcdccc
-# 20% background transparency (requires a compositor)
-#background = rgba(75, 75, 75, 1.0)
+foreground = #d8dee8
 background = #2f343f
+foreground_bold = #d0d6e0
+cursor = #b48ead
+cursor_foreground = #d8dee8
 
 # black
-color0  = #736060
-color8  = #5b4848
+color0  = #4b5262
+color8  = #434a5a
 
 # red
-color1  = #e3788f
-color9  = #cb6077
+color1  = #bf616a
+color9  = #b3555e
 
 # green
-color2  = #d6ed73
-color10 = #bec55b
+color2  = #a3be8c
+color10 = #93ae7c
 
 # yellow
-color3  = #fcd49f
-color11 = #e4bc87
+color3  = #ebcb8b
+color11 = #dbbb7b
 
 # blue
-color4  = #a2cbed
-color12 = #8ab3d5
+color4  = #81a1c1
+color12 = #7191b1
 
 # magenta
-color5  = #c0b3d1
-color13 = #a89bb9
+color5  = #b48ead
+color13 = #a6809f
 
 # cyan
-color6  = #93e5cc
-color14 = #7bcdb4
+color6  = #88c0d0
+color14 = #76aebe
 
 # white
-color7  = #e0d8d6
-color15 = #c8c0be
+color7  = #e5e9f0
+color15 = #d1d5dc

@@ -1,44 +1,44 @@
 ! ------------------------------------------------------------------------------
-! Espresso color scheme by Addy
-! Based On Mocha
+! Nord Color Scheme
+! By Arctic Ice Studio 
 ! ------------------------------------------------------------------------------
 
 ! special
-*.foreground:   #f5f8f6
+*.foreground:   #d8dee8
 *.background:   #2f343f
-*.cursorColor:  #dc8cc3
+*.cursorColor:  #b48ead
 
 ! black
-*.color0  : #736060
-*.color8  : #5b4848
+*.color0  : #4b5262
+*.color8  : #434a5a
 
 ! red
-*.color1  : #e3788f
-*.color9  : #cb6077
+*.color1  : #bf616a
+*.color9  : #b3555e
 
 ! green
-*.color2  : #d6ed73
-*.color10 : #bec55b
+*.color2  : #a3be8c
+*.color10 : #93ae7c
 
 ! yellow
-*.color3  : #fcd49f
-*.color11 : #e4bc87
+*.color3  : #ebcb8b
+*.color11 : #dbbb7b
 
 ! blue
-*.color4  : #a2cbed
-*.color12 : #8ab3d5
+*.color4  : #81a1c1
+*.color12 : #7191b1
 
 ! magenta
-*.color5  : #c0b3d1
-*.color13 : #a89bb9
+*.color5  : #b48ead
+*.color13 : #a6809f
 
 ! cyan
 *.color6  : #93e5cc
 *.color14 : #7bcdb4
 
 ! white
-*.color7  : #e0d8d6
-*.color15 : #c8c0be
+*.color7  : #e5e9f0
+*.color15 : #d1d5dc
 
 
 ! ------------------------------------------------------------------------------
@@ -54,19 +54,18 @@ URxvt*iso14755:         false
 URxvt*depth:            32
 !URxvt*background:      rgba:0000/0000/0000/AAAA
 !URxvt*background:      [100]#2f343f
-URxvt*foreground:       #F8F8FF
-URxvt.underlineColor:   #4682B4
-URxvt.highlightColor:   #4682B4
+URxvt.underlineColor:   #81a1c1
+URxvt.highlightColor:   #81a1c1
 URxvt.throughColor:     Blue
-URxvt*cursorColor:      #dc8cc3
-URxvt*cursorColor2:     Black
+URxvt*cursorColor:      #b48ead
+URxvt*cursorColor2:     Magenta
 URxvt*scrollBar:        false
 URxvt*scrollBar_right:  false
 URxvt*internalBorder:   0
 URxvt*externalBorder:   0
-URxvt.colorIT:      	#87af5f
-URxvt.colorBD:      	#c5c8c6
-URxvt.colorUL:      	#87afd7
+URxvt.colorIT:      	#a3be8c
+URxvt.colorBD:      	#e5e9f0
+URxvt.colorUL:      	#81a1c1
 URxvt.geometry: 		92x16
 URxvt.internalBorder:	16
 
@@ -104,7 +103,7 @@ URxvt.tabbed.tabbar-fg: 4
 URxvt.tabbed.tabbar-bg: 16
 URxvt.tabbed.tab-fg:    15
 URxvt.tabbed.tab-bg:    4
-URxvt*buffered:         false
+URxvt*buffered:         false          
 
 
 ! ------------------------------------------------------------------------------
@@ -113,7 +112,7 @@ URxvt*buffered:         false
 
 rofi.color-enabled: true
 rofi.color-window: #2f343f, #2f343f, #2f343f
-rofi.color-normal: #2f343f, #cacaca, #2f343f, #2f343f, #e3788f
-rofi.color-active: #2f343f, #93e5cc, #2f343f, #2f343f, #93e5cc
-rofi.color-urgent: #2f343f, #fcd49f, #2f343f, #2f343f, #fcd49f                              
+rofi.color-normal: #2f343f, #d8dee8, #2f343f, #2f343f, #bf616a
+rofi.color-active: #2f343f, #b48ead, #2f343f, #2f343f, #93e5cc
+rofi.color-urgent: #2f343f, #ebcb8b, #2f343f, #2f343f, #ebcb8b           
                                                            
