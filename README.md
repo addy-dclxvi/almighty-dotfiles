@@ -80,7 +80,7 @@ Some of these configs are hardcoded, that mean You need to edit the configs befo
 
 - My favourite bands are Dream Theater, Metallica, and NOFX. (Not important :p)
 
-- My favourite drinks are Red Velvet, Ice Cream Cone, Avocado Juice, Vanilla Milk, and Espresso (with less sugar, I'm already sweet :D). Just in case You want to buy me some.
+- My favourite drinks are Red Velvet, Ice Cream Cone, Cola flavour Soda, Avocado Juice, Vanilla Milk, and Espresso (with less sugar, I'm already sweet :D). Just in case You want to buy me some.
 
 ## Package List
 I can't remember one by one what packages need to be installed to make everything works.
