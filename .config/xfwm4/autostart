@@ -1,0 +1,71 @@
+# Put your startup items here (I mean below)
+# I have made some example, just uncomment the line that you need to get it starts on session
+# And add more items if You need
+# Don't forget to add ampersand for process those are running in background ;)
+# And also don't forget, make sure You have the package before uncomment a line :D
+# Cheers!
+# Addy
+
+## Xfce4 Panel, usual companion for Xfce
+#xfce4-panel &
+
+## tint2 panel, one of my favourite panel :)
+#tint2 &
+
+## Bluetooth system tray
+#(sleep 3; blueberry-tray) &
+
+## Set a wallpaper
+xfdesktop &
+
+## Numlock, probably You need it start automatically
+#numlockx &
+
+## GNOME PolicyKit authentication
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+## Volume control for systray
+#(sleep 2; volumeicon) &
+
+## Volume keys daemon
+#xfce4-volumed &
+
+## Turn off/on System Beep
+#xset b off
+
+## Enable power management
+#xfce4-power-manager &
+
+## Clipboard Manager
+#(sleep 3; clipit) &
+
+## XFCE4 Settings daemon
+xfsettingsd &
+
+## Start xscreensaver
+#xscreensaver -no-splash &
+
+## Network manager applet
+#(sleep 5; nm-applet) &
+
+## Conky, an efficient way for system info
+#conky &
+
+## Plank, a lightweight & eye candy replacement for taskbar
+plank &
+
+## Keep Your eyes safe from your monitor radiation
+#redshift-gtk &
+
+## The most eye candy bar (or panel replacement) I ever tried
+polybar -c ~/.config/xfwm4/polybar top &
+
+## Thunar daemon mode
+#thunar --daemon &
+
+## Music is my only friend :(
+mpd &
+
+## Ehm, maybe you need an external compsitor?
+compton -b --config ~/.config/compton.conf &
+

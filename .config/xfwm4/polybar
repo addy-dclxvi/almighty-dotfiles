@@ -1,0 +1,184 @@
+[colors]
+background = #ccffffff
+foreground = #474c57
+
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+throttle-input-for = 30
+screenchange-reload = true
+
+[bar/top]
+; Use  xrandr -q | grep " connected" | cut -d ' ' -f1
+; for a list of connected monitors
+monitor = LVDS1
+monitor-strict = false
+override-redirect = false
+width = 100%
+height = 28
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = Iosevka Nerd Font:size=8:antialias=true;1
+font-1 = icomoon :size=9:0
+font-2 = FontAwesome:pixelsize=9;2
+
+modules-left = rofi workspaces menu
+modules-center = mpd
+modules-right = cpu weather volume clock
+
+module-margin = 0
+padding-right = 4
+padding-left = 4
+bottom = false
+underline-size = 2
+
+tray-position = right
+tray-padding = 2
+tray-background = ${colors.background}
+
+[module/clock]
+type = internal/date
+interval = 60
+;date = " %a %d // %H:%M"
+date = " %H:%M"
+format-prefix = 
+format-prefix-foreground = #a1d569
+format-background = ${colors.background}
+format-padding = 2
+
+
+[module/volume]
+type = internal/volume
+format-volume = <ramp-volume> <label-volume>
+format-volume-background = ${colors.background}
+format-volume-padding = 2
+ramp-volume-0 =
+ramp-volume-1 =
+ramp-volume-2 =
+ramp-volume-3 =
+ramp-volume-foreground = #f59335
+label-muted =  Muted
+
+[module/menu]
+type = custom/menu
+label-open =
+label-open-foreground = #a1d569
+label-open-background = ${colors.background}
+label-open-padding = 0
+label-close =
+label-close-padding = 0
+label-close-foreground = #f59335
+label-separator = |
+label-separator-foreground = #95c1c0
+format-spacing = 2
+
+menu-0-0 =
+menu-0-0-exec = menu-open-1
+menu-0-1 =
+menu-0-1-exec = menu-open-2
+menu-0-2 =
+menu-0-2-exec = menu-open-3
+
+menu-1-0 =
+menu-1-0-exec = menu-open-0
+menu-1-1 =
+menu-1-1-exec = systemctl reboot
+
+menu-2-0 =
+menu-2-0-exec = systemctl poweroff
+menu-2-1 =
+menu-2-1-exec = menu-open-0
+
+menu-3-0 =
+menu-3-0-exec = kill -9 -1
+menu-3-1 =
+menu-3-1-exec = menu-open-0
+
+[module/workspaces]
+type = internal/xworkspaces
+enable-click = true
+enable-scroll = true
+Additional formatting
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+icon-5 = 6;
+icon-6 = 7;
+icon-7 = 8;
+icon-default = " "
+format = <label-state>
+format-padding = 2
+
+label-active = " %icon%"
+label-active-foreground = #f59335
+label-active-background = ${colors.background}
+label-active-underline = #f59335
+label-active-padding = 1
+
+label-occupied = " %icon%"
+label-occupied-underline = #95c1c0
+label-occupied-background = ${colors.background}
+label-occupied-foreground = #95c1c0
+label-occupied-padding = 1
+
+label-urgent = " %icon%"
+label-urgent-foreground = #fec7cd
+label-urgent-background = ${colors.background}
+label-urgent-underline = #fec7cd
+label-urgent-padding = 1
+
+label-empty = " %icon%"
+label-empty-foreground = #95c1c0
+label-empty-background = ${colors.background}
+label-empty-padding = 1
+
+[module/rofi]
+type = custom/script
+exec = echo " "
+interval = 3600
+click-left = rofi-apps
+label-foreground = ${colors.foreground}
+label-background = ${colors.background}
+format-prefix = 
+format-prefix-foreground = #ef6b7b
+format-padding = 2
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "  "
+;format-prefix-foreground = #bf616a
+label = %mb_used%
+
+[module/cpu]
+type = internal/cpu
+label = %percentage%%
+format-prefix = " "
+format-prefix-foreground = #ef6b7b
+format-background = ${colors.background}
+format-padding = 2
+
+[module/weather]
+type = custom/script
+interval = 1800
+format = <label>
+format-padding = 2
+format-prefix = " "
+format-prefix-foreground = #95c1c0
+format-background = ${colors.background}
+exec = weather
+
+[module/mpd]
+type = internal/mpd
+format-online = <label-time>    <label-song>    <icon-prev> <toggle> <icon-next>
+icon-prev = 
+icon-play = 
+icon-pause = 
+icon-next = 
+icon-stop = 
+label-song-maxlen = 40
+label-song-ellipsis = true
