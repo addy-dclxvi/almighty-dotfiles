@@ -142,7 +142,7 @@
     ignore_newline = no
 
     # Merge multiple notifications with the same content
-    stack_duplicates = true
+    stack_duplicates = false
 
     # Hide the count of merged notifications with the same content
     hide_duplicate_count = false
