@@ -1,0 +1,3 @@
+#!/bin/bash
+pamixer -d 2
+notify-send "Volume Down " "$(volume)"
