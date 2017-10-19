@@ -1,0 +1,11 @@
+#!/bin/bash
+statusLine=$(amixer get Master | tail -n 1)
+status=$(echo "${statusLine}" | grep -wo "on")
+
+if [[ "${status}" == "on" ]]; then
+pamixer -t
+notify-send "Volume Mute " "$(volume)"
+else
+pamixer -t
+notify-send "Volume Unmute " "$(volume)"
+fi
