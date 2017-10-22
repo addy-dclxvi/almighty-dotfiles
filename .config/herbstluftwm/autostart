@@ -4,7 +4,7 @@ hc() {
     cmds="$cmds , $@"
 }
 hc emit_hook reload xsetroot -solid '#292a44'
-hc pad 0 28 0 0
+hc pad 0 36 8 8 8
 hc keyunbind --all
 
 ## startup apps
@@ -28,7 +28,7 @@ hc keybind $Mod-Escape close
 
 ## keybind for common apps
 hc keybind $Mod-d spawn dmenu_run -i -b -nb '#222222' -nf '#efefef' -sb '#222222' -sf '#cb6077' -fn 'Roboto:regular:pixelsize=12'
-hc keybind $Mod-Shift+d spawn rofi -show drun
+hc keybind $Mod-Shift+d spawn rofi-apps
 hc keybind $Mod-Return spawn termite
 hc keybind $Mod-Shift-Return spawn urxvt
 hc keybind $Mod-l spawn i3lock-fancy
@@ -125,14 +125,11 @@ hc set frame_border_active_color '#ef6b7b'
 hc set frame_border_normal_color '#4ec2e8'
 #hc set frame_bg_normal_color '#2f343f'
 #hc set frame_bg_active_color '#2f343f'
-hc set frame_active_opacity 40
+hc set frame_active_opacity 20
 hc set frame_normal_opacity 0
-#hc keybind $Mod-o cycle_value frame_active_opacity 0 40
-hc keybind $Mod-o cycle_value frame_normal_opacity 0 40
 hc set frame_bg_transparent 0
 #hc set frame_transparent_width 0
-hc set frame_gap 32
-hc keybind $Mod-g cycle_value frame_gap 32 0
+hc set frame_gap 8
 hc set frame_padding 0
 hc set frame_border_width 2
 
@@ -150,15 +147,22 @@ hc attr theme.floating.outer_width 0
 hc attr theme.inner_width 0
 
 hc set always_show_frame 0
-hc keybind $Mod-s cycle_value always_show_frame 0 1
 hc set window_gap 8
 hc set smart_window_surroundings 1
 hc set smart_frame_surroundings 1
 hc set mouse_recenter_gap 0
 hc set focus_follows_mouse 1
 
+# toggle the frame visibility
+#hc keybind $Mod-o cycle_value frame_active_opacity 0 40 
+hc keybind $Mod-o cycle_value frame_normal_opacity 0 20
+hc keybind $Mod-s cycle_value always_show_frame 0 1
+
+# toggle the frame gaps
+hc keybind $Mod-g cycle_value frame_gap 8 0
+
 # make individual window can be floating. useful for popup
-# but this is creating a new issue. the new window will be overlaping. set this to 0 to revert it back to default.
+# but this is creating a new issue. the new windows will be overlaping. set this to 0 to revert it back to default.
 hc set default_frame_layout 2
 
 
