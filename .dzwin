@@ -1,0 +1,8 @@
+out_to_x no
+out_to_console yes
+update_interval 2.5
+total_run_times 0
+use_spacer none
+TEXT
+^bg(\#2f343f)^fg(\#b48ead)   ${execi 2 focus-workspace}  #/
+^bg(\#2f343f)^fg(\#ebcb8b)  ${execi 2 focus-window}  #/

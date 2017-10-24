@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#wmctrl -d | grep '*' | sed 's/.* //'
+#command above doesn't work in spectrwm
+
+WS=$(xdotool get_desktop)
+NUMB=$(($WS + 1))
+echo $NUMB

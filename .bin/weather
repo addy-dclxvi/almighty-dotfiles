@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # I take this script from Anachron's i3blocks
-# I only slightly modify this script to add an option to show icon, useful for my tint2 executor
+# I only slightly modify this script to add an option to show icon
+# I also remove the i3blocks specify script
+# To make this works with tint2 executor, polybar custom script, dzen2 feeder, conkybar, lemonbar feeder, dunst notify, etc.
 # 'weather -i' = with icon, 'weather' = text only
 # Cheers!
 # Addy
@@ -11,9 +13,6 @@ API_KEY="365a6f3a274bba21cabdbee0aa44exxx"
 
 # Check on http://openweathermap.org/find
 CITY_ID="1650xxx"
-
-URGENT_LOWER=0
-URGENT_HIGHER=30
 
 ICON_SUNNY="  Clear"
 ICON_CLOUDY="  Cloudy"
@@ -74,8 +73,4 @@ else
 	else
     echo "${WEATHER_MAIN} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
 	fi	
-fi
-
-if [[ "${WEATHER_TEMP}" -lt "${URGENT_LOWER}" ]] || [[ "${WEATHER_TEMP}" -gt "${URGENT_HIGHER}" ]]; then
-  exit 33
 fi

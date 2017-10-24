@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Taken from Anachron i3blocks
-# I only slightly modify this script to add an option to show icon, useful for my tint2 executor
+# I only slightly modify this script to add an option to show icon
+# I also remove the i3blocks specify script
+# To make this works with tint2 executor, polybar custom script, dzen2 feeder, conkybar, lemonbar feeder, dunst notify, etc.
 # 'temperature -i' = with icon, 'temperature' = text only
 # Cheers!
 # Addy

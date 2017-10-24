@@ -1,0 +1,17 @@
+out_to_x no
+out_to_console yes
+update_interval 2.5
+total_run_times 0
+use_spacer none
+TEXT
+#^fg(\#b48ead)^i($HOME/.xbm/net_up_01.xbm) ^fg(\#ebcb8b) ${upspeedf wlp2s0}       #/
+#^fg(\#b48ead)^i($HOME/.xbm/net_down_01.xbm) ^fg(\#ebcb8b) ${downspeedf wlp2s0}       #/
+^fg(\#b48ead)^i($HOME/.xbm/temp.xbm) ^fg(\#ebcb8b) ${acpitemp}°C       #/
+^fg(\#b48ead)^i($HOME/.xbm/cpu.xbm) ^fg(\#ebcb8b) ${cpu}%        #/
+^fg(\#b48ead)^i($HOME/.xbm/mem.xbm) ^fg(\#ebcb8b) ${mem}        #/
+^fg(\#b48ead)^i($HOME/.xbm/spkr_01.xbm)^ca(1,pavucontrol) ^fg(\#ebcb8b) ${execi 4 volume}^ca()    #/
+^fg(\#bf616a)^i($HOME/.xbm/arrow.xbm)^bg(\#bf616a)^ca(1,urxvt)^fg(\#2f343f)Term    ^ca()#/
+^fg(\#81a1c1)^i($HOME/.xbm/arrow.xbm)^bg(\#81a1c1)^ca(1,chromium)^fg(\#2f343f)Web    ^ca()#/
+^fg(\#a3be8c)^i($HOME/.xbm/arrow.xbm)^bg(\#a3be8c)^ca(1,thunar)^fg(\#2f343f)Files    ^ca()#/
+^fg(\#ebcb8b)^i($HOME/.xbm/arrow.xbm)^bg(\#ebcb8b)^ca(1,my-music)^fg(\#2f343f)Audio    ^ca()^fg(\#2f343f)^i($HOME/.xbm/arrow.xbm)^ca()^bg(\#2f343f)#/
+^ca(1,rofi-apps)^fg(\#bf616a)${execi 60 whoami}^fg(\#d8dee8)@^fg(\#d8dee8)$nodename^ca()    #/
