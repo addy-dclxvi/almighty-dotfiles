@@ -2,30 +2,38 @@
 
 ## autostart
 
-## reload the keybinds
-#pkill sxhkd &
+## sometimes sxhkd doesn't obey the reload command
+## so kill him, and show him who is the boss
+pkill sxhkd
 sxhkd &
-## reload polybar
-pkill polybar
-polybar -c ~/.config/bspwm/polybar top &
+
+## start polybar, the best invention in the ricing world
+#pkill polybar
+#polybar -c ~/.config/bspwm/polybar top &
+
+# but no polybar this time
+~/.config/bspwm/lemonbar &
+
+## music is my only friend :(
+mpd &
+
 ## reload the xsettingsd, a minimal x settings daemon
 pkill xsettingsd
 xsettingsd &
+
 ## set the wallpaper
 feh --bg-fill ~/.wallpaper.jpg
+
 ## reload compton
 pkill compton
 compton -b &
-## you can't live without music :D
-mpd &
+
 ## reload the cursor theme
 xsetroot -cursor_name left_ptr
 
-##
-#bspc monitor -d 'I ' 'II ' 'III ' 'IV ' 'V ' 'VI ' 'VII ' 'VIII '
+## workspace name
 bspc monitor -d '' '' '' '' '' '' '' ''
 #bspc monitor -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
-#bspc monitor -d '1 ' '2 ' '3 ' '4 ' '5 ' '6 ' '7 ' '8 '
 
 bspc config border_width        2
 bspc config window_gap         	8
@@ -34,19 +42,16 @@ bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config focus_follows_pointer true
-bspc config top_padding 20
+bspc config top_padding 24
 bspc config bottom_padding 0
+bspc config left_padding 0
+bspc config right_padding 0
 
 
 ## color settings
 
-#bspc config normal_frame_opacity 1.0
-#bspc config focused_frame_opacity 0.05
-bspc config focused_border_color "#fd7980" 
+bspc config focused_border_color "#ffffff" 
 bspc config normal_border_color "#2f343f"
-#bspc config presel_border_color "#282828"
-#bspc config urgent_border_color "#a89bb9"
-#bspc config focused_private_border_color "#282828"
 bspc config border_width 2
 
 

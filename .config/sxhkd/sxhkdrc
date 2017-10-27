@@ -30,9 +30,10 @@ XF86AudioStop
 
 ## program launcher
 super + shift + d
-	dmenu_run -i -b -nb '#222222' -nf '#efefef' -sb '#222222' -sf '#cb6077' -fn 'Roboto:regular:pixelsize=12'
+	dmenu_run -i -b -nb '#2f343f' -nf '#d8dee8' -sb '#2f343f' -sf '#bf616a' -fn 'Roboto:regular:pixelsize=12'
 super + d
 	rofi -show drun -font 'Roboto Regular 8'
+#	rofi-apps
 
 ## make sxhkd reload its configuration files
 super + s
@@ -46,7 +47,7 @@ super + shift + f
 super + shift + w
 	chromium
 	
-## launch skippy-xd. actually useless for tiling wm, but it just looks nice XD
+## launch skippy-xd. it is an abonimation actually. but, it just look nice XD
 super + Tab
 	skippy-xd
 
@@ -63,6 +64,10 @@ Print
 ##  BSPWM COMMANDS  ##
 ######################
 
+## aesthetics mode
+super + a
+	~/.config/bspwm/aesthectics
+
 ## quit bspwm normally
 super + control + Escape
 	bspc quit
@@ -71,37 +76,34 @@ super + control + Escape
 super + shift + BackSpace
 	~/.config/bspwm/bspwmrc
 
-## close and kill app
+## close app
 super + Escape
-	bspc node -{c,k}
+	bspc node -c
+
+## he disobey you? kill!
+super + Escape
+	bspc node -k
 
 ## fullscreen
 super + f
 	bspc desktop -l next
+	
+## spit horizontal & split vertical, like in i3-gaps :D
+super + {h,v}
+	bspc node -p {east,south}
 
-## if the current node is automatic, send it to the last manual, otherwise pull the last leaf
-#super + y
-#	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
-
-## swap the current node and the biggest node
-#super + g
-#	bspc node -s biggest
+## cancel it, I set it to super + r. like in my herbstluftwm config
+super + r
+	bspc node -p cancel
 
 ## set the window state
 super + {t,p,space}
 	bspc node -t {tiled,pseudo_tiled,floating}
 
-## set the node flags
-#super + ctrl + {x,y,z}
-#	bspc node -g {locked,sticky,private}
-
 ## focus the node in the given direction
 super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
-## focus the node for the given path jump
-#super + {p,b,comma,period}
-#	bspc node -f @{parent,brother,first,second}
 
 ## focus the next node in the current desktop
 alt + Tab
@@ -114,18 +116,7 @@ ctrl + alt + Left
 ctrl + alt + Right
 	bspc desktop -f next.local
 
-## focus the last node/desktop
-#super + {Tab,grave}
-#	bspc {node,desktop} -f last
-
-## focus the older or newer node in the focus history
-#super + {o,i}
-#	bspc wm -h off; \
-#	bspc node {older,newer} -f; \
-#	bspc wm -h on
-
 ## focus or send to the given desktop
-#super + {_,shift + }{1-9,0}
 super + {_,shift + }{1-8}
 	bspc {desktop -f,node -d} '^{1-8}'
 
@@ -160,35 +151,3 @@ super + 7
 super + 8 
 	bspc desktop --focus^1:^8; \
 	bspc desktop --focus^2:^8; \
-	
-## preselect the direction
-#super + ctrl + {h,j,k,l}
-#	bspc node -p {west,south,north,east}
-
-## preselect the ratio
-#super + ctrl + {1-9}
-#	bspc node -o 0.{1-9}
-
-## cancel the preselection for the focused node
-#super + ctrl + space
-#	bspc node -p cancel
-
-## cancel the preselection for the focused desktop
-#super + ctrl + shift + space
-#	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
-
-#
-# move/resize
-#
-
-## expand a window by moving one of its side outward
-#super + shift + control + {h,j,k,l}
-#	bspc node -z {left -20 0,bottom 0 20,bottom 0 -20,left 20 0}
-
-## contract a window by moving one of its side inward
-#super + control + {h,j,k,l}
-#	bspc node -z {right -20 0,top 0 20,top 0 -20,right 20 0}
-
-## move a floating window
-#super + control + {Left,Down,Up,Right}
-#	bspc node -v {-20 0,0 20,0 -20,20 0}

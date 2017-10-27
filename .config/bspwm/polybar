@@ -8,9 +8,10 @@ secondary = #fd7980
 alert = #ebcb8b
 
 [bar/top]
+bottom = false
 monitor = LVDS-1
 width = 100%
-height = 20
+height = 24
 fixed-center = true
 underline-size = 2
 ;underline-color = #9b2323
