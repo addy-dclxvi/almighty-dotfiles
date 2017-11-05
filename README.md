@@ -9,36 +9,36 @@ Designed for **Arch Linux**, but can also works for another distro.
 
 ## Preview
 
-##**Openbox : Fallen Leaf** <br />
+## Openbox : Fallen Leaf
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-openbox.jpg) <br />
 **Openbox Theme** : Arroundie (included in this repo). To get the rounded corner, You need *openbox-patched* (AUR). <br />
 **GTK Theme** : Lumiere, **Panel** : tint2, **Running Apps** : Feh, Thunar, & vim inside termite <br />
 
-##**i3-gaps : Scenes From a Memory** <br />
+## i3-gaps : Scenes From a Memory
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-i3.jpg) <br />
 **Stuff in the screenshot** : URxvt, dunst, eLinks, and Conky piped into i3bar <br />
 
-##**Bspwm : Eiffel** <br />
+## Bspwm : Eiffel
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-bspwm.jpg) <br />
 **Stuff in the screenshot** : Polybar, Weechat, and dunst <br />
 
-##**Fluxbox : Polygon** <br />
+## Fluxbox : Polygon
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-fluxbox.jpg) <br />
 **Stuff in the screenshot** : Vim inside termite, Fluxbox Toolbar, and dunst <br />
 
-##**Herbstluftwm : Winter** <br />
+## Herbstluftwm : Winter
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-herbstluftwm.jpg) <br />
 **Stuff in the screenshot** : tint2 & ncmpcpp <br />
 
-##**xfwm-standalone : Take-Off** <br />
+## xfwm-standalone : Take-Off
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-xfwm.jpg) <br />
 **Stuff in the screenshot** : Polybar, Plank, and rofi <br />
 
-##**Spectrwm : Hexagon** <br />
+## Spectrwm : Hexagon
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-spectrwm.jpg) <br />
 **Stuff in the screenshot** : Conky piped into dzen2, vim inside termite, Thunar, mpdviz, and ncmpcpp <br />
 
-##**Fvwm : Abstract** <br />
+## Fvwm : Abstract
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-fvwm.jpg) <br />
 **Stuff in the screenshot** : Fvwm Pager, Minimized to Thumbnail module (neofetch, ncmpcpp, and CAVA), Thunar, vim inside termite, and dunst. I haven't pushed this, too lazy to fix some problem. This WM really drain my patience (╯°□°）╯︵ ┻━┻ <br />
 
