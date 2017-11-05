@@ -39,7 +39,7 @@ floating_modifier $mod
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id compton -b
 exec --no-startup-id xsettingsd
-exec --no-startup-id polybar -c ~/.config/i3/polybar top
+#exec --no-startup-id polybar -c ~/.config/i3/polybar top
 #exec --no-startup-id nm-applet
 
 ## music is my only friend
@@ -47,7 +47,7 @@ exec --no-startup-id mpd
 
 ## set wallpaper
 #exec --no-startup-id nitrogen --restore
-exec --no-startup-id feh --bg-fill ~/.wallpaper.jpg
+exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg
 
 ## keybind for launching a terminal
 bindsym $mod+Return exec termite
@@ -56,9 +56,9 @@ bindsym $mod+Return exec termite
 bindsym $mod+Shift+Return exec urxvt
 
 ## start a web browser
-bindsym $mod+Shift+w exec chromium;workspace 3;focus
-#bindsym $mod+Shift+w exec opera;workspace 3;focus
-#bindsym $mod+Shift+w exec firefox;workspace 3;focus
+bindsym $mod+Shift+w exec chromium;workspace 2;focus
+#bindsym $mod+Shift+w exec opera;workspace 2;focus
+#bindsym $mod+Shift+w exec firefox;workspace 2;focus
 
 ## file manager
 bindsym $mod+Shift+f exec thunar;workspace 3;focus
@@ -81,12 +81,12 @@ bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioStop exec mpc stop
 
 ## screenshots
-bindsym $mod+Print exec --no-startup-id scrot 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f ~ ; viewnior ~/$f'
+bindsym $mod+Print exec --no-startup-id screeny
 #bindsym $alt+Print exec --no-startup-id xfce4-screenshooter
 
 ## program launcher
-bindsym $mod+d exec rofi -show drun -font 'Roboto Regular 8'
-bindsym $mod+Shift+d  exec dmenu_run -i -b -nb '#222222' -nf '#efefef' -sb '#222222' -sf '#cb6077' -fn 'Roboto:regular:pixelsize=12'
+bindsym $mod+d exec rofi-apps
+bindsym $mod+Shift+d  exec dmenu-custom
 
 ## change focus
 bindsym $mod+Left focus left
@@ -193,9 +193,9 @@ bindsym $mod+r mode "resize"
 bindsym $mod+g mode "gaps"
 
 ## colors                border      	background		text        	indicator
-client.focused          $background		$background		$foreground	 	$red
-client.focused_inactive $background   	$foreground  	$foreground 	$background
-client.unfocused        $background   	$foreground  	$foreground 	$background
+client.focused          $background		$background		$foreground	 	$background
+client.focused_inactive $background   	$background  	$foreground 	$background
+client.unfocused        $background   	$background  	$foreground 	$background
 client.urgent           $background     $background   	$foreground 	$yellow  
 
 ## who needs window title when you have i3-gaps?
@@ -239,4 +239,24 @@ for_window [class=Pamac*|System-config-printer.py|Lxtask] focus
 for_window [class=Gpicview|Viewnior|feh] floating enable
 ## I prefer Urxvt to be floating
 for_window [class=URxvt] floating enable
+
+# conkybar
+bar {
+
+    height 18
+    workspace_buttons yes
+    font pango:Noto Sans 8
+    status_command ~/.config/i3/conkybar.sh
+colors {
+        background $background
+        statusline $foreground
+        separator  $foreground
+        # <border name>			<border>		<background>	<text>
+        focused_workspace		$background		$background		$red
+        active_workspace		$background		$background		$white
+        inactive_workspace		$background		$background		$white
+        urgent_workspace		$background		$background		$white
+        }
+
+    }
 

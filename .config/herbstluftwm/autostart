@@ -3,17 +3,19 @@
 hc() {
     cmds="$cmds , $@"
 }
-hc emit_hook reload xsetroot -solid '#292a44'
+hc emit_hook reload xsetroot -solid '#2f343e'
 hc pad 0 36 8 8 8
 hc keyunbind --all
 
 ## startup apps
 pkill compton
 compton &
-feh --bg-fill ~/.wallpaper.jpg
+feh --bg-fill ~/.config/herbstluftwm/wallpaper.jpg
 xsettingsd &
-pkill polybar
-polybar -c ~/.config/herbstluftwm/polybar top &
+#pkill polybar
+#polybar -c ~/.config/herbstluftwm/polybar top &
+tint2 -c ~/.config/tint2/tiling/herb-statusbar.tint2rc
+tint2 -c ~/.config/tint2/tiling/herb-workspace.tint2rc
 mpd &
 
 ## use the super key as the main modifier
@@ -27,7 +29,7 @@ hc keybind $Mod-Shift-BackSpace reload
 hc keybind $Mod-Escape close
 
 ## keybind for common apps
-hc keybind $Mod-d spawn dmenu_run -i -b -nb '#222222' -nf '#efefef' -sb '#222222' -sf '#cb6077' -fn 'Roboto:regular:pixelsize=12'
+hc keybind $Mod-d spawn dmenu-custom
 hc keybind $Mod-Shift+d spawn rofi-apps
 hc keybind $Mod-Return spawn termite
 hc keybind $Mod-Shift-Return spawn urxvt

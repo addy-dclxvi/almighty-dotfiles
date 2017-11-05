@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Termite
+Comment=Use the command line
+Exec=termite
+Icon=/home/addy/.icons/Delta/material_terminal.png
+Type=Application
+Categories=GTK;System;TerminalEmulator;
+StartupNotify=true

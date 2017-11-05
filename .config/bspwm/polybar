@@ -1,265 +1,140 @@
 [colors]
-background = #cc2f343f
-background-alt = #882f343f
+
+background = #2f343f
+background-alt = #4f545f
 foreground = #d8dee8
-foreground-alt = #66d8dee8
-primary = #fff
-secondary = #fd7980
+foreground-alt = #787e68
+accent = #81a1c1
 alert = #ebcb8b
 
+
 [bar/top]
-bottom = false
+
 monitor = LVDS-1
-width = 100%
 height = 24
 fixed-center = true
-underline-size = 2
-;underline-color = #9b2323
-topbar.border-top-size = 4
-border-bottom-color = #9b2323
-border-top-color = #181818
 background = ${colors.background}
 foreground = ${colors.foreground}
-line-size = 2
-line-color = #f00
-border-size = 0
-border-color = #00000000
-padding-left = 2
-padding-right = 2
-module-margin-left = 1
+padding-left = 4
+padding-right = 4
+module-margin-left = 2
 module-margin-right = 2
 font-0 = Noto Sans:pixelsize=8
-font-1 = FontAwesome:pixelsize=9
-font-2 = unifont:fontformat=truetype:size=10:antialias=false;0
-font-3 = Wuncon Siji:pixelsize=10;1
-font-4 = Roboto:style=Regular:pixelsize=10;1
-
+font-1 = FontAwesome:pixelsize=8
+;tray-position = right
+;tray-padding = 2
+;tray-background = ${colors.background}
+wm-restack = bspwm
 modules-left = bspwm
 modules-center = xwindow
-modules-right = memory cpu volume date
+modules-right = wlan volume date
 
-;tray-position = right
-tray-padding = 2
-;tray-transparent = true
-tray-background = ${colors.background}
-wm-restack = bspwm
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:80:...%
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = "  "
-format-prefix-foreground = ${colors.secondary}
-;format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-;label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-;label-indicator-background = ${colors.secondary}
-;label-indicator-underline = ${colors.secondary}
 
 [module/bspwm]
+
 type = internal/bspwm
-
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-
 label-focused = %name%
-;label-focused-background = ${colors.background-alt}
-label-focused-foreground= #fff
-label-focused-underline= ${colors.secondary}
-label-focused-padding = 2
-
+label-focused-background= ${colors.background-alt}
+label-focused-padding = 3
 label-occupied = %name%
-label-occupied-padding = 2
-label-occupied-foreground= #cfcfcf
-
+label-occupied-padding = 3
+label-occupied-foreground= ${colors.foreground}
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
+label-urgent-padding = 3
 label-empty = %name%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 3
+
+
+[module/xwindow]
+
+type = internal/xwindow
+label = %title:0:100:...%
+
 
 [module/mpd]
+
 type = internal/mpd
-format-online = <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next> <bar-progress> <label-time>  <label-song>
-
-icon-prev = 
-icon-seekb = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-seekf = 
-icon-next = 
-
+;format-online = <icon-prev>  <label-time>  <label-song>  <icon-next>
+format-online = <toggle>  <label-song>
+;format-online = <label-time>  <label-song>
+;icon-prev = 
+;icon-next = 
+icon-play = 
+icon-pause = 
+;icon-prev-foreground = ${colors.accent}
+;icon-next-foreground = ${colors.accent}
+icon-pause-foreground = ${colors.accent}
 label-song-maxlen = 45
 label-song-ellipsis = true
 
-bar-progress-width = 10
-bar-progress-indicator = |
-bar-progress-indicator-foreground = #ff
-bar-progress-indicator-font = 2
-bar-progress-fill = ─
-bar-progress-fill-font = 2
-bar-progress-fill-foreground = ${colors.foreground}
-bar-progress-empty = ─
-bar-progress-empty-font = 2
-bar-progress-empty-foreground = ${colors.foreground-alt}
-
-
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = ${colors.foreground}
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-;format-prefix = "cpu: "
-format-prefix-foreground = ${colors.secondary}
-;format-underline = #fff
-label = %percentage%%
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-;format-prefix = "ram: "
-format-prefix-foreground = ${colors.secondary}
-;format-underline = #fff
-;label = %percentage_used%%
-label = %mb_used%
 
 [module/wlan]
+
 type = internal/network
 interface = wlp2s0
-interval = 1.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+interval = 15
+format-connected = <ramp-signal>  <label-connected>
 label-connected = %essid%
+format-disconnected = <label-disconnected>
+label-disconnected =   Disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
+ramp-signal-0 =  
+ramp-signal-1 =  
+ramp-signal-2 =  
+ramp-signal-3 =  
+ramp-signal-4 =  
+ramp-signal-5 =  
+ramp-signal-foreground = ${colors.accent}
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
-[module/date]
-type = internal/date
-interval = 1
-
-date =
-date-alt = " %Y-%m-%d"
-
-time = " %a %d // %H:%M"
-time-alt = %H:%M
-
-format-prefix =  
-format-prefix-foreground = ${colors.secondary}
-;format-underline = #fff
-
-label = %date% %time%
 
 [module/volume]
+
 type = internal/volume
-
 format-volume = <label-volume> <bar-volume>
-label-volume = " "
-label-volume-foreground = ${colors.secondary}
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
+label-volume = " "
+label-volume-foreground = ${colors.accent}
+format-muted-prefix = " "
+format-muted-foreground = ${colors.accent}
 label-muted = Muted
-
-bar-volume-width = 8
-;bar-volume-foreground-0 = #ad2828
-;bar-volume-foreground-1 = #ad2828
-;bar-volume-foreground-2 = #ad2828
-;bar-volume-foreground-3 = #ad2828
-;bar-volume-foreground-4 = #ad2828
-;bar-volume-foreground-5 = #ad2828
-;bar-volume-foreground-6 = #ad2828
-bar-volume-gradient = false
+label-muted-foreground= ${colors.foreground-alt}
+bar-volume-width = 6
 bar-volume-indicator = 
-bar-volume-indicator-font = 2
 bar-volume-fill = ─
-bar-volume-fill-font = 2
 bar-volume-empty = ─
-bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 
-[module/powermenu]
-type = custom/menu
+[module/battery]
 
-format-spacing = 1
+type = internal/battery
+full-at = 98
+battery = BAT1
+adapter = ACAD
+poll-interval = 60
+format-charging = <ramp-capacity>  <label-charging>
+label-charging =  %percentage%%
+label-full = Full
+format-discharging = <ramp-capacity>  <label-discharging>
+label-discharging = %percentage%%
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.accent}
 
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
+[module/date]
 
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
-[settings]
-screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-
-[global/wm]
-margin-top = 0
-margin-bottom = 0
-
-; vim:ft=dosini
+type = internal/date
+interval = 30
+label = " %date% %time%"
+date =
+date-alt = %a %d
+time = %H:%M
+time-alt = 
+format-prefix = 
+format-prefix-foreground = ${colors.accent}

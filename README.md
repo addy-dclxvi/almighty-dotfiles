@@ -8,20 +8,52 @@ This repo is actually intended for my personal backup, but everyone are welcome 
 Designed for **Arch Linux**, but can also works for another distro.
 
 ## Preview
-**A Change of Seasons** <br />
-![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview.jpg) <br />
-**Openbox Theme** : Clair (included in this repo)
+**Openbox : Fallen Leaf** <br />
+![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-openbox.jpg) <br />
+**Openbox Theme** : Arroundie (included in this repo). To get the rounded corner, You need *openbox-patched* (available in AUR). <br />
+**GTK Theme** : Lumiere <br />
+**Panel** : tint2 <br />
+**Running Apps** : Feh, Thunar, & vim inside termite <br />
+
+**i3-gaps : Scenes From a Memory** <br />
+![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-i3.jpg) <br />
+**Stuff in the screenshot** : URxvt, dunst, eLinks, and Conky piped into i3bar <br />
+
+**Bspwm : Eiffel** <br />
+![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-bspwm.jpg) <br />
+**Stuff in the screenshot** : Polybar, Weechat, and dunst <br />
+
+**Fluxbox : Polygon** <br />
+![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-fluxbox.jpg) <br />
+**Stuff in the screenshot** : Vim inside termite, Fluxbox Toolbar, and dunst <br />
+
+**Herbstluftwm : Winter** <br />
+![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-herbstluftwm.jpg) <br />
+**Stuff in the screenshot** : tint2 & ncmpcpp <br />
+
+**xfwm-standalone : Take-Off** <br />
+![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-xfwm.jpg) <br />
+**Stuff in the screenshot** : Polybar, Plank, and rofi <br />
+
+**Spectrwm : Hexagon** <br />
+![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-spectrwm.jpg) <br />
+**Stuff in the screenshot** : Conky piped into dzen2, vim inside termite, Thunar, mpdviz, and ncmpcpp <br />
+
+**Fvwm : Abstract** <br />
+![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-fvwm.jpg) <br />
+**Stuff in the screenshot** : Fvwm Pager, Minimized to Thumbnail module (neofetch, ncmpcpp, and CAVA), Thunar, vim inside termite, and dunst. I haven't pushed this, too lazy to fix some problem. This WM really drain my patience (╯°□°）╯︵ ┻━┻ <br />
+
 
 ## Containing
 - **Openbox** <br /> Some useful keybinds like snap window with useless gaps (super + arrows). MPC control using *play/pause, next, previous,* and *stop* keys. *Super + number* to switch workspace like in i3wm.
 *Super + shift + number* to send window to another workspace (also like in i3wm), and more keybinds. Please read the *rc.xml* first before using it, just in case I forgot to remove my **self-destruct** keybind before I pushed it to this repo. <br /> <br />
-And a well commented *autostart* file is included. Also including two bonus Openbox Theme only for You, Triste & Clair. Want more themes? please check my [Openbox Theme Collections](https://github.com/addy-dclxvi/Openbox-Theme-Collections).
+And a well commented *autostart* file is included. Also including one bonus Openbox Theme. Want more themes? please check my [Openbox Theme Collections](https://github.com/addy-dclxvi/Openbox-Theme-Collections).
 
-- **obmenu-generator** <br /> My Openbox menu in the screenshot above is generated using obmenu-generator pipemenu. To use my scheme simply copy my scheme & config, then install *obmenu-generator* from AUR and type ```obmenu-generator -p``` and reconfigure Openbox.
+- **i3-gaps** <br /> Pretty stock simple config with useless gaps. My config is using Conkybar (I mean Conky piped into i3bar) as statusbar.
 
-- **i3-gaps** <br /> Pretty stock simple config with useless gaps. My config is using Polybar as statusbar.
+- **Another WM** <br /> Pretty stock simple setup of herbstluftwm, Bspwm, Fluxbox, Spectrwm, & [xfwm-standalone](https://github.com/addy-dclxvi/xfwm4-standalone). Maybe next I will also post my [compiz-standalone](https://github.com/addy-dclxvi/compiz-standalone), Dwm, and Fvwm setup. If I'm not lazy :p
 
-- **Polybar** <br /> Just a very basic config from Jaagr's Polybar example.
+- **obmenu-generator** <br /> My Openbox menu is generated using obmenu-generator pipemenu. To use my scheme simply copy my scheme & config, then install *obmenu-generator* from AUR and type ```obmenu-generator -p``` and reconfigure Openbox.
   
 - **zshrc** <br /> Containing some useful alias, and simple [Oh-My-Zsh](https://aur.archlinux.org/packages/oh-my-zsh-git) config. Including my minimalist oh-my-zsh themes (in ~/.oh-my-zsh folder).
 To use it, simply install oh-my-zsh package, copy my .zshrc & .oh-my-zsh folder to your home. Then switch shell using ```chsh``` command.
@@ -30,16 +62,14 @@ To use it, simply install oh-my-zsh package, copy my .zshrc & .oh-my-zsh folder 
 
 - **Conky** <br /> Just a single conkyrc. For my another Conky collections please check my other [repos](https://github.com/addy-dclxvi?tab=repositories).
 
-- **Tint2** <br /> Just a single tint2rc. For my another Tint2 collections please check my [Tint2 Themes Collections](https://github.com/addy-dclxvi/Tint2-Theme-Collections).
+- **Tint2** <br /> Just a single tint2rc. For my another Tint2 collections please check my [Tint2 Themes Collections](https://github.com/addy-dclxvi/Tint2-Theme-Collections). You need tint2 with executor support, and my executor scripts is placed inside *~/.bin*
 
 - **termite** <br /> My custom color schemes for termite. To use white color schemes just launch ```termite-light``` command from *dmenu* (if you are using use my *~/.bin* & *.profile*). And Use *M+ 1mn* fonts.
 
 - **Xresources** <br /> My custom color schemes & config for Urxvt, including copy paste support by [Muennich](https://github.com/muennich/urxvt-perls). Hit Alt+C to copy, and Alt+V to paste (*xsel* package is needed). Use *M+ 1mn* fonts.<br />
 Also contains my stupidly minimalist *rofi* theme. The default color scheme is Nord dark. If You want to use light color scheme type this ```xrdb ~.Xresources-light```.
 
-- **ncmpcpp** <br /> A simple ncmpcpp config, with album art support. The album art script is taken from [Marco](https://marcocheung.wordpress.com/). Slightly modified to get rid the transparency bug. <br /> <br />
-![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview2.png) <br />
-**Now Playing** : Dream Theater - Strange Deja Vu (Metropolis Part 2 : Scenes from a Memory, 1999) <br /> <br />
+- **ncmpcpp** <br /> A simple ncmpcpp config, with album art support. The album art script is taken from [Marco](https://marcocheung.wordpress.com/). Slightly modified to get rid the transparency bug. <br />
 To use ncmpcpp with album art, simply launch ```my-music``` from dmenu (if you are using my *~/.bin* & *.profile*). Urxvt with pixbuf enabled is needed. You can get it from AUR, the package name is *rxvt-unicode-pixbuf*. And Use *M+ 1mn* fonts, because of what? It just looks nice. <br />
 Also integrated with *dunst* notification. Just copy my dunst config, install dunst, and do nothing. Dunst will launch automatically if triggered by *notify-send* event.
 
@@ -72,7 +102,7 @@ Some of these configs are hardcoded, that mean You need to edit the configs befo
 
 - My image viewers are Viewnior.
 
-- My Window Managers are Openbox, i3-gaps, Bspwm, Herbstluftwm, Xfwm (standalone), and Spectrwm. Arch Linux turns me from *Distro Hopper* into *WM Hopper*.
+- My Window Managers are Openbox, i3-gaps, Bspwm, Herbstluftwm, Xfwm (standalone), Compiz, Dwm, Fvwm, Fluxbox, and Spectrwm. Arch Linux turns me from *Distro Hopper* into *WM Hopper*.
 
 - My panels are tint2 (with executor support) and polybar (with libmpdclient support). I gave up with lemonbar & dzen2 after slamming my head into wall twice!
 

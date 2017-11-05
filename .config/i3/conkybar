@@ -1,0 +1,115 @@
+--[[
+                               
+# Heavily based on Monsieur Erik Dubois config (http://erikdubois.be)
+# I only slightly modify this to make it suitable for my setup
+# Cheers!
+# Addy
+
+]]
+
+conky.config = {
+    out_to_x = false,
+    own_window = false,
+    out_to_console = true,
+    background = false,
+    max_text_width = 0,
+    update_interval = 4.0,
+    total_run_times = 0,
+    short_units = true,
+    if_up_strictness = "address",
+    use_spacer = "left",
+    override_utf8_locale = false,
+    cpu_avg_samples = 2
+}
+
+conky.text = [[
+  [
+    {
+      "full_text": " | ",
+      "color": "\#cb6077",
+      "background": "\#2f343f",
+      "separator": true,
+      "separator_block_width": 0
+    },
+    {
+      "full_text": "  ${cpu cpu0}%, ${execi 4 sensors|grep 'Core 0'|awk '{print $3}'} ",
+      "color": "\#2a2a2a",
+      "background": "\#cb6077",
+      "separator": true,
+      "separator_block_width": 0
+    },
+    {
+      "full_text": " | ",
+      "color": "\#7bcdb4",
+      "background": "\#2f343f",
+      "separator": true,
+      "separator_block_width": 0
+    },
+    {
+      "full_text": "  ${mem}/${memmax} ",
+      "color": "\#2a2a2a",
+      "background": "\#7bcdb4",
+      "separator": true,
+      "separator_block_width": 0
+    },
+    {
+      "full_text": " | ",
+      "color": "\#a89bb9",
+      "background": "\#2f343f",
+      "separator": true,
+      "separator_block_width": 0
+    },
+    {
+      "full_text": "  ${execi 30 ssid} ",
+      "color": "\#2a2a2a",
+      "background": "\#a89bb9",
+      "separator": true,
+      "separator_block_width": 0
+    },
+    {
+      "full_text": " | ",
+      "color": "\#bec55b",
+      "background": "\#2f343f",
+      "separator": true,
+      "separator_block_width": 0
+    },
+    {
+      #linux mint
+      #"full_text": "  ${execi 2 amixer get Master | grep % | awk '{print $4}' | sed 's/[^0-9\%]//g' | head -n1} ",
+      #arch linux
+      "full_text": "  ${execi 2 amixer get Master | grep % | awk '{print $5}' | sed 's/[^0-9\%]//g' | head -n1} ",
+      "color": "\#2a2a2a",
+      "background": "\#bec55b",
+      "separator": true,
+      "separator_block_width": 0
+    },
+    {
+      "full_text": " | ",
+      "color": "\#8ab3d5",
+      "background": "\#2f343f",
+      "separator": true,
+      "separator_block_width": 0
+    },
+    {
+      "full_text": "  ${time %a, %d/%m/%y} ",
+      "color": "\#2a2a2a",
+      "background": "\#8ab3d5",
+      "separator": true,
+      "separator_block_width": 0
+    },
+    {
+      "full_text": " | ",
+      "color": "\#e4bc87",
+      "background": "\#2f343f",
+      "separator": true,
+      "separator_block_width": 0
+    },
+    {
+      "full_text": "  ${time %H:%M:%S} ",
+      "color": "\#2a2a2a",
+      "background": "\#e4bc87",
+      "separator": true,
+      "separator_block_width": 0
+    }
+  ],
+]]

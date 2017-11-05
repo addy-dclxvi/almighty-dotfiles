@@ -14,7 +14,7 @@
 tint2 &
 
 ## Set wallpaper with feh
-feh --bg-fill ~/.wallpaper.jpg
+feh --bg-fill ~/.config/openbox/wallpaper.jpg
 
 ## Some of my apps don't respect fontconfig, I'm using xsettingsd to fix it :)
 xsettingsd &

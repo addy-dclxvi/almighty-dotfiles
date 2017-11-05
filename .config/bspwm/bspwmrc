@@ -1,6 +1,8 @@
 #! /bin/sh
 
-## autostart
+###############
+## autostart ##
+###############
 
 ## sometimes sxhkd doesn't obey the reload command
 ## so kill him, and show him who is the boss
@@ -8,11 +10,11 @@ pkill sxhkd
 sxhkd &
 
 ## start polybar, the best invention in the ricing world
-#pkill polybar
-#polybar -c ~/.config/bspwm/polybar top &
+pkill polybar
+polybar -c ~/.config/bspwm/polybar top &
 
-# but no polybar this time
-~/.config/bspwm/lemonbar &
+# just in case you need lemonbar
+#~/.config/bspwm/lemonbar &
 
 ## music is my only friend :(
 mpd &
@@ -22,7 +24,7 @@ pkill xsettingsd
 xsettingsd &
 
 ## set the wallpaper
-feh --bg-fill ~/.wallpaper.jpg
+feh --bg-fill ~/.config/bspwm/wallpaper.jpg
 
 ## reload compton
 pkill compton
@@ -31,13 +33,17 @@ compton -b &
 ## reload the cursor theme
 xsetroot -cursor_name left_ptr
 
+###################
+## configuration ##
+###################
+
 ## workspace name
 bspc monitor -d '' '' '' '' '' '' '' ''
 #bspc monitor -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
 
+## common bspwm configuration
 bspc config border_width        2
 bspc config window_gap         	8
-
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
@@ -49,13 +55,14 @@ bspc config right_padding 0
 
 
 ## color settings
-
 bspc config focused_border_color "#ffffff" 
 bspc config normal_border_color "#2f343f"
 bspc config border_width 2
 
 
-## window rules
+##################
+## window rules ##
+##################
 
 ## workspace 1 (labs)
 bspc rule -a Termite desktop='^1' follow=on focus=on
@@ -74,14 +81,22 @@ bspc rule -a File-roller desktop='^3' follow=on focus=on
 ## workspace 4 (text-editors)
 bspc rule -a Geany desktop='^4' follow=on focus=on
 bspc rule -a libreoffice desktop='^4' follow=on focus=on
+bspc rule -a Soffice='^4' follow=on focus=on
+bspc rule -a libreoffice-base='^4' follow=on focus=on
+bspc rule -a libreoffice-calc='^4' follow=on focus=on
+bspc rule -a libreoffice-draw='^4' follow=on focus=on
+bspc rule -a libreoffice-impress='^4' follow=on focus=on
+bspc rule -a libreoffice-math='^4' follow=on focus=on
+bspc rule -a libreoffice-writer='^4' follow=on focus=on
 bspc rule -a Wps desktop='^4' follow=on focus=on
 bspc rule -a Et desktop='^4' follow=on focus=on
 bspc rule -a Wpp desktop='^4' follow=on focus=on
 
 ## workspace 5 (graphic-utilities)
 bspc rule -a Nitrogen desktop='^5' follow=on focus=on
-bspc rule -a Font-manager desktop='^5' state=floating follow=on focus=on
+bspc rule -a Font-manager desktop='^5' state=tiled follow=on focus=on
 bspc rule -a Evince desktop='^5' follow=on focus=on
+bspc rule -a Gucharmap desktop='^5' follow=on focus=on
 
 ## workspace 6 (multimedia)
 bspc rule -a Audacity desktop='^6' follow=on focus=on
@@ -91,15 +106,22 @@ bspc rule -a Ghb desktop='^6' follow=on focus=on
 bspc rule -a Xfburn desktop='^6' follow=on focus=on
 
 ## workspace 7 (graphics-editors)
+bspc rule -a Gimp desktop='^7' follow=on focus=on
 bspc rule -a Gimp-2.8 desktop='^7' follow=on focus=on
 bspc rule -a Inkscape desktop='^7' follow=on focus=on
+bspc rule -a Oomox desktop='^7' follow=on focus=on
 
-## workspace 8 (settings)
+## workspace 8 (system-settings)
 bspc rule -a Lxappearance desktop='^8' state=floating follow=on
 bspc rule -a Xfce4-settings-manager desktop='^8' state=floating follow=on
 bspc rule -a Lightdm-gtk-greeter-settings desktop='^8' state=floating follow=on
 bspc rule -a System-config-printer.py desktop='^8' state=floating follow=on
 bspc rule -a Lxtask desktop='^8' state=floating follow=on
+bspc rule -a GParted desktop='^8' follow=on focus=on
+bspc rule -a Pavucontrol desktop='^8' state=floating follow=on
+bspc rule -a Exo-helper-1 desktop='^8' state=floating follow=on
+bspc rule -a Lxrandr desktop='^8' state=floating follow=on
+bspc rule -a Arandr desktop='^8' state=floating follow=on
 
 ## need to be floating
 bspc rule -a URxvt state=floating follow=on

@@ -11,29 +11,18 @@ super + shift + Return
 	urxvt
 
 ## volume control
-XF86AudioRaiseVolume
-	amixer -D pulse sset Master '5%+'
-XF86AudioLowerVolume
-	amixer -D pulse sset Master '5%-'
-XF86AudioMute
-	amixer set Master toggle
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+	amixer {-D pulse sset Master '5%+',-D pulse sset Master '5%-',set Master toggle}
 
 ## music control
-XF86AudioNext
-	mpc next
-XF86AudioPrev
-	mpc prev
-XF86AudioPlay
-	mpc toggle
-XF86AudioStop
-	mpc stop
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
 
 ## program launcher
 super + shift + d
-	dmenu_run -i -b -nb '#2f343f' -nf '#d8dee8' -sb '#2f343f' -sf '#bf616a' -fn 'Roboto:regular:pixelsize=12'
+	dmenu_run -b -i -p Search -fn "Noto Sans:size=8" -w 480 -h 20 -x 20 -y 20
 super + d
-	rofi -show drun -font 'Roboto Regular 8'
-#	rofi-apps
+	rofi -modi run,drun,window -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font "Noto Sans 8"
 
 ## make sxhkd reload its configuration files
 super + s
@@ -47,9 +36,9 @@ super + shift + f
 super + shift + w
 	chromium
 	
-## launch skippy-xd. it is an abonimation actually. but, it just look nice XD
-super + Tab
-	skippy-xd
+## launch geany
+super + shift + g
+	geany
 
 ## fancy lockscreen :)
 super + l
@@ -81,7 +70,7 @@ super + Escape
 	bspc node -c
 
 ## he disobey you? kill!
-super + Escape
+super + shift + Escape
 	bspc node -k
 
 ## fullscreen
@@ -91,63 +80,64 @@ super + f
 ## spit horizontal & split vertical, like in i3-gaps :D
 super + {h,v}
 	bspc node -p {east,south}
+	
+## preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
 
 ## cancel it, I set it to super + r. like in my herbstluftwm config
 super + r
 	bspc node -p cancel
 
-## set the window state
-super + {t,p,space}
-	bspc node -t {tiled,pseudo_tiled,floating}
+## toggle beetwen pseudo-tiled & tiled
+super + p
+    bspc node -t "~"{pseudo_tiled,tiled}
 
-## focus the node in the given direction
+## toggle beetwen floating & tiled
+super + space
+    bspc node -t "~"{floating,tiled}
+    
+## just in case you want to go back to tiled mode but the toggle keybind doesn't work
+super + t
+	bspc node -t tiled
+
+## send the window in the given direction
 super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
-
 
 ## focus the next node in the current desktop
 alt + Tab
 	bspc node -f next.local
+	
+## focus the previous node in the current desktop
+alt + shift + Tab
+	bspc node -f prev.local
 
 ## focus the next/previous desktop in the current monitor
 ## i'm using control + alt + left/right. you know what they say? old habit, they die hard :D
-ctrl + alt + Left
-	bspc desktop -f prev.local
-ctrl + alt + Right
-	bspc desktop -f next.local
+ctrl + alt + {Left,Right}
+	bspc desktop -f {prev.local,next.local}
+
+## focus the last node/desktop
+super + {Tab,grave}
+	bspc {node,desktop} -f last
 
 ## focus or send to the given desktop
 super + {_,shift + }{1-8}
 	bspc {desktop -f,node -d} '^{1-8}'
+	
+## jump to another workspace
+super + {1-8}
+	bspc desktop --focus^{1-8}
 
-super + 1
-	bspc desktop --focus^1:^1; \
-	bspc desktop --focus^2:^1; \
-
-super + 2 
-	bspc desktop --focus^1:^2; \
-	bspc desktop --focus^2:^2; \
-
-super + 3 
-	bspc desktop --focus^1:^3; \
-	bspc desktop --focus^2:^3; \
-
-super + 4 
-	bspc desktop --focus^1:^4; \
-	bspc desktop --focus^2:^4; \
-
-super + 5 
-	bspc desktop --focus^1:^5; \
-	bspc desktop --focus^2:^5; \
-
-super + 6 
-	bspc desktop --focus^1:^6; \
-	bspc desktop --focus^2:^6; \
-
-super + 7 
-	bspc desktop --focus^1:^7; \
-	bspc desktop --focus^2:^7; \
-
-super + 8 
-	bspc desktop --focus^1:^8; \
-	bspc desktop --focus^2:^8; \
+## expanding windows
+super + ctrl + {Left,Right,Up,Down}
+	bspc node -z {left -5 0,right 5 0,top 0 -5,bottom 0 5}
+	
+## shrinking windows
+super + alt + {Left,Right,Up,Down}
+	bspc node -z {left 5 0,right -5 0,top 0 5,bottom 0 -5}
+	
+## move floating windows
+ctrl + shift + {Left,Down,Up,Right}
+	bspc node -v {-10 0,0 10,0 -10,10 0}

@@ -42,7 +42,9 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Triste-Froly</name>
+    <name>Arroundie-Froly</name>
+    <cornerRadius>4</cornerRadius>
+    <cornerRadius menu="yes">4</cornerRadius>
     <titleLayout>IMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -180,8 +182,8 @@
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
     <keybind key="W-t">
-		<action name="ToggleDecorations"/>
-	</keybind>
+      <action name="ToggleDecorations"/>
+    </keybind>
     <keybind key="W-S-BackSpace">
       <action name="Execute">
         <command>openbox --reconfigure</command>
@@ -285,6 +287,11 @@
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
+    <keybind key="W-Tab">
+      <action name="Execute">
+        <command>skippy-xd</command>
+      </action>
+    </keybind>
     <keybind key="A-Tab">
       <action name="NextWindow">
         <finalactions>
@@ -345,6 +352,11 @@
         <command>amixer -D pulse sset Master '5%-'</command>
       </action>
     </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+        <command>amixer set Master toggle</command>
+      </action>
+    </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
     <keybind key="W-A-Right">
       <action name="DirectionalCycleWindows">
@@ -398,12 +410,12 @@
     <!-- Keybindings for scrot -->
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f ~/Pictures/ ; gpicview ~/Pictures/$f'</command>
+        <command>scrot 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f ~ ; viewnior ~/$f'</command>
       </action>
     </keybind>
     <keybind key="A-Print">
       <action name="Execute">
-        <command>scrot -d 5 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f ~/Pictures/ ; gpicview ~/Pictures/$f'</command>
+        <command>scrot -d 5 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f ~ ; viewnior ~/$f'</command>
       </action>
     </keybind>
     <!-- Keybindings for menu -->
@@ -414,12 +426,12 @@
     </keybind>
     <keybind key="C-space">
       <action name="Execute">
-        <command>rofi -show drun -font 'Roboto Regular 8'</command>
+        <command>rofi-apps</command>
       </action>
     </keybind>
     <keybind key="A-F2">
       <action name="Execute">
-        <command>dmenu_run -i -nb '#222222' -nf '#efefef' -sb '#222222' -sf '#cb6077' -fn 'Roboto:regular:pixelsize=12'</command>
+        <command>dmenu-custom</command>
       </action>
     </keybind>
     <!-- Keybindings for split window -->

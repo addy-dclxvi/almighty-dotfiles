@@ -1,0 +1,68 @@
+# This file is read by fluxbox-generate_menu.  If you don't like a
+# default you can change it here.  Don't forget to remove the # in front
+# of the line.
+
+# Your favourite terminal. Put the command in quotes if you want to use
+# options. Put a backslash in before odd chars
+# MY_TERM='Eterm --tint \#123456'
+# MY_TERM='aterm -tint $(random_color)'
+
+# Your favourite browser. You can also specify options.
+# MY_BROWSER=mozilla
+
+# Name of the outputfile
+# MENUFILENAME=/home/addy/.fluxbox/menu
+
+# MENUTITLE=`fluxbox -version|cut -d " " -f-2`
+
+# standard url for console-browsers
+# HOMEPAGE=fluxbox.org
+
+# location with your own menu-entries
+# USERMENU=~/.fluxbox/usermenu
+
+# Put the launcher you would like to use here
+# LAUNCHER=fbrun
+# LAUNCHER=fbgm
+
+# Options for fbrun
+# FBRUNOPTIONS='-font 10x20 -fg grey -bg black -title run'
+
+# --- PREFIX'es
+# These are prefixes; So if fluxbox is installed in @PREFIX@/bin/fluxbox
+# your prefix is: @PREFIX@
+
+# fluxbox-generate already looks in /usr/X11R6, /usr, /usr/local and /opt so
+# there should be no need to specify them.
+#
+# PREFIX=@PREFIX@
+# GNOME_PREFIX=/opt/gnome
+# KDE_PREFIX=/opt/kde
+
+
+# Separate the list of background dirs with colons ':'
+# BACKGROUND_DIRS="/home/addy/.fluxbox/backgrounds/:@PREFIX@/share/fluxbox/backgrounds/:/usr/share/wallpapers"
+
+
+# --- Boolean variables.
+# Setting a variable to no'' won't help. Comment them out if you don't
+# want them. Settings are overruled by the command-line options.
+
+# Include all backgrounds in your backgrounds-directory
+# BACKGROUNDMENUITEM=yes
+
+# Include KDE-menus
+# KDEMENU=yes
+
+# Include Gnome-menus
+# GNOMEMENU=yes
+
+# Enable sudo commands
+# DOSUDO=yes
+
+# Don't cleanup the menu
+# REMOVE=no
+
+# Don't add icons to the menu
+# NO_ICON=yes
+

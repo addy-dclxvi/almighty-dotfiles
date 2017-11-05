@@ -78,6 +78,7 @@ our $CONFIG = {
 	{key => 'Name', re => qr/Openbox Configuration Manager/i, value => 'Openbox Configs'},
 	{key => 'Name', re => qr/Customize Look and Feel/i, value => 'LX Appearance'},
 	{key => 'Name', re => qr/Monitor Settings/i, value => 'LX RandR'},
+	{key => 'Name', re => qr/Oomox: customize icons and GTK themes/i, value => 'Oomox'},
 	],
 	terminalization_format  => "%s -e '%s'",
 	terminalize             => 1,
