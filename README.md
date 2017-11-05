@@ -16,7 +16,7 @@ Designed for **Arch Linux**, but can also works for another distro.
 
 ## i3-gaps : Scenes From a Memory
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-i3.jpg) <br />
-**Stuff in the screenshot** : URxvt, dunst, eLinks, and Conky piped into i3bar <br />
+**Stuff in the screenshot** : Ncmpcpp inside Urxvt, dunst, eLinks, and Conky piped into i3bar <br />
 
 ## Bspwm : Eiffel
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-bspwm.jpg) <br />
