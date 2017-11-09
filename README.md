@@ -12,7 +12,7 @@ Designed for **Arch Linux**, but can also works for another distro.
 ## Openbox : Fallen Leaf
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-openbox.jpg) <br />
 **Openbox Theme** : Arroundie (included in this repo). To get the rounded corner, You need *openbox-patched* (AUR). <br />
-**GTK Theme** : Lumiere, **Panel** : tint2, **Running Apps** : Feh, Thunar, & vim inside termite <br />
+**GTK Theme** : [Lumiere](https://github.com/addy-dclxvi/Openbox-Theme-Collections), **Panel** : tint2, **Running Apps** : Feh, Thunar, & vim inside termite <br />
 
 ## i3-gaps : Scenes From a Memory
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-i3.jpg) <br />
@@ -32,7 +32,8 @@ Designed for **Arch Linux**, but can also works for another distro.
 
 ## xfwm-standalone : Take-Off
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-xfwm.jpg) <br />
-**Stuff in the screenshot** : Polybar, Plank, and rofi <br />
+**DE** : None, **WM** : Xfwm [standalone](https://github.com/addy-dclxvi/xfwm4-standalone) <br /> 
+**Stuff in the screenshot** : Polybar, Plank, and rofi <br /> 
 
 ## Spectrwm : Hexagon
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-spectrwm.jpg) <br />
