@@ -9,7 +9,7 @@ Designed for **Arch Linux**, but can also works for another distro.
 
 ## Preview
 
-## Openbox : Fallen Leaf
+## Openbox : Vinyl
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-openbox.jpg) <br />
 **Openbox Theme** : Arroundie (included in this repo). To get the rounded corner, You need *openbox-patched* (AUR). <br />
 **GTK Theme** : [Lumiere](https://github.com/addy-dclxvi/Openbox-Theme-Collections), **Panel** : tint2, **Running Apps** : Feh, Thunar, & vim inside termite <br />
@@ -35,6 +35,10 @@ Designed for **Arch Linux**, but can also works for another distro.
 **DE** : None, **WM** : Xfwm [standalone](https://github.com/addy-dclxvi/xfwm4-standalone) <br /> 
 **Stuff in the screenshot** : Polybar, Plank, and rofi <br /> 
 
+## Dwm : Wherever I May Roam
+![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-dwm.jpg) <br />
+**Stuff in the screenshot** : dwm, dwm-status, and ncmpcpp. Terminal background colour #000507. Big credits to [Boris](https://boris241.deviantart.com/) for this setup! <br />
+
 ## Spectrwm : Hexagon
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-spectrwm.jpg) <br />
 **Stuff in the screenshot** : Conky piped into dzen2, vim inside termite, Thunar, mpdviz, and ncmpcpp <br />
@@ -51,7 +55,7 @@ And a well commented *autostart* file is included. Also including one bonus Open
 
 - **i3-gaps** <br /> Pretty stock simple config with useless gaps. My config is using Conkybar (I mean Conky piped into i3bar) as statusbar.
 
-- **Another WM** <br /> Pretty stock simple setup of herbstluftwm, Bspwm, Fluxbox, Spectrwm, & [xfwm-standalone](https://github.com/addy-dclxvi/xfwm4-standalone). Maybe next I will also post my [compiz-standalone](https://github.com/addy-dclxvi/compiz-standalone), Dwm, and Fvwm setup. If I'm not lazy :p
+- **Another WM** <br /> Pretty stock simple setup of herbstluftwm, Bspwm, Fluxbox, Spectrwm, dwm & [xfwm-standalone](https://github.com/addy-dclxvi/xfwm4-standalone). Maybe next I will also post my [compiz-standalone](https://github.com/addy-dclxvi/compiz-standalone) and Fvwm setup. If I'm not lazy :p
 
 - **obmenu-generator** <br /> My Openbox menu is generated using obmenu-generator pipemenu. To use my scheme simply copy my scheme & config, then install *obmenu-generator* from AUR and type ```obmenu-generator -p``` and reconfigure Openbox.
   
