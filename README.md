@@ -5,7 +5,8 @@
 ## Introduction
 A collection of configs to be placed in the users home directory usually prefixed with a period, hence the name dotfiles.
 This repo is actually intended for my personal backup, but everyone are welcome to use these resources. <br />
-Designed for **Arch Linux**, but can also works for another distro.
+Designed for **Arch Linux**, but can also works for another distro. <br />
+EDIT : I have migrated to Debian, mostly work
 
 ## Preview
 
