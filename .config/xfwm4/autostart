@@ -58,7 +58,10 @@ plank &
 #redshift-gtk &
 
 ## The most eye candy bar (or panel replacement) I ever tried
-polybar -c ~/.config/xfwm4/polybar top &
+#polybar -c ~/.config/xfwm4/polybar top &
+
+## Or Lemonbar
+~/.config/xfwm4/lemonbar &
 
 ## Thunar daemon mode
 #thunar --daemon &
