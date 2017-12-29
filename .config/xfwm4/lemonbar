@@ -89,8 +89,7 @@ while :; do
 		network_id=$(/sbin/iwgetid -r)
 		if [ -n "$network_id" ]
 		then
-		# echo 'N' "$(icon  2) "$network_id"";
-        echo 'N' "$(icon  2) "It Hurts When IP"";
+		echo 'N' "$(icon  2) "$network_id"";
 		else
         echo 'N' "$(icon  2) offline";
 		fi
