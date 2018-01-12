@@ -46,7 +46,7 @@ EDIT : I have migrated to Debian, mostly work
 
 ## Fvwm : Abstract
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-fvwm.jpg) <br />
-**Stuff in the screenshot** : Fvwm Pager, Minimized to Thumbnail module (neofetch, ncmpcpp, and CAVA), Thunar, vim inside termite, and dunst. I haven't pushed this, too lazy to fix some problem. This WM really drain my patience (╯°□°）╯︵ ┻━┻ <br />
+**Stuff in the screenshot** : Fvwm Pager, Minimized to Thumbnail module (Firefox, GIMP, and Evince), Thunar, vim inside termite, and ncmpcpp. I haven't pushed this, too lazy to fix some problem. This WM really drain my patience (╯°□°）╯︵ ┻━┻ <br />
 
 
 ## Containing
