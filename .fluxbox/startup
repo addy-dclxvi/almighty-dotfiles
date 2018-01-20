@@ -5,8 +5,8 @@
 # Load bitmap fonts
 xset fp+ ~/.fonts/misc &
 
-# Make ~/.scripts folder executable
-export PATH="${PATH}:$HOME/.scripts"
+# Make ~/.bin folder executable
+export PATH="${PATH}:$HOME/.bin"
 
 ## Who don't love an eye candy shadow?? Launch compton
 compton -b --config ~/.config/compton.conf &
