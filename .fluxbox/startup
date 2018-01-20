@@ -19,8 +19,8 @@ mpd &
 xsettingsd &
 
 ## Set wallpaper
-fbsetbg -f ~/.fluxbox/backgrounds/paw.jpg
-#fbsetbg -l
+#fbsetbg -f ~/.fluxbox/backgrounds/paw.jpg
+fbsetbg -l
 
 ## Clipboard Manager
 (sleep 3; clipit) &
