@@ -60,10 +60,10 @@ Mod4 F9 :Tab 9
 Mod4 F10 :Tab 10
 
 # open a terminal
-Mod4 Return :Exec termite
+Mod4 Return :Exec urxvt
 
 # open an alternative terminal
-Mod4 Shift Return :Exec urxvt
+Mod4 Shift Return :Exec xterm
 
 # open a dialog to run programs
 Mod1 F2 :Exec fbrun
@@ -155,7 +155,7 @@ OnWindowBorder Move1 :StartMoving
 Control space :Exec rofi-apps
 Mod4 space :RootMenu
 Mod4 D :Exec dmenu-custom
-Mod4 W :Exec chromium
+Mod4 W :Exec firefox
 Mod4 G :Exec geany
 Mod4 F :Exec thunar
 Print :Exec screeny

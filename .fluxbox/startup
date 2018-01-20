@@ -1,19 +1,12 @@
 #!/bin/sh
-#
-# fluxbox startup-script:
-#
-# Lines starting with a '#' are ignored.
-
-# Change your keymap:
-#xmodmap "/home/addy/.Xmodmap"
-
 # Applications you want to run with fluxbox.
 # MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
-#
-# unclutter -idle 2 &
-# wmnd &
-# wmsmixer -w &
-# idesk &
+
+# Load bitmap fonts
+xset fp+ ~/.fonts/misc &
+
+# Make ~/.scripts folder executable
+export PATH="${PATH}:$HOME/.scripts"
 
 ## Who don't love an eye candy shadow?? Launch compton
 compton -b --config ~/.config/compton.conf &
@@ -26,11 +19,20 @@ mpd &
 xsettingsd &
 
 ## Set wallpaper
-fbsetbg -f ~/.fluxbox/backgrounds/wallpaper.jpg
+fbsetbg -f ~/.fluxbox/backgrounds/paw.jpg
 #fbsetbg -l
 
+## Clipboard Manager
+(sleep 3; clipit) &
 
+## I love my wife! Upss typo, I mean wifi
+(sleep 5; nm-applet) &
 
+## Volume control for systray
+(sleep 2; volumeicon) &
+
+## Tint2 panel, better than Fluxbox Toolbar
+tint2 &
 
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.

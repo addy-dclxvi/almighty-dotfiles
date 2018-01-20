@@ -23,9 +23,9 @@ EDIT : I have migrated to Debian, mostly work
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-bspwm.jpg) <br />
 **Stuff in the screenshot** : Polybar, Weechat, and dunst <br />
 
-## Fluxbox : Polygon
+## Fluxbox : Paw Paw
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-fluxbox.jpg) <br />
-**Stuff in the screenshot** : Vim inside termite, Fluxbox Toolbar, and dunst <br />
+**Stuff in the screenshot** : Vim inside URxvt, tint2, colorpanes (included in this repo), and Thunar <br />
 
 ## Herbstluftwm : Winter
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-herbstluftwm.jpg) <br />

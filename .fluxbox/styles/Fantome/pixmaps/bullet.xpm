@@ -1,9 +1,8 @@
 /* XPM */
 static char * bullet_xpm[] = {
-"10 10 3 1",
+"10 10 2 1",
 " 	c None",
-".	c #000000",
-"+	c #FFFFFF",
+".	c #D8DEE8",
 "          ",
 "          ",
 "          ",
