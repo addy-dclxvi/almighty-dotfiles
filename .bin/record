@@ -1,2 +1,9 @@
 #!/bin/bash
-ffmpeg -video_size 1366x768 -framerate 25 -f x11grab -i :0.0+0,0 output.mp4
+ffmpeg -f x11grab \
+-s 1366x768 \
+-an -i :0.0 \
+-c:v libvpx \
+-b:v 5M \
+-crf 10 \
+-quality realtime \
+-y ~/Videos/record.mkv
