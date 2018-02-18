@@ -132,7 +132,7 @@ But sometimes the thumbnail doesn't look nice, add ```-n``` flag to skip embed t
 By the way I use Dream Theater (best band) song, [The Bigger Picture](https://www.youtube.com/watch?v=WpgNV4Nvetg) for the example above. It's a great song, I recommend You to listen to it. 
 The minute 5 to the end is one of the best part of the song ever recorded in human history. It sums up every emotion then unleash it. <br />
 
-- **~/.executor** <br /> A script to generate status for tint2 (best panel) executor. 
+- **~/.executor** <br /> A collections of scripts to generate status for tint2 (best panel) executor. 
 Example : tint2 in my Openbox screenshoot preview above is using these script to display weather and now-playing.
 But You can also use it for Polybar custom script, Lemonbar feeder, dzen2 feeder, Conky execi, or pipe it to Dunst, just use your creativity.
 And don't forget to read the script before use.
