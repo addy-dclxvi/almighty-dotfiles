@@ -238,7 +238,7 @@ My config also contains some useful alias to hide/unhide nicklist and time.
 
 - My screen resolution is 1366x768 :cry:
 
-- All of my setup are using Lumiere and Fantome GTK Theme. Get them from my [GTK Theme Collections(https://github.com/addy-dclxvi/gtk-theme-collections) repo.
+- All of my setup are using Lumiere and Fantome GTK Theme. Get them from my [GTK Theme Collections](https://github.com/addy-dclxvi/gtk-theme-collections) repo.
 
 - My username at my machine is *addy@freako*, so some of these configs path are pointing to ```/home/addy```. Replace them with your own username.
 
