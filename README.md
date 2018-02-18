@@ -101,7 +101,7 @@ It's important if You want to use my configurations. Because I centralized most 
 Exporting them to ```$PATH``` make the custom script in those folders can be launched without writing the absolute path. 
 For example to launch Rofi, I just need to make a keybind to execute ```rofi-apps```, instead of ```/home/addy/.utilty/rofi-apps```.
 
-- **Rofi (best launcher)** <br /> My Rofi looks like this <br />
+- **Rofi (Best Launcher)** <br /> My Rofi looks like this <br />
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-rofi.jpg) <br /> 
 My rofi colour is set in *~/.Xresources*, but it just an #INCLUDE command. The actual colour configuration is in *~/.xrdb/rofi*, You will understand if You look at it. 
 And the launch configuration is in *~/.utility/rofi-apps*. If You use my *.profile* or *.xsessionrc*, just make a keybind to execute ```rofi-apps``` to make your Rofi launched with appearance like this. <br /> <br /> 
@@ -264,6 +264,10 @@ For iconic fonts, depends on what You see inside the config file.
 - My screenshooter is scrot.
 
 - My music player is ncmpcpp (best music player) & Audacious (only for double click mp3 file, I mainly using ncmpcpp), my media player is MPV.
+
+- My media controller is mpc. So, my Play, Pause, Next, and Previous keybinds are executing mpc.
+
+- My volume controller is amixer, So, my Volume Up, Volume Down, and Mute/Unmute keybinds are executing amixer.
 
 - My image viewer is Viewnior.
 
