@@ -279,7 +279,7 @@ For iconic fonts, depends on what You see inside the config file.
 Most of the configurations are well-commented. Make sure You read them.
 
 ## Tips & Tricks
-Some tricks I frequently use for my wallpaper. Ssssstttt this is secret :wink: <br />
+Some tricks I frequently use for my wallpaper. Ssssstttt these are secret :wink: <br />
 
 - **Linear Vignette** <br /> 
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/tips1.jpg) <br /> 
