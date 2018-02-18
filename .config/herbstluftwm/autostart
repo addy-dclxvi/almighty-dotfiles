@@ -49,7 +49,7 @@ hc keybind XF86AudioPlay spawn mpc toggle
 hc keybind XF86AudioStop spawn mpc stop
 
 ## screenshot
-hc keybind Print spawn scrot 'scrot_%Y-%m-%d-%S_$wx$h.png'
+hc keybind Print spawn screeny
 
 ## change window focus
 hc keybind $Mod-Left  focus left

@@ -1,0 +1,51 @@
+
+[alsa]
+mixer-element=Master
+
+[audacious]
+record=FALSE
+
+[audgui]
+about_win=707,304,623,180
+filebrowser_win=345,142,672,480
+filesel_path=/media/addy/Media/musik/Dream Theater/04 DREAM THEATRE - Falling into infinity
+info_win=399,181,560,398
+
+[gtkui]
+column_widths=10,200,234,10,175,175,10,100,29,53,275,275,275,10
+infoarea_visible=FALSE
+menu_visible=FALSE
+player_height=414
+player_width=832
+player_x=267
+player_y=148
+playlist_columns=artist title length
+playlist_headers=FALSE
+playlist_tabs_visible=FALSE
+statusbar_visible=FALSE
+
+[gtkui-layout]
+item0_name=Search Tool
+item0_pos=0,-1,-1,192,150
+item1_name=Playlist Manager
+item1_pos=-1,0,522,284,188
+item2_name=LyricWiki Plugin
+item2_pos=-1,0,0,284,188
+item3_name=Blur Scope
+item3_pos=-1,0,0,284,188
+item4_name=OpenGL Spectrum Analyzer
+item4_pos=-1,0,0,284,188
+item5_name=Spectrum Analyzer
+item5_pos=-1,0,0,284,188
+item6_name=Album Art
+item6_pos=-1,101,0,159,164
+item_count=7
+
+[skins]
+mainwin_font=Noto Sans 8
+playlist_font=Noto Sans 8
+skin=/usr/share/audacious/Skins/Classic
+vis_type=1
+
+[skins-layout]
+albumart=0,522,288,192

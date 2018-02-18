@@ -15,7 +15,7 @@ visualizer_color = cyan, green, yellow, magenta, red
 #system_encoding = ""
 #playlist_disable_highlight_delay = 5
 #message_delay_time = 5
-song_list_format = "                               {{%a - %t}|{%f}}{$R%l}"
+song_list_format = "                           {{%a - %t}|{%f}}{$R%l}"
 #song_status_format = {%a - %t}|{%f}
 #song_status_format = "{{%a{ "%b"{ (%y)}} - }{%t$/b}}|{$b%f$/b}"
 song_status_format = "{{%a{ $2//$9 %b{, %y}} $2//$9 }{%t$/b}}|{$b%f$/b}"
@@ -108,8 +108,8 @@ active_column_color = red
 window_border_color = yellow
 
 ## you have dunst? use this 
-#execute_on_song_change = ~/.ncmpcpp/art-light.sh && notify-send "Now Playing ♫" "$(mpc current)"
-execute_on_song_change = ~/.ncmpcpp/art-dark.sh && notify-send "Now Playing ♫" "$(mpc current)"
+execute_on_song_change = ~/.ncmpcpp/art-light.sh && notify-send "Now Playing ♫" "$(mpc current)"
+#execute_on_song_change = ~/.ncmpcpp/art-dark.sh && notify-send "Now Playing ♫" "$(mpc current)"
 
 ## you don't have dunst? maybe another notification daemon would work. doesn't work? use this to disable sending notification attemps
 #execute_on_song_change = ~/.ncmpcpp/art-light.sh

@@ -1,14 +1,21 @@
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/usr/share/oh-my-zsh/
+  export ZSH=/home/addy/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="clair"
+TERM=xterm
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -30,7 +37,7 @@ DISABLE_AUTO_UPDATE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -38,7 +45,7 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -46,13 +53,15 @@ DISABLE_AUTO_UPDATE="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=~/.oh-my-zsh
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+#plugins=(
+#  git
+#)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,7 +94,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
 ## Some useful alias to make your life easier :)
 ##
 
@@ -95,6 +103,33 @@ alias lsf="ls --group-directories-first --color=auto"
 ## ls with color
 alias ls='ls --color=auto'
 
+## search package in the repository
+alias search="apt-cache search"
+
+## install package
+alias install="sudo apt-get install --no-install-recommends"
+
+## upgrade package
+alias upgrade="sudo apt-get upgrade"
+
+## update package
+alias update="sudo apt-get update"
+
+## remove package
+alias remove="sudo apt-get remove"
+
+## completely remove package
+alias purge="sudo apt-get remove --purge"
+
+## clean cache
+alias autoclean="sudo apt-get autoclean"
+
+## autoremove unneeded dependencies
+alias autoremove="sudo apt-get autoremove"
+
+## reconfigure package
+alias reconfigure="sudo dpkg-reconfigure"
+
 ## View and set wallpaper with feh
 alias feh-view="feh --scale-down --auto-zoom"
 alias feh-set="feh --bg-fill"
@@ -102,30 +137,14 @@ alias feh-set="feh --bg-fill"
 ## Refresh font cache
 alias font-refresh="fc-cache -fv"
 
-## ---- Not used anymore, I found that put this in ~/.bin is more effective ----
-## ncmpcpp with album-art
-#alias ncmpcpp-art='urxvt -hold -g 92x10 -e bash -c "ncmpcpp -c ~/.ncmpcpp/config-art" &'
-## alternative way
-#alias ncmpcpp-art="ncmpcpp -c .ncmpcpp/config-art"
-
-## start termite with light config
-#alias termite-light="termite -c ~/.config/termite/config-light &"
-## -----------------------------------------------------------------------------
-
-## download mp3 from youtube, ssst this is illegal actually
-alias ytmp3="youtube-dl --extract-audio --audio-format mp3"
-
 ## git clone depth 1, who needs to clone full repository if you can clone the top layer only
 alias clone="git clone --depth 1"
 
-## list all packages that's installed by me. Without packages that only installed as dependency. The dependencies will be installed automatically afterall (if needed).
-alias pkglist="pacman -Qqe"
-
-## list all installed packages, every packages
-alias pkglist-full="pacman -Qq"
-
-## remove orphaned packages. if the result is "no target specified". you have a clean packages :)
-alias pkglist-orphan="sudo pacman -Rns $(pacman -Qtdq)"
+## merge Xresources, useful for urxvt & rofi theming
+alias merge="xrdb ~/.Xresources"
 
 ## merge Xresources, useful for urxvt & rofi theming
-alias merge="xrdb -merge ~/.Xresources"
+alias merge="xrdb ~/.Xresources"
+
+## please remove this line if you're under 18
+alias porn="mpv 'http://www.pornhub.com/random'"

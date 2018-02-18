@@ -1,0 +1,2 @@
+#! /bin/sh
+notify-send "Battery Level" "$(battery -i)"

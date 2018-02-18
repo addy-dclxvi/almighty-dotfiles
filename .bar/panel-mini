@@ -1,0 +1,87 @@
+#!/bin/bash
+
+transparent='#00000000'
+background='#2f343f'
+foreground='#d8dee8'
+color0='#474c57'
+color1='#bf616a'
+color5='#b48ead'
+
+
+PANEL_FIFO=/tmp/panel-fifo
+HEIGHT=24
+WIDTH=480
+XOFFSET=874
+YOFFSET=12
+DIM=${WIDTH}x${HEIGHT}+${XOFFSET}+${YOFFSET}
+FONT0="-lucy-tewi-medium-r-normal-*-11-90-100-100-c-60-iso10646-1"
+FONT1="-wuncon-siji-medium-r-normal-*-10-100-75-75-c-80-iso10646-1"
+WM_NAME=bspwm_panel
+
+if xdo id -a "$WM_NAME" > /dev/null
+then
+	  printf "%s\n" "The panel is already running." >&2
+	  exit 1
+fi
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+## format an icon
+icon() {
+    case $2 in
+        0) printf "%s" "%{F$color5}${1}%{F-}";;
+    esac
+}
+
+## write pipe
+# wm
+while :; do
+    desk=$(xdotool get_desktop)
+    echo 'W'"$(($desk + 1))"
+    sleep 0.5;
+done > $PANEL_FIFO &
+
+# music player
+while :; do
+    status=$(mpc status | sed -n '2p')
+    case "$status" in
+        \[play*)    echo 'M'"%{A:popup-top:}%{A3:pkill n30f:}$(icon  0) $(mpc current)%{A}%{A}";;
+        \[paused*)  echo 'M'"%{A:popup-top:}%{A3:pkill n30f:}$(icon  0) $(mpc current)%{A}%{A}";;
+        *)          echo 'M'"$(icon  0) Stopped";;
+    esac
+    sleep 2;
+done > $PANEL_FIFO &
+		
+# clock
+while :; do
+    echo 'C'"$(date '+%H:%M')";
+    sleep 30;
+done > $PANEL_FIFO &
+
+
+## read pipe
+while read -r line < "$PANEL_FIFO" ; do
+    case $line in
+        C*)
+            # clock output
+            clock="%{F$foreground}%{B$color5} ${line#?} %{B-}%{F-}";;
+        M*)
+            # music output
+            music="%{F$foreground}%{B$background} ${line#?} %{B-}%{F-}";;
+        W*)
+            # wm
+            wm="%{F$foreground}%{B$color1} ${line#?} %{B-}%{F-}";;
+    esac
+    printf "%s\n" "%{r}${wm}${music}${clock}"
+done |\
+
+    lemonbar -n "$WM_NAME" \
+             -g "$DIM" \
+             -f "$FONT0" -f "$FONT1" \
+             -F "$foreground" -B "$transparent" |
+    sh &
+
+wait

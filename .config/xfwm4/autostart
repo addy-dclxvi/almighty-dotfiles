@@ -61,7 +61,7 @@ plank &
 #polybar -c ~/.config/xfwm4/polybar top &
 
 ## Or Lemonbar
-~/.config/xfwm4/lemonbar &
+panel-darkred &
 
 ## Thunar daemon mode
 #thunar --daemon &

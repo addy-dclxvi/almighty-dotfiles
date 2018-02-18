@@ -1,63 +1,38 @@
 #! /bin/sh
 
-###############
-## autostart ##
-###############
-
-## sometimes sxhkd doesn't obey the reload command
-## so kill him, and show him who is the boss
-pkill sxhkd
-sxhkd &
-
-## start polybar, the best invention in the ricing world
-pkill polybar
-polybar -c ~/.config/bspwm/polybar top &
-
-# just in case you need lemonbar
-#~/.config/bspwm/lemonbar &
-
-## music is my only friend :(
-mpd &
-
-## reload the xsettingsd, a minimal x settings daemon
-pkill xsettingsd
-xsettingsd &
-
-## set the wallpaper
-feh --bg-fill ~/.config/bspwm/wallpaper.jpg
-
-## reload compton
-pkill compton
-compton -b &
-
-## reload the cursor theme
-xsetroot -cursor_name left_ptr
+#                    ___           ___         ___           ___
+#     _____         /  /\         /  /\       /__/\         /__/\
+#    /  /::\       /  /:/_       /  /::\     _\_ \:\       |  |::\
+#   /  /:/\:\     /  /:/ /\     /  /:/\:\   /__/\ \:\      |  |:|:\  
+#  /  /:/~/::\   /  /:/ /::\   /  /:/~/:/  _\_ \:\ \:\   __|__|:|\:\
+# /__/:/ /:/\:| /__/:/ /:/\:\ /__/:/ /:/  /__/\ \:\ \:\ /__/::::| \:\ 
+# \  \:\/:/~/:/ \  \:\/:/~/:/ \  \:\/:/   \  \:\ \:\/:/ \  \:\~~\__\/ 
+#  \  \::/ /:/   \  \::/ /:/   \  \::/     \  \:\ \::/   \  \:\
+#   \  \:\/:/     \__\/ /:/     \  \:\      \  \:\/:/     \  \:\
+#    \  \::/        /__/:/       \  \:\      \  \::/       \  \:\
+#     \__\/         \__\/         \__\/       \__\/         \__\/
 
 ###################
 ## configuration ##
 ###################
 
 ## workspace name
-bspc monitor -d '' '' '' '' '' '' '' ''
-#bspc monitor -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
+## font needed wuncon-siji
+bspc monitor -d '' '' '' '' '' '' '' ''
 
 ## common bspwm configuration
 bspc config border_width        2
-bspc config window_gap         	8
+bspc config window_gap         	16
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+bspc config gapless_monocle      false
 bspc config focus_follows_pointer true
 bspc config top_padding 24
-bspc config bottom_padding 0
-bspc config left_padding 0
-bspc config right_padding 0
 
 
 ## color settings
-bspc config focused_border_color "#ffffff" 
+bspc config focused_border_color "#d8dee8" 
 bspc config normal_border_color "#2f343f"
-bspc config border_width 2
 
 
 ##################
@@ -65,11 +40,11 @@ bspc config border_width 2
 ##################
 
 ## workspace 1 (labs)
-bspc rule -a Termite desktop='^1' follow=on focus=on
 bspc rule -a URxvt desktop='^1' follow=on focus=on
+bspc rule -a Xfce4-terminal desktop='^1' follow=on focus=on
 
 ## workspace 2 (web browsers)
-bspc rule -a Firefox desktop='^2' follow=on focus=on
+bspc rule -a Firefox-esr desktop='^2' follow=on focus=on
 bspc rule -a Chromium desktop='^2' follow=on focus=on
 bspc rule -a Opera desktop='^2' follow=on focus=on
 bspc rule -a Transmission-gtk desktop='^2' follow=on focus=on
@@ -80,14 +55,15 @@ bspc rule -a File-roller desktop='^3' follow=on focus=on
 
 ## workspace 4 (text-editors)
 bspc rule -a Geany desktop='^4' follow=on focus=on
+bspc rule -a libreoffice-startcenter desktop='^4' follow=on focus=on
 bspc rule -a libreoffice desktop='^4' follow=on focus=on
-bspc rule -a Soffice='^4' follow=on focus=on
-bspc rule -a libreoffice-base='^4' follow=on focus=on
-bspc rule -a libreoffice-calc='^4' follow=on focus=on
-bspc rule -a libreoffice-draw='^4' follow=on focus=on
-bspc rule -a libreoffice-impress='^4' follow=on focus=on
-bspc rule -a libreoffice-math='^4' follow=on focus=on
-bspc rule -a libreoffice-writer='^4' follow=on focus=on
+bspc rule -a Soffice desktop='^4' follow=on focus=on
+bspc rule -a libreoffice-base desktop='^4' follow=on focus=on
+bspc rule -a libreoffice-calc desktop='^4' follow=on focus=on
+bspc rule -a libreoffice-draw desktop='^4' follow=on focus=on
+bspc rule -a libreoffice-impress desktop='^4' follow=on focus=on
+bspc rule -a libreoffice-math desktop='^4' follow=on focus=on
+bspc rule -a libreoffice-writer desktop='^4' follow=on focus=on
 bspc rule -a Wps desktop='^4' follow=on focus=on
 bspc rule -a Et desktop='^4' follow=on focus=on
 bspc rule -a Wpp desktop='^4' follow=on focus=on
@@ -124,11 +100,66 @@ bspc rule -a Lxrandr desktop='^8' state=floating follow=on
 bspc rule -a Arandr desktop='^8' state=floating follow=on
 
 ## need to be floating
-bspc rule -a URxvt state=floating follow=on
 bspc rule -a Audacious state=floating follow=on
 bspc rule -a Viewnior state=floating follow=on
 bspc rule -a feh state=floating follow=on
 bspc rule -a Gpicview state=floating follow=on
 
-## don't manage my conky :/
-bspc rule -a Conky manage=off
+## don't manage my conky & systemtray :/
+bspc rule -a Conky state=floating manage=off
+bspc rule -a stalonetray state=floating manage=off
+
+###############
+## autostart ##
+###############
+
+# Load bitmap fonts
+xset fp+ ~/.fonts/misc &
+
+## reload compton
+pkill compton
+compton -b &
+
+# system tray
+pkill stalonetray
+stalonetray &
+
+# network applet
+nm-applet &
+
+# clipboard manager
+pkill clipit
+clipit &
+
+# volume icon
+pkill volumeicon
+volumeicon &
+
+# keybind daemon
+pkill sxhkd
+sxhkd &
+
+## music is my only friend :(
+mpd &
+
+## reload the xsettingsd, a minimal x settings daemon
+pkill xsettingsd
+xsettingsd &
+
+## set the wallpaper
+feh --bg-fill ~/.wallpaper.jpg
+
+## load dunst
+pkill dunst
+dunst &
+
+## reload the cursor theme
+xsetroot -cursor_name left_ptr
+
+## load panel script
+pkill panel-bspwm
+panel-bspwm &
+
+## or polybar?
+#pkill polybar
+#polybar -c ~/.config/bspwm/polybar top &

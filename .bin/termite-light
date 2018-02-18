@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# Start termite with white color scheme
-# Execute 'termite-light' from dmenu
-
-termite -c ~/.config/termite/config-light

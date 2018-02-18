@@ -1,0 +1,138 @@
+#!/bin/bash
+
+background='#2f343f'
+foreground='#d8dee8'
+color4='#81a1c1'
+color1='#bf616a'
+
+# Import the colors (sometimes)
+#. "${HOME}/.cache/wal/colors.sh"
+
+PANEL_FIFO=/tmp/panel-fifo
+HEIGHT=28
+WIDTH=1366
+XOFFSET=0
+YOFFSET=0
+DIM=${WIDTH}x${HEIGHT}+${XOFFSET}+${YOFFSET}
+FONT0="-lucy-tewi-medium-r-normal-*-11-90-100-100-c-60-iso10646-1"
+FONT1="-wuncon-siji-medium-r-normal-*-10-100-75-75-c-80-iso10646-1"
+WM_NAME=panel
+
+if xdo id -a "$WM_NAME" > /dev/null
+then
+	  printf "%s\n" "The panel is already running." >&2
+	  exit 1
+fi
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+## format an icon
+icon() {
+    case $2 in
+        0) printf "%s" "%{F$color1}${1}%{F-}";;
+        1) printf "%s" "%{F$color4}${1}%{F-}";;
+    esac
+}
+
+## write pipe
+# wm
+while :; do
+    desk=$(xdotool get_desktop)
+    wm=$(($desk + 1))
+    case "$wm" in
+        1) echo 'W' " $(icon  0)               ";;
+        2) echo 'W' "   $(icon  0)             ";;
+        3) echo 'W' "     $(icon  0)           ";;
+        4) echo 'W' "       $(icon  0)         ";;
+        5) echo 'W' "         $(icon  0)       ";;
+        6) echo 'W' "           $(icon  0)     ";;
+        7) echo 'W' "             $(icon  0)   ";;
+        8) echo 'W' "               $(icon  0) ";;
+    esac
+    sleep 0.5;
+done > $PANEL_FIFO &
+
+# music player
+while :; do
+    status=$(mpc status | sed -n '2p')
+    case "$status" in
+        \[play*)    echo 'M' "$(icon  0) $(mpc current)";;
+        \[paused*)  echo 'M' "$(icon  0) $(mpc current)";;
+        *)          echo 'M' "$(icon  0) Stopped";;
+    esac
+    sleep 2;
+done > $PANEL_FIFO &
+
+# net
+while :; do
+		network_id=$(/sbin/iwgetid -r)
+		if [ -n "$network_id" ]
+		then
+		echo 'N' "$(icon  0) "$network_id"";
+		else
+        echo 'N' "$(icon  0) offline";
+		fi
+		sleep 15;
+done > $PANEL_FIFO &
+
+# bat
+while :; do
+		battery_status=$(cat /sys/class/power_supply/BAT1/status)
+		battery_percent=$(cat /sys/class/power_supply/BAT1/capacity)
+		case "$battery_status" in
+			Charging) echo 'B' "$(icon  0) ${battery_percent}";;
+			Discharging)
+			if [ "$battery_percent" -gt 80 ]
+            then
+            echo 'B' "$(icon  0) ${battery_percent}"
+            elif [ "$battery_percent" -gt 30 ]
+            then
+            echo 'B' "$(icon  0) ${battery_percent}"
+            else
+            echo 'B' "$(icon  0) ${battery_percent}"
+            fi
+            ;;
+        Unknown|Full) echo 'B' "$(icon  0) 100%";;
+    esac
+    sleep 30;
+done > $PANEL_FIFO &
+		
+# clock
+while :; do
+    echo 'C' "$(icon  0) $(date '+%H:%M')";
+    sleep 30;
+done > $PANEL_FIFO &
+
+
+## read pipe
+while read -r line < "$PANEL_FIFO" ; do
+    case $line in
+        C*)
+            # clock output
+            clock="%{F$foreground}%{B$background} ${line#?} %{B-}%{F-}";;
+        M*)
+            # music output
+            music="%{F$foreground}%{B$background} ${line#?} %{B-}%{F-}";;
+        W*)
+            # wm
+            wm="%{F$foreground}%{B$background} ${line#?} %{B-}%{F-}";;
+        B*)
+            # bat
+            bat="%{F$foreground}%{B$background} ${line#?} %{B-}%{F-}";;
+        N*)
+            # net
+            net="%{F$foreground}%{B$background} ${line#?} %{B-}%{F-}";;
+    esac
+    printf "%s\n" "%{l}${wm}%{c}${music}%{r}${net}${bat}${clock}  "
+done |\
+
+    lemonbar -n "$WM_NAME" \
+             -g "$DIM" \
+             -f "$FONT0" -f "$FONT1" \
+             -F "$foreground" -B "$background" |
+    sh &
+
+wait

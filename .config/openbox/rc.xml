@@ -410,12 +410,7 @@
     <!-- Keybindings for scrot -->
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f ~ ; viewnior ~/$f'</command>
-      </action>
-    </keybind>
-    <keybind key="A-Print">
-      <action name="Execute">
-        <command>scrot -d 5 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f ~ ; viewnior ~/$f'</command>
+        <command>screeny</command>
       </action>
     </keybind>
     <!-- Keybindings for menu -->

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+dmenu_run -b -i \
+-p Search \
+-fn "Noto Sans:size=8" \
+-w 420 -h 20 \
+-x 24 -y 48

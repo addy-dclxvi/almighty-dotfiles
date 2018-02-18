@@ -1,26 +1,37 @@
+#      ___           ___           ___           ___          _____
+#     /  /\         /__/|         /__/\         /__/|        /  /::\ 
+#    /  /:/_       |  |:|         \  \:\       |  |:|       /  /:/\:\ 
+#   /  /:/ /\      |  |:|          \__\:\      |  |:|      /  /:/  \:\  
+#  /  /:/ /::\   __|__|:|      ___ /  /::\   __|  |:|     /__/:/ \__\:|
+# /__/:/ /:/\:\ /__/::::\____ /__/\  /:/\:\ /__/\_|:|____ \  \:\ /  /:/
+# \  \:\/:/~/:/    ~\~~\::::/ \  \:\/:/__\/ \  \:\/:::::/  \  \:\  /:/
+#  \  \::/ /:/      |~~|:|~~   \  \::/       \  \::/~~~~    \  \:\/:/
+#   \__\/ /:/       |  |:|      \  \:\        \  \:\         \  \::/
+#     /__/:/        |  |:|       \  \:\        \  \:\         \__\/  
+#     \__\/         |__|/         \__\/         \__\/
+
+     
 ######################
 ##  COMMON COMMAND  ##
 ######################
 
 ## launch terminal
 super + Return
-	termite	
+	urxvt	
 
 ## launch alternative terminal
-super + shift + Return
-	urxvt
+#super + shift + Return
+#	termite
 
 ## volume control
 XF86Audio{RaiseVolume,LowerVolume,Mute}
-	amixer {-D pulse sset Master '5%+',-D pulse sset Master '5%-',set Master toggle}
-
+	amixer {-c 0 set PCM 4dB+,-c 0 set PCM 4dB-,set Master toggle}
+	
 ## music control
 XF86Audio{Next,Prev,Play,Stop}
 	mpc {next,prev,toggle,stop}
 
 ## program launcher
-super + shift + d
-	dmenu_run -b -i -p Search -fn "Noto Sans:size=8" -w 480 -h 20 -x 20 -y 20
 super + d
 	rofi -modi run,drun,window -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font "Noto Sans 8"
 
@@ -32,9 +43,9 @@ super + s
 super + shift + f
 	thunar
 	
-## launch chromium
+## launch firefox
 super + shift + w
-	chromium
+	firefox
 	
 ## launch geany
 super + shift + g
@@ -42,7 +53,7 @@ super + shift + g
 
 ## fancy lockscreen :)
 super + l
-	i3lock-fancy
+	i3lock
 	
 ## take a screenshot
 Print
@@ -53,20 +64,21 @@ Print
 ##  BSPWM COMMANDS  ##
 ######################
 
-## aesthetics mode
-super + a
-	~/.config/bspwm/aesthectics
 
 ## quit bspwm normally
 super + control + Escape
-	bspc quit
+	pkill panel; bspc quit
 
 ## reload bspwm config
 super + shift + BackSpace
-	~/.config/bspwm/bspwmrc
+	pkill panel;~/.config/bspwm/bspwmrc
 
 ## close app
 super + Escape
+	bspc node -c
+
+## close app (common way)
+alt + F4
 	bspc node -c
 
 ## he disobey you? kill!
@@ -91,11 +103,11 @@ super + r
 
 ## toggle beetwen pseudo-tiled & tiled
 super + p
-    bspc node -t "~"{pseudo_tiled,tiled}
+    bspc node -t pseudo_tiled
 
 ## toggle beetwen floating & tiled
 super + space
-    bspc node -t "~"{floating,tiled}
+    bspc node -t floating
     
 ## just in case you want to go back to tiled mode but the toggle keybind doesn't work
 super + t
@@ -115,8 +127,10 @@ alt + shift + Tab
 
 ## focus the next/previous desktop in the current monitor
 ## i'm using control + alt + left/right. you know what they say? old habit, they die hard :D
-ctrl + alt + {Left,Right}
-	bspc desktop -f {prev.local,next.local}
+ctrl + alt + Left
+	bspc desktop -f prev.local
+ctrl + alt + Right
+	bspc desktop -f next.local
 
 ## focus the last node/desktop
 super + {Tab,grave}
@@ -132,12 +146,12 @@ super + {1-8}
 
 ## expanding windows
 super + ctrl + {Left,Right,Up,Down}
-	bspc node -z {left -5 0,right 5 0,top 0 -5,bottom 0 5}
+	bspc node -z {left -10 0,right 10 0,top 0 -10,bottom 0 10}
 	
 ## shrinking windows
 super + alt + {Left,Right,Up,Down}
-	bspc node -z {left 5 0,right -5 0,top 0 5,bottom 0 -5}
+	bspc node -z {left 10 0,right -10 0,top 0 10,bottom 0 -10}
 	
 ## move floating windows
-ctrl + shift + {Left,Down,Up,Right}
+alt + shift + {Left,Down,Up,Right}
 	bspc node -v {-10 0,0 10,0 -10,10 0}

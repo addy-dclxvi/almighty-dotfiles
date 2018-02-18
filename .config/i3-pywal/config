@@ -1,0 +1,135 @@
+# set modifier
+set $mod Mod4
+set $alt Mod1
+
+# set font
+font pango:monospace 8
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+#autostart
+exec --no-startup-id xset fp+ ~/.fonts/misc &
+exec --no-startup-id wal -i ~/.config/i3/wallpaper.jpg
+
+# start a terminal
+bindsym $mod+Return exec urxvt
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec dmenu-pywal
+bindsym $mod+Shift+d exec rofi-apps
+
+#change volume
+bindsym XF86AudioRaiseVolume exec amixer -c 0 set PCM 2dB+
+bindsym XF86AudioLowerVolume exec amixer -c 0 set PCM 2dB-
+bindsym XF86AudioMute exec amixer set Master toggle
+
+# music control
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioStop exec mpc stop
+
+# common apps keybinds
+bindsym Print exec screeny
+bindsym $mod+Shift+w exec firefox
+bindsym $mod+Shift+f exec thunar
+bindsym $mod+Shift+g exec geany
+
+# kill focused window
+bindsym $mod+Escape kill
+bindsym $alt+F4 kill
+
+# change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout split
+bindsym $mod+s layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+Shift+space focus mode_toggle
+
+# switch to workspace
+bindsym $alt+Control+Right workspace next
+bindsym $alt+Control+Left workspace prev
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+
+# reload the configuration file
+bindsym $mod+Shift+BackSpace reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Really, exit?' -b 'Yes' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# panel
+bar {
+        i3bar_command pkill lemonbar;panel-pywal
+}
+
+# window rules
+for_window [class=".*"] border pixel 2
+for_window [class=Viewnior|feh|Audacity|File-roller] floating enable
+for_window [class=Lxappearance|Lxtask|Pavucontrol] floating enable
+
+# color from pywal
+set_from_resource $bg i3wm.color0 #2f343f
+set_from_resource $fg i3wm.color7 #d8dee8
+set_from_resource $c1 i3wm.color1 #bf616a
+set_from_resource $c3 i3wm.color3 #ebcb8b
+set_from_resource $c5 i3wm.color5 #81a1c1
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $c1
+client.focused_inactive $bg     $bg     $fg  $bg       $c5
+client.unfocused        $bg     $bg     $fg  $bg       $c5
+client.urgent           $bg     $bg     $fg  $bg       $c3
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+client.background       $bg

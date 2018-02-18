@@ -1,0 +1,4 @@
+#!/bin/bash
+
+scrot 'Cheese_%a-%d%b%y_%H.%M.png' \
+-e 'mv $f ~/Pictures ; viewnior ~/Pictures/$f'

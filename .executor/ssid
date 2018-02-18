@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# A simple script to display wifi name
+# 'ssid -i' = with icon, 'ssid' = text only
+# Cheers!
+# Addy
+
+SSID_NAME=$(/sbin/iwgetid -r)
+
+if [[ "${SSID_NAME}" != "" ]]; then
+	if  [[ $1 = "-i" ]]; then
+    #echo "  ${SSID_NAME}"
+    #echo "  ${SSID_NAME}"
+    echo "  Silence of The LANs"
+	else
+    echo "${SSID_NAME}"
+	fi
+else
+echo "Not Connected"
+fi

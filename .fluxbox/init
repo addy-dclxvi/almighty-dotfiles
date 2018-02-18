@@ -65,7 +65,7 @@ session.cacheMax:	200
 session.tabPadding:	0
 session.cacheLife:	5
 session.configVersion:	13
-session.styleFile:	/home/addy/.fluxbox/styles/Fantome
+session.styleFile:	/home/addy/.fluxbox/styles/Tourmente
 session.styleOverlay:	/home/addy/.fluxbox/overlay
 session.slitlistFile:	/home/addy/.fluxbox/slitlist
 session.doubleClickInterval:	250

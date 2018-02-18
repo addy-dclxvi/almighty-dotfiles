@@ -1,118 +1,52 @@
 ! ------------------------------------------------------------------------------
-! Nord Color Scheme
-! By Arctic Ice Studio 
+! Import Colour from ~/.xrdb
 ! ------------------------------------------------------------------------------
 
-! special
-*.foreground:   #d8dee8
-*.background:   #2f343f
-*.cursorColor:  #b48ead
-
-! black
-*.color0  : #4b5262
-*.color8  : #434a5a
-
-! red
-*.color1  : #bf616a
-*.color9  : #b3555e
-
-! green
-*.color2  : #a3be8c
-*.color10 : #93ae7c
-
-! yellow
-*.color3  : #ebcb8b
-*.color11 : #dbbb7b
-
-! blue
-*.color4  : #81a1c1
-*.color12 : #7191b1
-
-! magenta
-*.color5  : #b48ead
-*.color13 : #a6809f
-
-! cyan
-*.color6  : #93e5cc
-*.color14 : #7bcdb4
-
-! white
-*.color7  : #e5e9f0
-*.color15 : #d1d5dc
-
+#include ".xrdb/color/nord"
+#include ".xrdb/rofi/nord"
+#include ".xrdb/dmenu/nord"
+#include ".xrdb/fonts/tewi"
 
 ! ------------------------------------------------------------------------------
 ! URxvt configs
 ! ------------------------------------------------------------------------------
 
-! general settings
-URxvt*saveline:         15000
+URxvt.geometry: 		72x18
+URxvt*letterSpace: 	    0
+URxvt.lineSpace: 		0
+URxvt*internalBorder:   24
+URxvt*externalBorder:   0
+URxvt*depth:            32
+URxvt*saveline:         2000
 URxvt*termName:         rxvt-256color
 URxvt*iso14755:         false
-
-! appearance
-URxvt*depth:            32
-!URxvt*background:      rgba:0000/0000/0000/AAAA
-!URxvt*background:      [100]#2f343f
-URxvt.underlineColor:   #81a1c1
-URxvt.highlightColor:   #81a1c1
-URxvt.throughColor:     Blue
-URxvt*cursorColor:      #b48ead
-URxvt*cursorColor2:     Magenta
 URxvt*scrollBar:        false
 URxvt*scrollBar_right:  false
-URxvt*internalBorder:   0
-URxvt*externalBorder:   0
-URxvt.colorIT:      	#a3be8c
-URxvt.colorBD:      	#e5e9f0
-URxvt.colorUL:      	#81a1c1
-URxvt.geometry: 		92x16
-URxvt.internalBorder:	16
-
-! fonts
-URxvt*letterSpace: 	    		0
-URxvt.lineSpace: 				0
-!Xft.size:						8
-URxvt*font:                 	xft:M+ 1mn:regular:size=8
-URxvt*imFont:               	xft:M+ 1mn:regular:size=8
-URxvt*boldFont:             	xft:M+ 1mn:bold:size=8
-URxvt*italicFont:           	xft:M+ 1mn:italic:size=8
-URxvt*boldItalicFont:     		xft:M+ 1mn:regular:size=8
-! run :.!fc-list | grep <font-name>
-
-! perl extensions
 URxvt.perl-ext-common:  default,clipboard,url-select,keyboard-select
-!URxvt.perl-ext-common:  default,clipboard,url-select,keyboard-select,tabbed
-
-! macros for clipboard and selection
-
 URxvt.copyCommand:      xclip -i -selection clipboard
 URxvt.pasteCommand:     xclip -o -selection clipboard
 URxvt.keysym.M-c:       perl:clipboard:copy
 URxvt.keysym.M-v:       perl:clipboard:paste
 URxvt.keysym.M-C-v:     perl:clipboard:paste_escaped
 URxvt.keysym.M-Escape:  perl:keyboard-select:activate
+URxvt.keysym.Shift-Up:	command:\033]720;1\007
+URxvt.keysym.Shift-Down:command:\033]721;1\007
 URxvt.keysym.M-s:       perl:keyboard-select:search
 URxvt.keysym.M-u:       perl:url-select:select_next
 URxvt.urlLauncher:      firefox
 URxvt.underlineURLs:    true
 URxvt.urlButton:        1
-
-! tabbed
-URxvt.tabbed.tabbar-fg: 4
-URxvt.tabbed.tabbar-bg: 16
-URxvt.tabbed.tab-fg:    15
-URxvt.tabbed.tab-bg:    4
 URxvt*buffered:         false          
-
+URxvt.urgentOnBell: 	True
 
 ! ------------------------------------------------------------------------------
-! ROFI Color theme
+! Xft Font Configuration
 ! ------------------------------------------------------------------------------
 
-rofi.color-enabled: true
-rofi.color-window: #2f343f, #2f343f, #2f343f
-rofi.color-normal: #2f343f, #d8dee8, #2f343f, #2f343f, #bf616a
-rofi.color-active: #2f343f, #b48ead, #2f343f, #2f343f, #93e5cc
-rofi.color-urgent: #2f343f, #ebcb8b, #2f343f, #2f343f, #ebcb8b           
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
                                                            

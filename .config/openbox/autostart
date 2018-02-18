@@ -26,7 +26,7 @@ compton -b --config ~/.config/compton.conf &
 mpd &
 
 ## Conky, an efficient way for system info
-conky &
+#conky &
 
 ## Turn off/on System Beep
 #xset b off
