@@ -14,7 +14,7 @@ Also, please read what written inside the files before use. And remember, copyin
 ## Openbox (Best WM): Vinyl
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-openbox.jpg) <br />
 **Openbox Theme** : Arroundie (included in this repo). To get the rounded corner, You need *openbox-patched* (AUR). 
-Or if You are on Debian, You can read [this](https://forums.bunsenlabs.org/viewtopic.php?id=3173) discussion on BunsenLabs Forum to get it. <br />
+Or if You are on Debian (best distro), You can read [this](https://forums.bunsenlabs.org/viewtopic.php?id=3173) discussion on BunsenLabs Forum to get it. <br />
 **GTK Theme** : [Lumiere](https://github.com/addy-dclxvi/gtk-theme-collections), **Panel** : tint2 (best panel), **Running Apps** : Feh, Thunar, & vim inside termite <br />
 **Now Playing** : Led Zeppelin - Since I Have Been Loving You <br /> <br />
 
@@ -91,7 +91,7 @@ I haven't pushed this, too lazy to fix some problem. This WM really drain my pat
 And a well commented *autostart* file is included. I only put one Openbox theme in this repo. 
 My other Openbox themes is in [Openbox Theme Collections](https://github.com/addy-dclxvi/Openbox-Theme-Collections).
 
-- **Another WM** <br /> Pretty stock simple setup of i3, herbstluftwm, Bspwm, Fluxbox, Spectrwm, dwm & [xfwm-standalone](https://github.com/addy-dclxvi/xfwm4-standalone).
+- **Other WMs** <br /> Pretty stock simple setup of i3, herbstluftwm, Bspwm, Fluxbox, Spectrwm, dwm & [xfwm-standalone](https://github.com/addy-dclxvi/xfwm4-standalone).
 
 - **.profile and .xsessionrc** <br /> They are scripts those executed by LightDM when You login X session. Previously I use *.profile* file when I'm still on Arch. 
 But, I found that *~/.profile* file is not executed by LightDM on Debian.
@@ -213,7 +213,7 @@ Mystartpage looks like this. Dark variant is also available.
 
 - **Bar** <br /> My collections of Lemonbar script/config. The workspace indicator is generated using xdotool, so it can be work on any WM.
 Except *panel-bspwm*, it's specially designed for Bspwm. The workspace indicator is generated using ```bspc subscribe``` for efficient loop.
-The wifi indicator is generated using ```/sbin/iwgetconfig```, another distro than Debian (best distro) may have different path of ```iwgetid```. <br />
+The wifi indicator is generated using ```/sbin/iwgetid```, another distro than Debian (best distro) may have different path of ```iwgetid```. <br />
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-popup.jpg) <br />
 *panel-mini* has a bonus ability. It can display album art popup using mpc, ImageMagick, and n30f. Click left to display popup and click right to close popup.
 I put the popup script in *~/.toys* and the background image in *~/.popup* folder.
