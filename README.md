@@ -6,7 +6,7 @@
 A collection of configs to be placed in the users home directory usually prefixed with a period, hence the name dotfiles.
 This repo is actually intended for my personal backup, but everyone are welcome to use these resources. 
 Maybe not always up to date with my current setup.
-I also put some explanations in this README file, because people say they are interested with my setup. I hope this will be useful. <br />
+I also put some explanations in this README file, because people say they are interested with my setup. I hope this will be useful.
 Also, please read what written inside the files before use. And remember, copying configuration file doesn't make it instantly work :wink: <br />
 
 ## Preview
@@ -230,6 +230,8 @@ Unfotunately the Weechat version in Debian repo is too low and doesn't support B
 My config also contains some useful alias to hide/unhide nicklist and time.
 
 - **Plank** <br /> Minimalist Plank theme looks like in my Rofi preview screenshot above.
+
+- **~/.utility/gitpush & ~/.utility/gitsetup** <br /> A helper script made by Erik Dubois to push files to GitHub repository.
 
 ## Additional Information
 - My main window manager is Openbox (best window manger in existence).
