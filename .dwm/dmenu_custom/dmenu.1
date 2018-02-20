@@ -1,0 +1,242 @@
+.TH DMENU 1 dmenu\-VERSION
+.SH NAME
+dmenu \- dynamic menu
+.SH SYNOPSIS
+.B dmenu
+.RB [ \-b ]
+.RB [ \-f ]
+.RB [ \-r ]
+.RB [ \-i ]
+.RB [ \-z ]
+.RB [ \-t ]
+.RB [ \-mask ]
+.RB [ \-noinput ]
+.RB [ \-s
+.IR screen ]
+.RB [ \-name
+.IR name ]
+.RB [ \-class
+.IR class ]
+.RB [ \-o
+.IR opacity ]
+.RB [ \-dim
+.IR opacity ]
+.RB [ \-dc 
+.IR color ]
+.RB [ \-l
+.IR lines ]
+.RB [ \-h
+.IR height ]
+.RB [ \-w
+.IR width ]
+.RB [ \-p
+.IR prompt ]
+.RB [ \-fn
+.IR font ]
+.RB [ \-nb
+.IR color ]
+.RB [ \-nf
+.IR color ]
+.RB [ \-sb
+.IR color ]
+.RB [ \-sf
+.IR color ]
+.RB [ \-v ]
+.P
+.BR dmenu_run " ..."
+.SH DESCRIPTION
+.B dmenu
+is a dynamic menu for X, which reads a list of newline\-separated items from
+stdin.  When the user selects an item and presses Return, their choice is printed
+to stdout and dmenu terminates.  Entering text will narrow the items to those
+matching the tokens in the input.
+.P
+.B dmenu_run
+is a script used by
+.IR dwm (1)
+which lists programs in the user's $PATH and runs the result in their $SHELL.
+.SH OPTIONS
+.TP
+.B \-b
+dmenu appears at the bottom of the screen.
+.TP
+.B \-q
+dmenu will not show any items if the search string is empty.
+.TP
+.B \-f
+dmenu grabs the keyboard before reading stdin.  This is faster, but will lock up
+X until stdin reaches end\-of\-file.
+.TP
+.B \-r 
+activates filter mode. All matching items currently shown in the list will be
+selected, starting with the item that is highlighted and wrapping around to the
+beginning of the list. 
+.TP 
+.B \-i
+dmenu matches menu items case insensitively.
+.TP
+.B \-z
+dmenu uses fuzzy matching. It matches items that have all characters entered, in sequence they are
+entered, but there may be any number of characters between matched characters.
+For example it takes "txt" makes it to "*t*x*t" glob pattern and checks if it
+matches.
+.TP
+.B \-t
+dmenu uses space\-separated tokens to match menu items. Using this overrides -z option.
+.TP
+.B \-mask
+dmenu masks input with asterisk characters (*).
+.TP
+.B \-noinput
+dmenu ignores input from stdin (equivalent to: echo | dmenu).
+.TP
+.BI \-s " screen"
+dmenu apears on the specified screen number. Number given corespondes to screen number in X configuration.
+.TP
+.BI \-name " name"
+defines window name for dmenu. Defaults to "dmenu".
+.TP
+.BI \-class " class"
+defines window class for dmenu. Defaults to "Dmenu".
+.TP
+.BI \-o " opacity"
+defines window opacity for dmenu. Defaults to 1.0.
+.TP
+.BI \-dim " opacity"
+enables screen dimming when dmenu appers. Takes dim opacity as argument.
+.TP 
+.BI \-dc " color"
+defines color of screen dimming. Active only when -dim in effect. Defautls to black (#000000)
+.TP
+.BI \-l " lines"
+dmenu lists items vertically, with the given number of lines.
+.TP
+.BI \-h " height"
+defines the height of the bar in pixels.
+.TP
+.BI \-p " prompt"
+defines the prompt to be displayed to the left of the input field.
+.TP
+.BI \-fn " font"
+defines the font or font set used. eg. "fixed" or "Monospace-12:normal" (an xft font)
+.TP
+.BI \-x " xoffset"
+defines the offset from the left border of the screen.
+.TP
+.BI \-y " yoffset"
+defines the offset from the top border of the screen.
+.TP
+.BI \-w " width"
+defines the desired menu window width.
+.TP
+.BI \-nb " color"
+defines the normal background color.
+.IR #RGB ,
+.IR #RRGGBB ,
+and X color names are supported.
+.TP
+.BI \-nf " color"
+defines the normal foreground color.
+.TP
+.BI \-sb " color"
+defines the selected background color.
+.TP
+.BI \-sf " color"
+defines the selected foreground color.
+.TP
+.B \-v
+prints version information to stdout, then exits.
+.SH USAGE
+dmenu is completely controlled by the keyboard.  Items are selected using the
+arrow keys, page up, page down, home, and end.
+.TP
+.B Tab
+Copy the selected item to the input field.
+.TP
+.B Return
+Confirm selection.  Prints the selected item to stdout and exits, returning
+success.
+.TP
+.B Shift\-Return
+Confirm input.  Prints the input text to stdout and exits, returning success.
+.TP
+.B Escape
+Exit without selecting an item, returning failure.
+.TP
+C\-a
+Home
+.TP
+C\-b
+Left
+.TP
+C\-c
+Escape
+.TP
+C\-d
+Delete
+.TP
+C\-e
+End
+.TP
+C\-f
+Right
+.TP
+C\-g
+Escape
+.TP
+C\-h
+Backspace
+.TP
+C\-i
+Tab
+.TP
+C\-j
+Return
+.TP
+C\-J
+Shift-Return
+.TP
+C\-k
+Delete line right
+.TP
+C\-m
+Return
+.TP
+C\-n
+Down
+.TP
+C\-p
+Up
+.TP
+C\-u
+Delete line left
+.TP
+C\-w
+Delete word left
+.TP
+C\-y
+Paste from primary X selection
+.TP
+C\-Y
+Paste from X clipboard
+.TP
+M\-g
+Home
+.TP
+M\-G
+End
+.TP
+M\-h
+Up
+.TP
+M\-j
+Page down
+.TP
+M\-k
+Page up
+.TP
+M\-l
+Down
+.SH SEE ALSO
+.IR dwm (1),
+.IR stest (1)

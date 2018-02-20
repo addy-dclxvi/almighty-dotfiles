@@ -1,0 +1,87 @@
+.TH STEST 1 dmenu\-VERSION
+.SH NAME
+stest \- filter a list of files by properties
+.SH SYNOPSIS
+.B stest
+.RB [ -abcdefghlpqrsuwx ]
+.RB [ -n
+.IR file ]
+.RB [ -o
+.IR file ]
+.RI [ file ...]
+.SH DESCRIPTION
+.B stest
+takes a list of files and filters by the files' properties, analogous to
+.IR test (1).
+Files which pass all tests are printed to stdout. If no files are given, stest
+reads files from stdin.
+.SH OPTIONS
+.TP
+.B \-a
+Test hidden files.
+.TP
+.B \-b
+Test that files are block specials.
+.TP
+.B \-c
+Test that files are character specials.
+.TP
+.B \-d
+Test that files are directories.
+.TP
+.B \-e
+Test that files exist.
+.TP
+.B \-f
+Test that files are regular files.
+.TP
+.B \-g
+Test that files have their set-group-ID flag set.
+.TP
+.B \-h
+Test that files are symbolic links.
+.TP
+.B \-l
+Test the contents of a directory given as an argument.
+.TP
+.BI \-n " file"
+Test that files are newer than
+.IR file .
+.TP
+.BI \-o " file"
+Test that files are older than
+.IR file .
+.TP
+.B \-p
+Test that files are named pipes.
+.TP
+.B \-q
+No files are printed, only the exit status is returned.
+.TP
+.B \-r
+Test that files are readable.
+.TP
+.B \-s
+Test that files are not empty.
+.TP
+.B \-u
+Test that files have their set-user-ID flag set.
+.TP
+.B \-w
+Test that files are writable.
+.TP
+.B \-x
+Test that files are executable.
+.SH EXIT STATUS
+.TP
+.B 0
+At least one file passed all tests.
+.TP
+.B 1
+No files passed all tests.
+.TP
+.B 2
+An error occurred.
+.SH SEE ALSO
+.IR dmenu (1),
+.IR test (1)

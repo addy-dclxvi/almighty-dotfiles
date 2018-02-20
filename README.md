@@ -70,7 +70,7 @@ I just changed the colour, replace his python script to get workspace status wit
 ## Dwm : Wherever I May Roam
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-dwm.jpg) <br />
 **Stuff in the screenshot** : dwm, dwm-status, and ncmpcpp. Nord colour scheme but I change the background colour to #000507. 
-Big credits to [Boris](https://boris241.deviantart.com/) for this setup! <br />
+Big credits to [Boris](https://boris241.deviantart.com/) for this setup! I put some guide inside *~/.dwm* folder. I hope it can help You to make this damned window manager running.<br />
 **Now Playing** : Metallica - Wherever I May Roam <br /> <br />
 
 ## Spectrwm : Hexagon
@@ -198,7 +198,7 @@ To use this, launch your rofi and hit Shift + Left to enter *run* mode (if you'r
 Search ```record``` and hit enter to start recording. If You want to end the recording session, launch your rofi again, hit Shift + Left, search for ```stop-recording``` then hit Enter.
 The video will be saved in *~/Videos/record.mkv*. Rename it first before take another recording session :wink:
 
-- **~/.utility/screeny** <br /> A script to take a screenshot using scrot, move the result to *~/Pictures*, then preview the result using Viewnior.
+- **~/.utility/screeny** <br /> A script to take a screenshot using scrot, add date & time to the file name, move the result to *~/Pictures*, then preview the result using Viewnior.
 Bind ```screeny``` command to your *Print Screen* button. <br />
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-screeny.jpg) <br />
 And You can instantly delete the result if You are unsatified the screenshoot using Delete button.
@@ -225,7 +225,7 @@ And maybe You also need to ```sudo dpkg-reconfigure fontconfig-config``` on Debi
 - **Stalonetray** <br /> A configuration file for stalonetray. I usually use it as a companion for Lemonbar. Lemonbar has no dedicated system tray handler.
 The system tray will be placed on top-left of the desktop and undocked (like on my Bspwm preview above).
 
-- **Weechat** <br /> Minimalist Weechat IRC config with Bufflist (like in my Bspwm & Xfwm) screenshoot above. 
+- **Weechat** <br /> Minimalist Weechat IRC config with Bufflist, like in my Bspwm & Xfwm screenshoot above. 
 Unfotunately the Weechat version in Debian repo is too low and doesn't support Bufflist (except by using external plugin). 
 My config also contains some useful alias to hide/unhide nicklist and time.
 
@@ -250,6 +250,8 @@ My config also contains some useful alias to hide/unhide nicklist and time.
 For iconic fonts, depends on what You see inside the config file. 
 
 - My Web Browser is Firefox now. Previously Chromium.
+
+- My File Manager is Thunar.
 
 - My terminal is URxvt (best terminal emulator) and Termite.
 
@@ -334,6 +336,8 @@ The links above are pointed to their dotfiles repo. They have interesting stuff.
 
 ## Motivational Quotes
 "The Linux philosophy is *'Laugh in the face of danger'*. Oops! Wrong One. *'Do it yourself'*. Yes, that's it." -- Linus Torvalds
+
+"RTFM" -- Most People in Arch Forum
 
 ## Other Gallery
 [Deviant Art](http://addy-dclxvi.deviantart.com/)
