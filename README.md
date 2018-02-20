@@ -70,7 +70,7 @@ I just changed the colour, replace his python script to get workspace status wit
 ## Dwm : Wherever I May Roam
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-dwm.jpg) <br />
 **Stuff in the screenshot** : dwm, dwm-status, and ncmpcpp. Nord colour scheme but I change the background colour to #000507. 
-Big credits to [Boris](https://boris241.deviantart.com/) for this setup! I put some guide inside *~/.dwm* folder. I hope it can help You to make this damned window manager running.<br />
+I put some guide inside *~/.dwm* folder. I hope it can help You to make this damned window manager running.<br />
 **Now Playing** : Metallica - Wherever I May Roam <br /> <br />
 
 ## Spectrwm : Hexagon
