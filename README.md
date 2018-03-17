@@ -1,4 +1,4 @@
-![dotfiles](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/header.jpg)
+![dotfiles](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/header.png)
 
 ## Introduction
 A collection of configs to be placed in the users home directory usually prefixed with a period, hence the name dotfiles.
