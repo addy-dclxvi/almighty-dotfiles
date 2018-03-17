@@ -1,0 +1,33 @@
+##
+## See INSTALL, README and CUSTOMIZE for more information.
+##
+
+SetEnv themes MixedThemePackage/themes
+
+# Read $[themes]/air1/air1-1280x1024.fvwm
+# Read $[themes]/air1/air1-1920x1200.fvwm
+# Read $[themes]/air2/air2.fvwm
+# Read $[themes]/blue/blue.fvwm
+# Read $[themes]/bluestripes/bluestripes-1280x1024.fvwm
+# Read $[themes]/bluestripes/bluestripes-1920x1200.fvwm
+# Read $[themes]/cable/cable-1280x1024.fvwm
+# Read $[themes]/cable/cable-1920x1200.fvwm
+# Read $[themes]/deer/deer.fvwm
+# Read $[themes]/elegantstripes/elegantstripes.fvwm
+# Read $[themes]/green/green.fvwm
+# Read $[themes]/greenstripes/greenstripes-1280x1024.fvwm
+# Read $[themes]/greenstripes/greenstripes-1920x1200.fvwm
+# Read $[themes]/greystripes/greystripes-1280x1024.fvwm
+# Read $[themes]/greystripes/greystripes-1920x1200.fvwm
+# Read $[themes]/meadow/meadow.fvwm
+# Read $[themes]/orange/orange.fvwm
+# Read $[themes]/pink/pink-1280x1024.fvwm
+# Read $[themes]/pink/pink-1920x1200.fvwm
+# Read $[themes]/waitingroom/waitingroom-1280x1024.fvwm
+# Read $[themes]/waitingroom/waitingroom-1920x1200.fvwm
+# Read $[themes]/wheat/wheat-1280x1024.fvwm
+# Read $[themes]/wheat/wheat-1920x1200.fvwm
+Read $[themes]/clair/clair.fvwm
+
+UnsetEnv themes
+

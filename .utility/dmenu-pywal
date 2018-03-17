@@ -3,7 +3,7 @@
 # Import the colors
 . "${HOME}/.cache/wal/colors.sh"
 
-dmenu-run -i -p Search \
+dmenu_run -i -p Search \
 -w 420 -h 20 -x 24 -y 48 \
 -nb $background -nf $foreground \
 -sb $color1 -sf $background
