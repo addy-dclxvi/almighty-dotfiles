@@ -9,9 +9,7 @@ SSID_NAME=$(/sbin/iwgetid -r)
 
 if [[ "${SSID_NAME}" != "" ]]; then
 	if  [[ $1 = "-i" ]]; then
-    #echo "  ${SSID_NAME}"
-    #echo "  ${SSID_NAME}"
-    echo "  Silence of The LANs"
+    echo "  ${SSID_NAME}"
 	else
     echo "${SSID_NAME}"
 	fi
