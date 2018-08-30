@@ -1,0 +1,20 @@
+#!/bin/bash
+
+wid=$1
+if [ "$wid" == "" ]
+then
+	exit 1
+fi
+
+dir=$2
+if [ "$dir" == "" ]
+then
+	exit 2
+fi
+
+rm -f "$dir"/"$wid".png
+
+cat <<END
+DestroyWindowStyle
+END
+

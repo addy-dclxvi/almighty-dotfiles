@@ -1,0 +1,22 @@
+#!/bin/bash
+
+wid=$1
+if [ "$wid" == "" ]
+then
+	exit 1
+fi
+
+dir=$2
+if [ "$dir" == "" ]
+then
+	exit 2
+fi
+
+xwd -silent -id "$wid" | convert -scale 140 -border 1x1 -bordercolor black xwd:- png:"$dir"/"$wid".png
+
+cat <<END
+Raise
+WindowStyle IconOverride, Icon "$dir"/"$wid".png
+Iconify
+END
+

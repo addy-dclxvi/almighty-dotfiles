@@ -78,11 +78,25 @@ I put some guide inside **~/.dwm** folder. I hope it can help You to make this d
 **Stuff in the screenshot** : Conky piped into dzen2, vim inside termite, Thunar, mpdviz, and ncmpcpp <br />
 **Now Playing** : System of a Down - Lonely Day <br /> <br />
 
-## Fvwm : Don't Try This at Home
+## ~~Fvwm : Don't Try This at Home~~
 ![preview-fvwm](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-fvwm.jpg) <br />
-I build this on top of [Mixed Fvwm Themes](http://www.vakuumverpackt.de/fvwm/). So, install it first. <br />
-**Stuff in the screenshot** : Fvwm Pager, Minimized to Thumbnail module (Firefox, GIMP, and Evince), Thunar, vim inside termite, and ncmpcpp.  <br />
-**Now Playing** : Beethoven - Moonlight Sonata <br /> <br />
+~~I build this on top of [Mixed Fvwm Themes](http://www.vakuumverpackt.de/fvwm/). So, install it first.~~ <br />
+~~**Stuff in the screenshot** : Fvwm Pager, Minimized to Thumbnail module (Firefox, GIMP, and Evince), Thunar, vim inside termite, and ncmpcpp.~~  <br />
+~~**Now Playing** : Beethoven - Moonlight Sonata~~ <br />
+**Edit :** Nuked <br /> <br />
+
+## ~~Fvwm : Images and Words~~
+![preview-fvwm2](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-fvwm2.jpg) <br />
+~~Also build on top of Mixed Fvwm Theme.~~ <br />
+~~**Now Playing** : Dream Theater - Under a Glass Monn~~ <br />
+**Edit :** Also nuked <br /> <br />
+
+## Fvwm : Colors
+![preview-fvwm3](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-fvwm3.jpg) <br />
+Rewritten from scratch (I mean from Fvwm default). Not using Mixed Fvwm Themes anymore because I want more control of my configurations.
+Just in case You want to see some workflow click [here](https://www.youtube.com/watch?v=N5eBLytHo1c). <br />
+**Stuff in the screenshoot** : Thunar Gtk3, ncmpcpp, colorpanes, Viewnior, Fvwm Pager, Fvwm Iconbox, GIMP, and Vim. <br />
+**Now Playing :** Between The Buried and Me - Sun of Nothing <br /> <br />
 
 ## Explanations
 - **Openbox** <br /> Some useful keybinds like snap window with useless gaps (super + arrows). MPC control using *play/pause, next, previous,* and *stop* keys. 

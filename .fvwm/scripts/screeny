@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# A simple script to take screenshoot using scrot
+# Then add date to the file name
+# Then open the result instantly using Viewnior
+
+scrot 'Cheese_%y.%m.%d_%H.%M.%S.png' \
+-e 'mv $f ~/Pictures ; viewnior ~/Pictures/$f'
