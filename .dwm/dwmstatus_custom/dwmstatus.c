@@ -99,9 +99,9 @@ static int fetch_wifi_info(char *wifi_str) {
   status_t wifi = fread_wifi_status("/sys/class/net/wlp4s0/operstate");
 
   if(wifi == UP) {
-    len += snprintf(wifi_str, STRSZ, "\ue220");
-  } else {
     len += snprintf(wifi_str, STRSZ, "\ue222");
+  } else {
+    len += snprintf(wifi_str, STRSZ, "\ue220");
   }
 
   return len;
