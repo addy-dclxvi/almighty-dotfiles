@@ -359,3 +359,6 @@ The links above are pointed to their dotfiles repo. They have interesting stuff.
 
 ## Other Gallery
 [Deviant Art](http://addy-dclxvi.deviantart.com/)
+
+## Wallpaper I use
+In this [Imgur Album](https://imgur.com/a/0SAg3zv) and [Zip File](https://drive.google.com/open?id=10-LvYhDny7BfyebjD2NfTnhEOje6ByI7)
