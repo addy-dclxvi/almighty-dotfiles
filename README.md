@@ -1,18 +1,18 @@
 ![dotfiles](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/header.png)
 
 ## Introduction
-A collection of configs to be placed in the users home directory usually prefixed with a period, hence the name dotfiles.
-This repo is actually intended for my personal backup, but everyone are welcome to use these resources. 
+A collection of configs to be placed in the user's home directory usually prefixed with a period, hence the name dotfiles.
+This repo is actually intended for my personal backup, but everyone is welcome to use these resources. 
 Maybe not always up to date with my current setup.
 I also put some explanations in this README file, because people say they are interested with my setup. I hope this will be useful.
-Also, please read what written inside the files before use. And remember, copying configuration file doesn't make it instantly work :wink: <br />
+Also, please read what is written inside the files before use. And remember, copying configuration file doesn't make it instantly work :wink: <br />
 
 ## Preview
 
 ## Openbox : Vinyl
 ![preview-openbox](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-openbox.jpg) <br />
-**Openbox Theme** : Arroundie (included in this repo). To get the rounded corner, You need *openbox-patched* (AUR). 
-Or if You are on Debian, You can read [this](https://forums.bunsenlabs.org/viewtopic.php?id=3173) discussion on BunsenLabs Forum to get it. <br />
+**Openbox Theme** : Arroundie (included in this repo). To get the rounded corner, you need *openbox-patched* (AUR). 
+Or if you are on Debian, you can read [this](https://forums.bunsenlabs.org/viewtopic.php?id=3173) discussion on BunsenLabs Forum to get it. <br />
 **GTK Theme** : [Lumiere](https://github.com/addy-dclxvi/gtk-theme-collections), **Panel** : tint2, 
 **Running Apps** : Feh, Thunar, & vim inside termite <br />
 **Now Playing** : Led Zeppelin - Since I Have Been Loving You <br /> <br />
@@ -27,9 +27,9 @@ But font awesome has changed its glyph code now. Probably the icons will break. 
 ![preview-i3-pywal](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-i3-pywal.jpg) <br />
 **Stuff in the screenshot** : Ncmpcpp inside Urxvt, mpdviz visualizer, dmenu2 (not a normal dmenu), and Lemonbar <br />
 **Now Playing** : Dream Theater - Vacant <br />
-My current i3 setup on Debian. Vanilla i3, too lazy too build i3-gaps. I place this configuration on *~/.config/i3-pywal*.
-If You want to use it, just copy every content in this folder to *~/.config/i3*. And everything is *pywaled*.
-So, You need to install pywal first. <br /> <br />
+My current i3 setup on Debian. Vanilla i3, too lazy too build i3-gaps. I place this configuration in *~/.config/i3-pywal*.
+If you want to use it, just copy all the contents of this folder to *~/.config/i3*. And everything is *pywaled*.
+So, you need to install pywal first. <br /> <br />
 
 ## Bspwm : Ant Man
 ![preview-bspwm2](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-bspwm2.jpg) <br />
@@ -57,7 +57,7 @@ Just like the setup above, but I use Polybar for the panel. My Polybar config is
 ![preview-herbstluftwm2](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-herbstluftwm2.jpg) <br />
 Just like my setup above, but I use Polybar. The Polybar configuration is placed in *~/.config/herbstluftwm* folder. 
 It's actually NerdyPepper's polybar config. 
-I just changed the colour, replace his python script to get workspace status with ewmh, and replace spotipy with mpc. <br />
+I just changed the colour, replaced his python script to get workspace status with ewmh, and replaced spotipy with mpc. <br />
 **Stuff in the screenshot** : Neofetch & colorbar <br />
 **Now Playing** : Rage Againts The Machine - Killing in The Name Of <br /> <br />
 
@@ -70,7 +70,7 @@ I just changed the colour, replace his python script to get workspace status wit
 ## Dwm : Wherever I May Roam
 ![preview-dwm](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-dwm.jpg) <br />
 **Stuff in the screenshot** : dwm, dwm-status, and ncmpcpp. Nord colour scheme but I change the background colour to #000507. 
-I put some guide inside **~/.dwm** folder. I hope it can help You to make this damned window manager running.<br />
+I put some guide inside **~/.dwm** folder. I hope it can help you to get this damned window manager running.<br />
 **Now Playing** : Metallica - Wherever I May Roam <br /> <br />
 
 ## Spectrwm : Hexagon
@@ -94,7 +94,7 @@ I put some guide inside **~/.dwm** folder. I hope it can help You to make this d
 ## Fvwm : Colors
 ![preview-fvwm3](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-fvwm3.jpg) <br />
 Rewritten from scratch (I mean from Fvwm default). Not using Mixed Fvwm Themes anymore because I want more control of my configurations.
-Just in case You want to see some workflow click [here](https://www.youtube.com/watch?v=N5eBLytHo1c). <br />
+Just in case you want to see some workflow click [here](https://www.youtube.com/watch?v=N5eBLytHo1c). <br />
 **Stuff in the screenshoot** : Thunar Gtk3, ncmpcpp, colorpanes, Viewnior, Fvwm Pager, Fvwm Iconbox, GIMP, and Vim. <br />
 **Now Playing :** Between The Buried and Me - Sun of Nothing <br /> <br />
 
@@ -106,19 +106,19 @@ My other Openbox themes is in [Openbox Theme Collections](https://github.com/add
 
 - **Other WMs** <br /> Pretty stock simple setup of i3, herbstluftwm, Bspwm, Fluxbox, Spectrwm, dwm & [xfwm-standalone](https://github.com/addy-dclxvi/xfwm4-standalone).
 
-- **.profile and .xsessionrc** <br /> They are scripts those executed by LightDM when You login X session. Previously I use *.profile* file when I'm still on Arch. 
+- **.profile and .xsessionrc** <br /> They are scripts those executed by LightDM when you login to an X session. Previously I used *.profile* file when I'm still on Arch. 
 But, I found that *~/.profile* file is not executed by LightDM on Debian.
-So, I use *~/.xsessionrc* file now (maybe *.xsessionrc* also work in Arch, I haven't tested it). 
-It contains some command to export *~/.bar*, *~/.executor*, *~/.notify*, *~/.utility*, and some other folders to `$PATH`. 
-It's important if You want to use my configurations. Because I centralized most of the command to my `$PATH`. 
-Exporting them to `$PATH` make the custom script in those folders can be launched without writing the absolute path. 
+So, I use *~/.xsessionrc* file now (maybe *.xsessionrc* also works in Arch, I haven't tested it). 
+It contains some commands to export *~/.bar*, *~/.executor*, *~/.notify*, *~/.utility*, and some other folders to `$PATH`. 
+It's important if you want to use my configurations. Because I centralized most of the command to my `$PATH`. 
+Exporting them to `$PATH` makes it so that the custom script in those folders can be launched without writing the absolute path. 
 For example to launch Rofi, I just need to make a keybind to execute `rofi-apps`, instead of `/home/addy/.utilty/rofi-apps`.
 
 - **Rofi** <br /> My Rofi looks like this <br />
 ![preview-rofi](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-rofi.jpg) <br /> 
-My rofi colour is set in *~/.Xresources*, but it just an #INCLUDE command. The actual colour configuration is in *~/.xrdb/rofi*, You will understand if You look at it. 
-And the launch configuration is in *~/.utility/rofi-apps*. If You use my *.profile* or *.xsessionrc*, 
-just make a keybind to execute `rofi-apps` to make your Rofi launched with appearance like this. <br /> <br /> 
+My rofi colour is set in *~/.Xresources*, but it is just an #INCLUDE command. The actual colour configuration is in *~/.xrdb/rofi*, you will understand if you look at it. 
+And the launch configuration is in *~/.utility/rofi-apps*. If you use my *.profile* or *.xsessionrc*, 
+just make a keybind to execute `rofi-apps` to make your Rofi launch with appearance like this. <br /> <br /> 
 ![preview-rofi2](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-rofi2.jpg) <br /> 
 That's my rofi with dark colour. <br /> 
 
@@ -143,19 +143,19 @@ It also contains some useful alias, so please read before use :wink:
 To use it simply run `ytmp3 <URL>` for example `ytmp3 https://www.youtube.com/watch?v=WpgNV4Nvetg` <br /> 
 ![preview-ytmp3](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-ytmp3.jpg) <br /> <br /> 
 But sometimes the thumbnail doesn't look nice, add `-n` flag to skip embed the albumart, for example `ytmp3 -n https://www.youtube.com/watch?v=WpgNV4Nvetg`.
-By the way I use Dream Theater song, [The Bigger Picture](https://www.youtube.com/watch?v=WpgNV4Nvetg) for the example above. It's a great song, I recommend You to listen to it. 
-The minute 5 to the end is one of the best part of the song ever recorded in human history. It sums up every emotion then unleash it. <br />
+By the way I use Dream Theater song, [The Bigger Picture](https://www.youtube.com/watch?v=WpgNV4Nvetg) for the example above. It's a great song, I recommend you to listen to it. 
+The part 5 minutes to the end is one of the best parts of a song ever recorded in human history. It sums up every emotion then unleashes it. <br />
 
 - **~/.executor** <br /> A collections of scripts to generate status for tint2 executor. 
-Example : tint2 in my Openbox screenshoot preview above is using these script to display weather and now-playing.
-But You can also use it for Polybar custom script, Lemonbar feeder, dzen2 feeder, Conky execi, or pipe it to Dunst, just use your creativity.
+Example : tint2 in my Openbox screenshoot preview above is using these scripts to display weather and now-playing.
+But you can also use it for Polybar custom script, Lemonbar feeder, dzen2 feeder, Conky execi, or pipe it to Dunst, just use your creativity.
 And don't forget to read the script before use.
 
 - **Xresources** <br /> My configuration for URxvt, including copy paste support by [Muennich](https://github.com/muennich/urxvt-perls). 
 Hit Alt+C to copy, and Alt+V to paste (*xsel* package is needed). 
 I put the colour configuration in *~/.xrdb* folder and include it in Xresources using `#include` command. 
-It makes me able to change or mix the colour scheme for urxvt, dmenu, and rofi easily. You will understand if You look at it.
-All of my favourite terminal colour scheme I frequently use on my setup is available in *~/.xrdb/color* folder.
+It makes me able to change or mix the colour scheme for urxvt, dmenu, and rofi easily. You will understand if you look at it.
+All of my favourite terminal colour schemes I frequently use on my setup is available in *~/.xrdb/color* folder.
 
 - **Compton** <br /> Eye candy shadow. Also some useful "exclude" to avoid broken compositing.
 
@@ -164,7 +164,7 @@ I have a plan to merge them all to my [Conky Themes Collections](https://github.
 
 - **Tint2** <br /> Just a single tint2rc, looks like my Openbox preview above. 
 For my another Tint2 collections please check my [Tint2 Themes Collections](https://github.com/addy-dclxvi/Tint2-Theme-Collections). 
-You need tint2 with executor support, and consider to use backported tint2 from BunsenLabs repo if You are on Debian. 
+You need tint2 with executor support, and consider to use backported tint2 from BunsenLabs repo if you are on Debian. 
 Tint2 version in Debian repo is outdated (Upss, every packages in Debian repo is outdated actually :stuck_out_tongue_winking_eye: )
 
 - **termite** <br /> My termite terminal emulator configuration with Nord colour scheme & Mostly-Bright colour scheme.
@@ -178,7 +178,7 @@ Also integrated with *dunst* notification (any notification daemon should be wor
 Dunst will launch automatically if triggered by *notify-send* event (except if You're not using Display Manager, add `dunst &` to your ~/.xinitrc). 
 And because this is a hacky trick, the album art can't adapt to the terminal size :disappointed_relieved:
 
-- **Skippy-XD** <br /> If You don't know, Skippy-XD is a program to expose the stacked windows. I usually use it when I go taskbar-less. <br />
+- **Skippy-XD** <br /> If you don't know, Skippy-XD is a program to expose the stacked windows. I usually use it when I go taskbar-less. <br />
 ![preview-skippy](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-skippy.jpg) <br />
 My Skippy-XD configuration looks like this, nothing special.
 
@@ -205,12 +205,12 @@ I frequently use them for terminal colour scheme show-off. <br /> <br />
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-pokemon.jpg) <br />
 Also contains a script to launch URxvt with Pokemon background (URxvt with pixbuf enabled is needed). Use light terminal colour scheme first. It's super effective!
 
-- **~/.notify** <br /> A set of command to pipe my executor scripts to Dunst. When I go statusbar-less, I usually made keybinds to execute them. <br />
+- **~/.notify** <br /> A set of commands to pipe my executor scripts to Dunst. When I go statusbar-less, I usually make keybinds to execute them. <br />
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-dunst.jpg) <br />
-In the screenshot above, I made a keybinds to execute `notify-weather`, `notify-music`, and `notify-ssid`. It displayed as notifications when I hit those keybinds.
+In the screenshot above, I made keybinds to execute `notify-weather`, `notify-music`, and `notify-ssid`. It displays as notifications when I hit those keybinds.
 
-- **~/.utility/record** <br /> A script to do a screenrecord using ffmpeg, so You don't need any external program.
-You just need ffmpeg and mkv codec, mostly autoinstalled when You have a multimedia player like VLC or MPV. <br />
+- **~/.utility/record** <br /> A script to do a screenrecord using ffmpeg, so you don't need any external program.
+You just need ffmpeg and mkv codec, mostly autoinstalled when you have a multimedia player like VLC or MPV. <br />
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-screenrecord.jpg) <br />
 To use this, launch your rofi and hit Shift + Left to enter *run* mode (if you're using my rofi configuration).
 Search `record` and hit enter to start recording. If You want to end the recording session, launch your rofi again, hit Shift + Left, search for `stop-recording` then hit Enter.
@@ -219,7 +219,7 @@ The video will be saved in *~/Videos/record.mkv*. Rename it first before take an
 - **~/.utility/screeny** <br /> A script to take a screenshot using scrot, add date & time to the file name, move the result to *~/Pictures*, then preview the result using Viewnior.
 Bind `screeny` command to your *Print Screen* button. <br />
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-screeny.jpg) <br />
-And You can instantly delete the result if You are unsatified the screenshoot using Delete button.
+And you can instantly delete the result if you are unsatified the screenshoot using Delete button.
 
 - **Ranger** <br /> Pretty stock Ranger file manager configuration. <br />
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/preview-ranger.jpg) <br />
@@ -236,9 +236,9 @@ The wifi indicator is generated using `/sbin/iwgetid`, another distro than Debia
 *panel-mini* has a bonus ability. It can display album art popup using mpc, ImageMagick, and n30f. Click left to display popup and click right to close popup.
 I put the popup script in *~/.toys* and the background image in *~/.popup* folder.
 
-- **~/.fonts** <br /> Contains Icomoon font, for some of my Polybar config. It's actually packed by NerdyPepper, but I think It would be wise to save a copy here to make You easier to recreate my setup.
+- **~/.fonts** <br /> Contains Icomoon font, for some of my Polybar config. It's actually packed by NerdyPepper, but I think It would be wise to save a copy here to make it easier for you to recreate my setup.
 Also contains Siji and Tewi fonts. To use those bitmap fonts, add `xset fp+ ~/.fonts/misc &` to your startup. 
-And maybe You also need to `sudo dpkg-reconfigure fontconfig-config` on Debian to enable the bitmap fonts.
+And maybe you also need to `sudo dpkg-reconfigure fontconfig-config` on Debian to enable the bitmap fonts.
 
 - **Stalonetray** <br /> A configuration file for stalonetray. I usually use it as a companion for Lemonbar. Lemonbar has no dedicated system tray handler.
 The system tray will be placed on top-left of the desktop and undocked (like on my Bspwm preview above).
@@ -256,7 +256,7 @@ My config also contains some useful alias to hide/unhide nicklist and time.
 
 - My screen resolution is 1366x768 :cry:
 
-- All of my setup are using Lumiere and Fantome GTK Theme. Get them from my [GTK Theme Collections](https://github.com/addy-dclxvi/gtk-theme-collections) repo.
+- All of my setups are using Lumiere and Fantome GTK Theme. Get them from my [GTK Theme Collections](https://github.com/addy-dclxvi/gtk-theme-collections) repo.
 
 - My username at my machine is *addy@freako*, so some of these configs path are pointing to `/home/addy`. Replace them with your own username.
 
@@ -293,13 +293,13 @@ For iconic fonts, depends on what You see inside the config file.
 
 - My favourite bands is Dream Theater, important to recreate my setup :sunglasses:
 
-- My favourite drinks are Red Velvet, Ice Cream Cone, Cola flavour Soda, Avocado Juice, Vanilla Milk, and Espresso (with less sugar, I'm already sweet :blush:). Just in case You want to buy me some.
+- My favourite drinks are Red Velvet, Ice Cream Cone, Cola flavour Soda, Avocado Juice, Vanilla Milk, and Espresso (with less sugar, I'm already sweet :blush:). Just in case you want to buy me some.
 
 ## Comments
-Most of the configurations are well-commented. Make sure You read them.
+Most of the configurations are well-commented. Make sure you read them.
 
 ## Tips & Tricks
-Some tricks I frequently use for my wallpaper. Ssssstttt these are secret :wink: <br />
+Some tricks I frequently use for my wallpaper. Ssssshhhhh these are secret :wink: <br />
 
 - **Linear Vignette** <br /> 
 ![alt text](https://raw.githubusercontent.com/addy-dclxvi/almighty-dotfiles/master/tips1.jpg) <br /> 
@@ -348,9 +348,9 @@ If it looks stupid but it works, it's not stupid :laughing:
 and other member of Linuxer Desktop Art (Our Local Ricing Community) for teaching me how to rice. 
 The links above are pointed to their dotfiles repo. They have interesting stuff. I suggest You check them out :smile:
 
-- Dylan, NerdyPepper, Mohabaks, Eti, Chriptik, lovelybac0n, Anachron, and many other amazing guys from r/unixporn. I take some of their ideas and dotfiles.
+- Dylan, NerdyPepper, Mohabaks, Eti, Chriptik, lovelybac0n, Anachron, and many other amazing guys from r/unixporn. I took some of their ideas and dotfiles.
 
-- CrunchBang, BunsenLabs, and Archlabs Forums. I learn so much there, and meet amazing people like Matt, Nate, NixiePro, Head_on_a_Stick, Sector11, Nili, Glen, PackRat, Damo, JohnRaff, and many others.
+- CrunchBang, BunsenLabs, and Archlabs Forums. I learned so much there, and met amazing people like Matt, Nate, NixiePro, Head_on_a_Stick, Sector11, Nili, Glen, PackRat, Damo, JohnRaff, and many others.
 
 ## Motivational Quotes
 "The Linux philosophy is *'Laugh in the face of danger'*. Oops! Wrong One. *'Do it yourself'*. Yes, that's it." -- Linus Torvalds
@@ -360,5 +360,5 @@ The links above are pointed to their dotfiles repo. They have interesting stuff.
 ## Other Gallery
 [Deviant Art](http://addy-dclxvi.deviantart.com/)
 
-## Wallpaper I use
+## Wallpapers I use
 In this [Imgur Album](https://imgur.com/a/0SAg3zv) and [Zip File](https://drive.google.com/open?id=10-LvYhDny7BfyebjD2NfTnhEOje6ByI7)
