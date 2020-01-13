@@ -1,4 +1,13 @@
 #!/bin/bash
 
-scrot 'Cheese_%a-%d%b%y_%H.%M.png' \
--e 'mv $f ~/Pictures ; viewnior ~/Pictures/$f'
+#scrot 'Cheese_%a-%d%b%y_%H.%M.png' \
+#-e 'mv $f ~/Pictures ; viewnior ~/Pictures/$f'
+
+read -p "1 - Full, 2 - Delay(5), 0 - Pick out: " scr_scrot
+if [[ $scr_scrot == 0 ]]; then
+  scrot -s -e 'mv $f ~/Pictures/screen; viewnior ~/Pictures/screen/$f'
+elif [[ $scr_scrot == 1 ]]; then
+  scrot -e 'mv $f ~/Pictures/screen; viewnior ~/Pictures/screen/$f'
+elif [[ $scr_scrot == 2 ]]; then
+  scrot -d 5 -e 'mv $f ~/Pictures/screen; viewnior ~/Pictures/screen/$f'
+fi
